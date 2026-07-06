@@ -86,7 +86,7 @@ function buildNavbar() {
     <div class="navbar__inner">
 
       <a href="/index.html" class="navbar__logo">
-        <img src="/asset/logo_hmps.png" alt="HMPS INF logo" class="navbar__logo-mark" />
+        <img src="/asset/logo_hmps.png" alt="Logo HMPS Informatika UIN Sultan Maulana Hasanuddin Banten" loading="lazy" class="navbar__logo-mark" />
         <span class="navbar__logo-text"><b>HMPS</b> INF</span>
       </a>
 
