@@ -3,6 +3,14 @@
    Tab pills + animasi karakter per dept
    ============================================ */
 
+import { initTheme } from './theme.js'
+import { initNavbar } from './navbar.js'
+import { initFloatingBtn } from './floating-btn.js'
+import { initPageTransitions } from './page-transition.js'
+import { initFooter } from './footer.js'
+import { initReveal } from './reveal.js'
+
+
 const DEPT_ANIMATIONS = {
   internal:  { name: 'slideLeft',   duration: '0.5s',  easing: 'cubic-bezier(0.22,1,0.36,1)' },
   kominfo:   { name: 'fadeScale',   duration: '0.45s', easing: 'cubic-bezier(0.22,1,0.36,1)' },
@@ -18,6 +26,7 @@ const STATUS_COLOR = {
   'Berjalan':     '#378ADD',
   'Selesai':      '#1D9E75',
   'Rutin':        '#7F77DD',
+  'Upcoming':     '#D85A30',
 }
 
 const DEPTS = [
@@ -305,6 +314,13 @@ function closeModal() {
 
 /* ── Init ── */
 document.addEventListener('DOMContentLoaded', () => {
+  initNavbar()
+  initTheme()
+  initFooter()
+  initFloatingBtn()
+  initPageTransitions()
+  initReveal()
+
   const modalClose   = document.getElementById('modalClose')
   const modalOverlay = document.getElementById('modalOverlay')
   if (modalClose)   modalClose.onclick = closeModal

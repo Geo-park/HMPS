@@ -256,8 +256,15 @@ function initScrollAware() {
 /* ── Active link ── */
 function setActiveLink() {
   const path = window.location.pathname
+  // Normalize: treat '/' and '/index.html' the same
+  const normPath = (path === '/' || path === '') ? '/index.html' : path
+
   document.querySelectorAll('.nav-link[href], .mega-menu__link').forEach(el => {
-    if (el.getAttribute('href') === path) el.classList.add('active')
+    const href = el.getAttribute('href')
+    if (!href) return
+    // Strip hash before comparing
+    const hrefPath = href.split('#')[0]
+    if (hrefPath && hrefPath === normPath) el.classList.add('active')
   })
 }
 

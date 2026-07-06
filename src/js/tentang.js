@@ -1,5 +1,14 @@
+import { initTheme } from './theme.js'
+import { initNavbar } from './navbar.js'
+import { initFloatingBtn } from './floating-btn.js'
+import { initPageTransitions } from './page-transition.js'
+import { initFooter } from './footer.js'
+import { initReveal } from './reveal.js'
+
+
 const FAQ_DATA = [
   {
+
     cat: 'Umum',
     items: [
       { q: 'Apa itu HMPS INF?', a: 'HMPS INF adalah Himpunan Mahasiswa Program Studi Informatika UIN Sultan Maulana Hasanuddin Banten. Kami adalah organisasi resmi yang mewadahi seluruh mahasiswa Program Studi Informatika.' },
@@ -81,5 +90,14 @@ window.toggleFaq = function(id) {
   if (!isOpen) item.classList.add('open')
 }
 
-renderChips()
-renderList()
+document.addEventListener('DOMContentLoaded', () => {
+  initNavbar()
+  initTheme()
+  initFooter()
+  initFloatingBtn()
+  initPageTransitions()
+  initReveal()
+
+  renderChips()
+  renderList()
+})
