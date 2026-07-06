@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Halaman Galeri HMPS INF sedang dalam pengembangan." />
+  <title>Galeri — HMPS INF</title>
+  <link rel="icon" type="image/png" href="/asset/logo_hmps.png" />
+  <link rel="apple-touch-icon" href="/asset/logo_hmps.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <script>
+    (function() {
+      var t = localStorage.getItem('hmps-theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="/src/css/base.css" />
+  <link rel="stylesheet" href="/src/css/navbar.css" />
+  <link rel="stylesheet" href="/src/css/footer.css" />
+  <link rel="stylesheet" href="/src/css/floating-btn.css" />
+</head>
+<body>
+  <header id="navbar" class="navbar" role="banner"></header>
+
+  <main class="page-fade">
+    <section class="section-tight container">
+      <span class="eyebrow">Ongoing</span>
+      <h1 class="page-title">Halaman Galeri sedang dalam pengembangan.</h1>
+      <p class="page-lead">Dokumentasi foto dan video kegiatan akan segera dipublikasikan.</p>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer" role="contentinfo"></footer>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

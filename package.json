@@ -1,0 +1,14 @@
+{
+  "name": "hmps-inf",
+  "version": "1.0.0",
+  "description": "Website Resmi HMPS INF UIN SMH Banten 2026/2027",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

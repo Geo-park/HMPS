@@ -1,0 +1,73 @@
+/* ============================================
+   HMPS INF — Struktur Organisasi
+   ============================================ */
+
+.struktur-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.struktur-card {
+  padding: 26px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.struktur-card .ph-avatar {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 8px;
+}
+
+.struktur-role {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+.struktur-name {
+  font-weight: 600;
+  font-size: 16px;
+  font-family: var(--font-display);
+}
+
+.struktur-batch {
+  font-size: 13px;
+  color: var(--color-text-3);
+}
+
+.dept-structure-section {
+  margin-bottom: 56px;
+}
+
+.dept-structure-title {
+  margin-bottom: 24px;
+}
+
+.dept-structure-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .struktur-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .struktur-grid {
+    grid-template-columns: 1fr;
+  }
+}

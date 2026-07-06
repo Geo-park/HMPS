@@ -1,0 +1,139 @@
+/* ============================================
+   HMPS INF — Floating Contact Button
+   ============================================ */
+
+.floating-contact {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  z-index: var(--z-floating);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-3);
+}
+
+/* ── Trigger ── */
+.floating-contact__trigger {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  background: #7F77DD;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(127, 119, 221, 0.4);
+  cursor: pointer;
+  border: none;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.floating-contact__trigger:hover {
+  background: #6A61D4;
+  transform: scale(1.05);
+}
+
+.floating-contact__trigger svg {
+  width: 22px;
+  height: 22px;
+}
+
+.floating-contact__trigger .icon-close {
+  display: none;
+}
+
+.floating-contact.open .floating-contact__trigger .icon-contact {
+  display: none;
+}
+
+.floating-contact.open .floating-contact__trigger .icon-close {
+  display: block;
+}
+
+/* ── Items ── */
+.floating-contact__items {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-2);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-base);
+}
+
+.floating-contact.open .floating-contact__items {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.floating-contact__item {
+  width: 44px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: color-mix(in srgb, var(--item-color, var(--color-primary)) 8%, var(--color-surface));
+  border: 2px solid var(--item-color, var(--color-primary));
+  border-radius: var(--radius-full);
+  color: var(--item-color, var(--color-primary));
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  margin-right: 4px;
+  overflow: hidden;
+  transition: 
+    background var(--transition-fast), 
+    color var(--transition-fast), 
+    transform var(--transition-fast), 
+    box-shadow var(--transition-fast),
+    width var(--transition-fast),
+    padding var(--transition-fast);
+}
+
+.floating-contact.open .floating-contact__item {
+  width: 200px;
+  padding: 12px 14px;
+}
+
+.floating-contact__item:hover {
+  background: var(--item-color, var(--color-primary));
+  color: #fff;
+  transform: translateX(-4px) scale(1.02);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--item-color, var(--color-primary)) 40%, transparent);
+}
+
+.floating-contact__item svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.floating-contact__item:hover svg {
+  transform: scale(1.05);
+}
+
+.floating-contact__item-label {
+  opacity: 0;
+  max-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: opacity var(--transition-fast), max-width var(--transition-fast);
+}
+
+.floating-contact.open .floating-contact__item-label {
+  opacity: 1;
+  max-width: 120px;
+}
+
+@media (max-width: 768px) {
+  .floating-contact {
+    bottom: var(--space-4);
+    right: var(--space-4);
+  }
+}

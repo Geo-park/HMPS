@@ -1,0 +1,134 @@
+/* ============================================
+   HMPS INF — Design Tokens v2
+   Visual: hmps-pink.vercel.app reference
+   Nav + fitur: custom build (mega menu, dll)
+   ============================================ */
+
+:root {
+  /* Brand */
+  --purple: #7F77DD;
+  --purple-600: #6A61D4;
+  --purple-700: #5A51C4;
+  --purple-soft: rgba(127, 119, 221, 0.12);
+
+  /* Departemen */
+  --color-internal: #7F77DD;
+  --color-kominfo: #1D9E75;
+  --color-mikat: #BA7517;
+  --color-eksternal: #378ADD;
+  --color-pao: #D85A30;
+  --color-pp: #D4537E;
+  --color-ekraf: #5865F2;
+
+  /* Light theme */
+  --color-bg: #F6F6FA;
+  --color-bg-2: #EFEFF5;
+  --color-surface: #FFFFFF;
+  --color-surface-2: #FBFBFE;
+  --color-text: #16161D;
+  --color-text-2: #5B5B69;
+  --color-text-3: #8C8C9A;
+  --color-border: rgba(22, 22, 29, 0.08);
+  --color-border-2: rgba(22, 22, 29, 0.12);
+
+  /* Navbar glass */
+  --nav-bg: rgba(255, 255, 255, 0.72);
+  --nav-border: rgba(22, 22, 29, 0.08);
+
+  /* Hero */
+  --hero-shape: rgba(127, 119, 221, 0.10);
+
+  /* Placeholder */
+  --placeholder-bg: #ECECF3;
+  --placeholder-stripe: #E2E2EC;
+
+  /* Shadows */
+  --shadow-card: 0 1px 2px rgba(22, 22, 29, 0.04), 0 8px 24px rgba(22, 22, 29, 0.05);
+  --shadow-pop: 0 12px 40px rgba(22, 22, 29, 0.14);
+  --shadow-lg: 0 8px 32px rgba(22, 22, 29, 0.12);
+
+  /* Glass (navbar + modal) */
+  --glass-bg-light: rgba(255, 255, 255, 0.72);
+  --glass-border-light: rgba(22, 22, 29, 0.08);
+  --glass-blur: 16px;
+
+  /* Typography */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-label: 'Space Grotesk', monospace;
+
+  /* Type Scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  /* Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-btn: 8px;
+  --radius-card: 12px;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-pill: 999px;
+
+  /* Misc */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --maxw: 1200px;
+
+  /* Transition */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* Z-index */
+  --z-navbar: 100;
+  --z-dropdown: 200;
+  --z-modal: 300;
+  --z-floating: 400;
+}
+
+/* ── Dark Mode ── */
+[data-theme="dark"] {
+  --color-bg: #0F0F14;
+  --color-bg-2: #14141B;
+  --color-surface: #1A1A23;
+  --color-surface-2: #20202B;
+  --color-text: #ECECF2;
+  --color-text-2: #A7A7B6;
+  --color-text-3: #71717F;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-2: rgba(255, 255, 255, 0.14);
+
+  --nav-bg: rgba(20, 20, 27, 0.82);
+  --nav-border: rgba(255, 255, 255, 0.08);
+
+  --hero-shape: rgba(127, 119, 221, 0.18);
+  --purple-soft: rgba(127, 119, 221, 0.18);
+
+  --placeholder-bg: #1F1F2A;
+  --placeholder-stripe: #262633;
+
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.30), 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-pop: 0 16px 48px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.40);
+
+  --glass-bg-light: rgba(20, 20, 27, 0.82);
+  --glass-border-light: rgba(255, 255, 255, 0.08);
+}

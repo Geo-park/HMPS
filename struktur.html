@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lihat struktur organisasi HMPS Informatika UIN SMH Banten 2026/2027, lengkap dengan susunan kepengurusan dan departemen." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="author" content="HMPS Informatika UIN SMH Banten" />
+  <meta name="theme-color" content="#7F77DD" />
+  <link rel="canonical" href="/struktur.html" />
+  <meta property="og:title" content="Struktur Organisasi HMPS INF 2026/2027" />
+  <meta property="og:description" content="Lihat struktur organisasi HMPS Informatika UIN SMH Banten 2026/2027, lengkap dengan susunan kepengurusan dan departemen." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/struktur.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Struktur Organisasi HMPS INF 2026/2027" />
+  <meta name="twitter:description" content="Lihat struktur organisasi HMPS Informatika UIN SMH Banten 2026/2027, lengkap dengan susunan kepengurusan dan departemen." />
+  <title>Struktur Organisasi — HMPS INF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <script>
+    (function() {
+      var t = localStorage.getItem('hmps-theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="/src/css/base.css" />
+  <link rel="stylesheet" href="/src/css/navbar.css" />
+  <link rel="stylesheet" href="/src/css/footer.css" />
+  <link rel="stylesheet" href="/src/css/floating-btn.css" />
+  <link rel="stylesheet" href="/src/css/struktur.css" />
+  <link rel="icon" type="image/png" href="/asset/logo_hmps.png" />
+  <link rel="apple-touch-icon" href="/asset/logo_hmps.png" />
+</head>
+
+<body>
+
+  <header id="navbar" class="navbar" role="banner"></header>
+
+  <main class="page-fade">
+
+    <!-- ==============================================
+         Bagian Judul & Pengantar
+         Header utama untuk halaman Struktur
+         ============================================== -->
+    <section class="section-tight container">
+      <span class="eyebrow">Kepengurusan 2026/2027</span>
+      <h1 class="page-title">Struktur <span class="text-purple">Organisasi</span></h1>
+      <p class="page-lead">Mengenal para penggerak HMPS INF periode 2026/2027.</p>
+    </section>
+
+    <!-- ==============================================
+         Bagian Badan Pengurus Harian (BPH)
+         Menampilkan pimpinan utama himpunan
+         ============================================== -->
+    <section class="section container">
+      <div class="reveal">
+        <h2 class="block-title">
+          <div class="icon-box-sm icon-box-purple">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 20h9" />
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+            </svg>
+          </div>
+          Badan Pengurus Harian
+        </h2>
+      </div>
+      <div class="struktur-grid reveal">
+        <article class="card struktur-card">
+          <div class="ph ph-avatar avatar-lg"><span>Foto</span></div>
+          <span class="struktur-role text-purple">Ketua Umum</span>
+          <span class="struktur-name">— Pending —</span>
+          <span class="struktur-batch">2026/2027</span>
+        </article>
+        <article class="card struktur-card">
+          <div class="ph ph-avatar avatar-lg"><span>Foto</span></div>
+          <span class="struktur-role text-purple">Wakil Ketua</span>
+          <span class="struktur-name">— Pending —</span>
+          <span class="struktur-batch">2026/2027</span>
+        </article>
+        <article class="card struktur-card">
+          <div class="ph ph-avatar avatar-lg"><span>Foto</span></div>
+          <span class="struktur-role text-purple">Sekretaris</span>
+          <span class="struktur-name">— Pending —</span>
+          <span class="struktur-batch">2026/2027</span>
+        </article>
+        <article class="card struktur-card">
+          <div class="ph ph-avatar avatar-lg"><span>Foto</span></div>
+          <span class="struktur-role text-purple">Bendahara</span>
+          <span class="struktur-name">— Pending —</span>
+          <span class="struktur-batch">2026/2027</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         Bagian Per-Departemen
+         Di-render secara dinamis dari file struktur.js
+         ============================================== -->
+    <section class="section bg-alt">
+      <div class="container" id="dept-struktur"></div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer" role="contentinfo"></footer>
+  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/struktur.js"></script>
+</body>
+
+</html>

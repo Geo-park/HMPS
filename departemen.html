@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jelajahi 7 departemen HMPS Informatika UIN SMH Banten, lengkap dengan program kerja, fokus bidang, dan kontribusi organisasi." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="author" content="HMPS Informatika UIN SMH Banten" />
+  <meta name="theme-color" content="#7F77DD" />
+  <link rel="canonical" href="/departemen.html" />
+  <meta property="og:title" content="Departemen HMPS INF — Program Kerja dan Fokus Bidang" />
+  <meta property="og:description" content="Jelajahi 7 departemen HMPS Informatika UIN SMH Banten, lengkap dengan program kerja, fokus bidang, dan kontribusi organisasi." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/departemen.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Departemen HMPS INF — Program Kerja dan Fokus Bidang" />
+  <meta name="twitter:description" content="Jelajahi 7 departemen HMPS Informatika UIN SMH Banten, lengkap dengan program kerja, fokus bidang, dan kontribusi organisasi." />
+  <title>Departemen — HMPS INF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    .dep-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+
+    .dep-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 18px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-text-2);
+      font-weight: 600;
+      font-size: 14.5px;
+      cursor: pointer;
+      transition: all .22s var(--ease);
+      font-family: inherit;
+    }
+
+    .dep-tab:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .dep-tab.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .dep-tab .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    .dep-content {
+      animation: fadeUp .4s var(--ease);
+      margin-top: 32px;
+    }
+
+    .dep-hero {
+      display: flex;
+      gap: 22px;
+      padding: 30px;
+      align-items: flex-start;
+    }
+
+    .dep-hero-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .dep-hero-tag {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .dep-hero h2 {
+      font-size: 28px;
+      margin: 4px 0 10px;
+    }
+
+    .dep-hero p {
+      color: var(--color-text-2);
+      font-size: 16px;
+    }
+
+    .dep-vm {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .dep-vm-card {
+      padding: 28px;
+    }
+
+    .dep-vm-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .dep-vm-card>p {
+      color: var(--color-text-2);
+    }
+
+    .dep-sec-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      margin: 44px 0 22px;
+      font-family: var(--font-display);
+      font-weight: 700;
+    }
+
+    .proker-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .proker-card {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .proker-card:hover {
+      border-color: var(--accent);
+    }
+
+    .proker-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 11px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 14px;
+    }
+
+    .proker-card h4 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .proker-card p {
+      color: var(--color-text-2);
+      font-size: 14.5px;
+      flex: 1;
+    }
+
+    .proker-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      margin-top: 16px;
+      transition: gap .2s;
+    }
+
+    .proker-card:hover .proker-more {
+      gap: 10px;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: rgba(10, 10, 16, .55);
+      backdrop-filter: blur(6px);
+      animation: fadeIn .2s ease;
+    }
+
+    .modal-overlay.hidden {
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    .modal {
+      position: relative;
+      max-width: 520px;
+      width: 100%;
+      padding: 34px;
+      animation: popIn .3s var(--ease);
+    }
+
+    @keyframes popIn {
+      from {
+        opacity: 0;
+        transform: scale(.94) translateY(10px)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+    }
+
+    .modal-title {
+      font-size: 26px;
+      margin: 14px 0 12px;
+      font-family: var(--font-display);
+      font-weight: 700;
+    }
+
+    .modal-desc {
+      color: var(--color-text-2);
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+
+    .modal-meta {
+      display: grid;
+      gap: 14px;
+      border-top: 1px solid var(--color-border);
+      padding-top: 22px;
+    }
+
+    .modal-meta>div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .modal-meta-label {
+      color: var(--color-text-3);
+      font-size: 14px;
+    }
+
+    .modal-meta b {
+      font-size: 14.5px;
+    }
+
+    @media(max-width:768px) {
+      .dep-vm {
+        grid-template-columns: 1fr;
+      }
+
+      .proker-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dep-hero {
+        flex-direction: column;
+      }
+
+    }
+  </style>
+  <script>
+    (function () {
+      var t = localStorage.getItem('hmps-theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="/src/css/base.css" />
+  <link rel="stylesheet" href="/src/css/navbar.css" />
+  <link rel="stylesheet" href="/src/css/footer.css" />
+  <link rel="stylesheet" href="/src/css/floating-btn.css" />
+  <link rel="stylesheet" href="/src/css/departemen.css" />
+  <link rel="icon" type="image/png" href="/asset/logo_hmps.png" />
+  <link rel="apple-touch-icon" href="/asset/logo_hmps.png" />
+</head>
+
+<body>
+
+  <header id="navbar" class="navbar" role="banner"></header>
+
+  <main class="page-fade">
+  <section class="section-tight">
+    <div class="container">
+      <span class="eyebrow reveal">Struktur Organisasi</span>
+      <h1 class="page-title reveal">Tujuh departemen, <span style="color:var(--purple)">satu tujuan.</span></h1>
+      <p class="page-lead reveal">Pilih departemen untuk melihat visi, struktur pengurus, dan program kerjanya.</p>
+      <div class="dep-tabs" id="depTabs"></div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container" id="depContent"></div>
+  </section>
+</main>
+
+  <!-- Modal -->
+  <div class="modal-overlay hidden" id="modalOverlay">
+    <article class="card modal" id="modalBox">
+      <button class="icon-btn modal-close" id="modalClose" aria-label="Tutup">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+      <div id="modalContent"></div>
+    </article>
+  </div>
+
+  <footer id="footer" class="footer" role="contentinfo"></footer>
+  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/departemen.js"></script>
+</body>
+
+</html>
