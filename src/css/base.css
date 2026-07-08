@@ -418,6 +418,59 @@ body {
   align-items: center;
   overflow: hidden;
   padding: 90px 0;
+  background-image: url('/asset/background.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+/* Overlay gelap supaya teks terbaca */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(13, 12, 20, 0.95) 0%,
+    rgba(13, 12, 20, 0.60) 40%,
+    rgba(13, 12, 20, 0.10) 100%
+  );
+  z-index: 1;
+}
+
+/* Pastikan konten di atas overlay */
+.hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-shape,
+.hero-glow {
+  display: none;
+}
+
+/* Text color override supaya terbaca di atas foto */
+[data-theme="light"] .hero .hero-title,
+[data-theme="light"] .hero .hero-sub,
+[data-theme="light"] .hero .hero-badge {
+  color: #fff;
+}
+
+[data-theme="light"] .hero .hero-badge {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.85);
+}
+
+[data-theme="light"] .hero .dot {
+  background: var(--purple);
+}
+
+
+
+/* Scroll indicator */
+.scroll-ind {
+  color: rgba(255,255,255,0.5);
 }
 
 .hero-inner {

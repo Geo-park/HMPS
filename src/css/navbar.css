@@ -315,7 +315,7 @@
   display: grid;
   place-items: center;
   color: #fff;
-  border: 1px solid #4A3F9F;
+  border: 1px solid #fefdff;
   background: #4A3F9F;
   cursor: pointer;
   transition: color 0.2s, border-color 0.2s, transform 0.2s, background 0.2s;

@@ -75,6 +75,7 @@ const NAV_STRUCTURE = [
     ]
   },
   { label: 'Galeri', href: '#', disabled: true },
+  { label: 'SIAKAD', href: 'https://neosiakad.uinbanten.ac.id/', mega: false },
 ]
 
 /* ── Build Navbar ── */
