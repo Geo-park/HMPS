@@ -35,7 +35,7 @@ const NAV_STRUCTURE = [
     ]
   },
   {
-    label: 'Departemen',href: '/departemen.html'
+    label: 'Departemen', href: '/departemen.html'
   },
   {
     label: 'Akademik', mega: true,
@@ -43,7 +43,7 @@ const NAV_STRUCTURE = [
       {
         title: 'Belajar',
         links: [
-          { label: 'Roadmap Kuliah', href: '#', icon: 'map', disabled: true },
+          { label: 'Roadmap Kuliah', href: '/roadmap.html', icon: 'map' },
           { label: 'Skill-UP Hub', href: '#', icon: 'rocket', disabled: true },
         ]
       },

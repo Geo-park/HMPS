@@ -13,6 +13,7 @@ export default defineConfig({
         galeri:       resolve(__dirname, 'galeri.html'),
         aspirasi:     resolve(__dirname, 'aspirasi.html'),
         roadmap:      resolve(__dirname, 'roadmap.html'),
+        siakad:        resolve(__dirname, 'https://neosiakad.uinbanten.ac.id/'),
       }
     }
   }

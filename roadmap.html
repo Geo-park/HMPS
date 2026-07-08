@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Jelajahi roadmap HMPS Informatika UIN SMH Banten untuk program kerja, target organisasi, dan agenda strategis ke depan." />
-  <title>Roadmap HMPS Informatika UIN SMH Banten</title>
-  <link rel="icon" href="/logo.png" />
-  <link rel="apple-touch-icon" href="/logo.png" />
+  <meta name="description" content="Roadmap Kuliah Informatika UIN SMH Banten — Panduan studi semester 1 hingga lulus." />
+  <title>Roadmap Kuliah — HMPS INF</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <script>
@@ -20,27 +18,732 @@
   <link rel="stylesheet" href="/src/css/navbar.css" />
   <link rel="stylesheet" href="/src/css/footer.css" />
   <link rel="stylesheet" href="/src/css/floating-btn.css" />
+  <style>
+    .disclaimer {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 16px 20px;
+      background: rgba(186,117,23,0.10);
+      border: 1px solid rgba(186,117,23,0.25);
+      border-radius: var(--radius-card);
+      margin-bottom: 48px;
+      font-size: 14px;
+      color: var(--color-text-2);
+      line-height: 1.6;
+    }
+    .disclaimer svg { flex-shrink: 0; color: #BA7517; margin-top: 2px; }
+
+    .rm-tree {
+      position: relative;
+      padding-bottom: 40px;
+    }
+    .rm-tree::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--color-border);
+      transform: translateX(-50%);
+    }
+
+    .rm-row {
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr;
+      gap: 0;
+      min-height: 48px;
+      align-items: flex-start;
+    }
+
+    .rm-checkpoint {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .rm-dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--color-surface);
+      border: 2px solid var(--color-border);
+      display: grid;
+      place-items: center;
+      color: var(--color-text-3);
+      flex-shrink: 0;
+    }
+    .rm-dot.active {
+      border-color: var(--purple);
+      background: var(--purple);
+      color: #fff;
+    }
+
+    .rm-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      margin-bottom: 32px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .rm-card:hover {
+      border-color: var(--color-border-2);
+      box-shadow: var(--shadow-pop);
+    }
+
+    .rm-left  { padding-right: 20px; }
+    .rm-right { padding-left: 20px; }
+    .rm-empty { padding: 0; }
+
+    .rm-card-header {
+      display: flex;
+      align-items: center;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--color-border);
+      gap: 14px;
+    }
+    .rm-card-num {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--purple);
+      line-height: 1;
+    }
+    .rm-card-info { flex: 1; }
+    .rm-card-info h3 { font-size: 17px; font-weight: 700; margin-bottom: 2px; }
+    .rm-card-info p  { font-size: 13px; color: var(--color-text-2); }
+    .rm-sks-badge {
+      font-family: var(--font-label);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      color: var(--purple);
+      background: var(--purple-soft);
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      white-space: nowrap;
+    }
+
+    .rm-mk-list {
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .rm-mk-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: var(--radius-btn);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background .15s, border-color .15s;
+    }
+    .rm-mk-item:hover {
+      background: var(--purple-soft);
+      border-color: var(--color-border);
+    }
+    .rm-mk-accent {
+      width: 3px;
+      height: 18px;
+      border-radius: 2px;
+      background: var(--purple);
+      flex-shrink: 0;
+      opacity: .4;
+      transition: opacity .15s;
+    }
+    .rm-mk-item:hover .rm-mk-accent { opacity: 1; }
+    .rm-mk-name {
+      font-weight: 600;
+      font-size: 13.5px;
+      color: var(--color-text);
+      flex: 1;
+    }
+    .rm-mk-sks {
+      font-family: var(--font-label);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--color-text-3);
+      flex-shrink: 0;
+    }
+
+    .rm-placeholder {
+      padding: 28px 24px;
+      text-align: center;
+      border: 2px dashed var(--color-border);
+      border-radius: var(--radius-card);
+      color: var(--color-text-3);
+      margin-bottom: 32px;
+    }
+    .rm-placeholder .rm-ph-num {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--purple);
+      opacity: .3;
+      margin-bottom: 6px;
+    }
+    .rm-placeholder p { font-size: 13.5px; }
+
+    .rm-fork-wrap {
+      grid-column: 1 / -1;
+      padding: 12px 0;
+    }
+    .rm-fork-label {
+      font-family: var(--font-label);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--color-text-3);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .rm-fork-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .rm-track {
+      padding: 16px;
+      border-radius: var(--radius-card);
+      text-align: center;
+    }
+    .rm-track-emoji { font-size: 24px; margin-bottom: 6px; }
+    .rm-track-name  { font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+    .rm-track-sub   { font-size: 11.5px; color: var(--color-text-2); }
+
+    /* Modal */
+    .mk-modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: rgba(10,10,16,.55);
+      backdrop-filter: blur(6px);
+      animation: mkFadeIn .2s ease;
+    }
+    .mk-modal-overlay.hidden { display: none; }
+    @keyframes mkFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .mk-modal {
+      position: relative;
+      max-width: 480px;
+      width: 100%;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-pop);
+      padding: 32px;
+      animation: mkPopIn .3s var(--ease);
+    }
+    @keyframes mkPopIn {
+      from { opacity: 0; transform: scale(.94) translateY(10px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    .mk-modal-close {
+      position: absolute;
+      top: 16px; right: 16px;
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      display: grid; place-items: center;
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      cursor: pointer;
+      color: var(--color-text-2);
+      transition: color .2s, border-color .2s;
+    }
+    .mk-modal-close:hover { color: var(--color-text); border-color: var(--color-border-2); }
+
+    .mk-modal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-label);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      color: var(--purple);
+      background: var(--purple-soft);
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 14px;
+    }
+    .mk-modal-name {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+      color: var(--color-text);
+    }
+    .mk-modal-desc {
+      color: var(--color-text-2);
+      font-size: 15.5px;
+      line-height: 1.75;
+    }
+    .mk-modal-footer {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--color-border);
+      font-size: 13px;
+      color: var(--color-text-3);
+    }
+
+    /* Skill-UP */
+    .skillup-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .skillup-card { padding: 24px; text-align: center; }
+    .skillup-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      display: grid; place-items: center; margin: 0 auto 14px;
+    }
+    .skillup-card h4 { font-size: 16px; margin-bottom: 8px; }
+    .skillup-card p  { font-size: 13.5px; color: var(--color-text-2); }
+
+    /* Beasiswa */
+    .beasiswa-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 32px;
+    }
+    .beasiswa-card { padding: 24px; }
+
+    @media (max-width: 768px) {
+      .rm-tree::before { left: 20px; transform: none; }
+      .rm-row { grid-template-columns: 40px 1fr; }
+      .rm-checkpoint { justify-content: center; }
+      .rm-left  { display: none; }
+      .rm-right { padding: 0 0 0 8px; grid-column: 2; }
+      .rm-row-right .rm-left  { display: none; }
+      .rm-row-right .rm-right { grid-column: 2; padding: 0 0 0 8px; display: block; }
+      .rm-fork-grid { grid-template-columns: 1fr; }
+      .skillup-grid { grid-template-columns: 1fr 1fr; }
+      .beasiswa-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .skillup-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
+
   <header id="navbar" class="navbar" role="banner"></header>
 
   <main class="page-fade">
-    <section class="section-tight container">
-      <span class="eyebrow">Ongoing</span>
-      <h1 class="page-title">Halaman Roadmap sedang dalam pengembangan.</h1>
-      <p class="page-lead">Panduan belajar dan jalur pengembangan mahasiswa Informatika akan segera hadir.</p>
+
+    <!-- Hero -->
+    <section class="section-tight" id="roadmap">
+      <div class="container">
+        <span class="eyebrow reveal">Panduan Studi</span>
+        <h1 class="page-title reveal" style="transition-delay:100ms">
+          Roadmap <span style="color:var(--purple)">Kuliah</span>
+        </h1>
+        <p class="page-lead reveal" style="transition-delay:200ms">
+          Panduan alur studi Informatika dari semester 1 hingga lulus. Klik mata kuliah untuk melihat deskripsinya.
+        </p>
+      </div>
     </section>
+
+    <!-- Tree -->
+    <section class="section-tight" style="padding-top:0">
+      <div class="container">
+        <div class="disclaimer reveal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          <span><b>Disclaimer:</b> Roadmap ini berdasarkan kurikulum Program Studi Informatika UIN Sultan Maulana Hasanuddin Banten. Mata kuliah dan SKS dapat berubah sewaktu-waktu. Untuk informasi resmi terkini, hubungi program studi.</span>
+        </div>
+        <div class="rm-tree" id="rmTree"></div>
+      </div>
+    </section>
+
+    <!-- Skill-UP Hub -->
+    <section class="section-tight" id="skillup" style="background:var(--color-bg-2);">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Dept. Mikat</span>
+          <h2 class="section-title">Skill-UP Hub</h2>
+          <p class="section-sub">Program kelompok belajar intensif HMPS INF — 20 Sep hingga 12 Des 2026.</p>
+        </div>
+        <div class="skillup-grid">
+          <article class="card skillup-card reveal">
+            <div class="skillup-icon" style="background:var(--purple-soft);color:var(--purple);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <h4>Coding</h4>
+            <p>Pemrograman dasar hingga lanjut, algoritma, dan problem solving.</p>
+          </article>
+          <article class="card skillup-card reveal">
+            <div class="skillup-icon" style="background:rgba(212,83,126,0.12);color:#D4537E;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+            </div>
+            <h4>Desain Digital</h4>
+            <p>UI/UX design, graphic design, dan tools kreatif digital.</p>
+          </article>
+          <article class="card skillup-card reveal">
+            <div class="skillup-icon" style="background:rgba(29,158,117,0.12);color:#1D9E75;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+              </svg>
+            </div>
+            <h4>Database</h4>
+            <p>SQL, NoSQL, perancangan basis data, dan query optimization.</p>
+          </article>
+          <article class="card skillup-card reveal">
+            <div class="skillup-icon" style="background:rgba(55,138,221,0.12);color:#378ADD;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="8" rx="2"/>
+                <rect x="2" y="14" width="20" height="8" rx="2"/>
+                <line x1="6" y1="6" x2="6.01" y2="6"/>
+                <line x1="6" y1="18" x2="6.01" y2="18"/>
+              </svg>
+            </div>
+            <h4>Jaringan</h4>
+            <p>Dasar jaringan komputer, konfigurasi, dan keamanan jaringan.</p>
+          </article>
+          <article class="card skillup-card reveal">
+            <div class="skillup-icon" style="background:rgba(88,101,242,0.12);color:#5865F2;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+            </div>
+            <h4>Project Dev</h4>
+            <p>Manajemen proyek software, agile, git, dan deployment.</p>
+          </article>
+        </div>
+        <div class="card reveal" style="padding:28px;margin-top:24px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+          <div>
+            <h3 style="margin-bottom:6px;">Bergabung dengan Skill-UP Hub</h3>
+            <p style="color:var(--color-text-2);font-size:15px;">Daftar kelompok belajar dan akses resource eksklusif via Discord komunitas Mikat.</p>
+          </div>
+          <button class="btn btn-outline" style="flex-shrink:0;" disabled>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.041.033.051a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+            </svg>
+            Discord — Coming Soon
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beasiswa Corner -->
+    <section class="section-tight" id="beasiswa">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Dept. Kominfo</span>
+          <h2 class="section-title">Beasiswa Corner</h2>
+          <p class="section-sub">Informasi beasiswa aktif untuk mahasiswa Informatika UIN SMH Banten.</p>
+        </div>
+        <div class="beasiswa-grid">
+          <article class="card beasiswa-card reveal">
+            <div style="width:42px;height:42px;border-radius:10px;background:rgba(186,117,23,0.12);color:#BA7517;display:grid;place-items:center;margin-bottom:14px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+            </div>
+            <h4 style="font-size:16px;margin-bottom:8px;">KIP Kuliah</h4>
+            <p style="color:var(--color-text-2);font-size:14px;">Beasiswa pemerintah untuk mahasiswa kurang mampu berprestasi.</p>
+          </article>
+          <article class="card beasiswa-card reveal">
+            <div style="width:42px;height:42px;border-radius:10px;background:rgba(29,158,117,0.12);color:#1D9E75;display:grid;place-items:center;margin-bottom:14px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <h4 style="font-size:16px;margin-bottom:8px;">Beasiswa Prestasi</h4>
+            <p style="color:var(--color-text-2);font-size:14px;">Beasiswa dari UIN SMH Banten untuk mahasiswa berprestasi akademik.</p>
+          </article>
+          <article class="card beasiswa-card reveal">
+            <div style="width:42px;height:42px;border-radius:10px;background:var(--purple-soft);color:var(--purple);display:grid;place-items:center;margin-bottom:14px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <h4 style="font-size:16px;margin-bottom:8px;">Beasiswa Eksternal</h4>
+            <p style="color:var(--color-text-2);font-size:14px;">Info beasiswa dari perusahaan dan lembaga. Update via @hmpsinformatikaa.</p>
+          </article>
+        </div>
+        <div class="card reveal" style="padding:20px 24px;margin-top:24px;display:flex;align-items:center;gap:12px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" style="flex-shrink:0;">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+          <p style="font-size:14.5px;color:var(--color-text-2);">
+            Follow <a href="https://instagram.com/hmpsinformatikaa" style="color:var(--purple);font-weight:600;">@hmpsinformatikaa</a> untuk update beasiswa terbaru. PJ: <b>Muhammad Sulthan Fajri Rabbani</b> (Kominfo).
+          </p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer id="footer" class="footer" role="contentinfo">  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollegeOrUniversity",
-    "name": "HMPS Informatika UIN Sultan Maulana Hasanuddin Banten",
-    "url": "https://hmps-pink.vercel.app",
-    "logo": "https://hmps-pink.vercel.app/logo.png"
-  }
-  </script>
+  <!-- Modal MK -->
+  <div class="mk-modal-overlay hidden" id="mkModalOverlay">
+    <div class="mk-modal">
+      <button class="mk-modal-close" id="mkModalClose">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div id="mkModalContent"></div>
+    </div>
+  </div>
 
+  <footer id="footer" class="footer" role="contentinfo"></footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+  <script>
+  const SEMESTERS = [
+    {
+      num: 1, sks: 22,
+      mk: [
+        { nama: 'Pancasila',                sks: 2, desc: 'Memahami nilai-nilai Pancasila sebagai dasar negara dan pandangan hidup bangsa Indonesia dalam konteks kehidupan modern.' },
+        { nama: 'Islam dan Sains',           sks: 2, desc: 'Mengintegrasikan nilai-nilai Islam dengan perkembangan ilmu pengetahuan dan teknologi secara harmonis.' },
+        { nama: 'Bahasa Inggris',            sks: 2, desc: 'Meningkatkan kemampuan komunikasi bahasa Inggris untuk kebutuhan akademik, riset, dan profesional di bidang IT.' },
+        { nama: 'Fisika',                    sks: 3, desc: 'Konsep dasar fisika yang relevan dengan dunia komputasi, elektronika, dan rekayasa.' },
+        { nama: 'Kalkulus',                  sks: 3, desc: 'Dasar-dasar kalkulus diferensial dan integral sebagai pondasi matematika teknik dan analisis algoritma.' },
+        { nama: 'Logika Matematika',         sks: 2, desc: 'Penalaran logis, proposisi, dan pembuktian matematika yang menjadi dasar pemrograman dan desain algoritma.' },
+        { nama: 'Komputer Dasar',            sks: 3, desc: 'Pengenalan komputer secara menyeluruh: perangkat keras, perangkat lunak, sistem informasi, dan penggunaan produktivitas digital.' },
+        { nama: 'Algoritma dan Pemrograman', sks: 3, desc: 'Dasar-dasar algoritma, flowchart, pseudocode, dan pemrograman terstruktur menggunakan bahasa pemrograman.' },
+        { nama: 'Sistem Operasi',            sks: 2, desc: 'Konsep dan cara kerja sistem operasi modern: manajemen proses, memori, file system, dan scheduling.' },
+      ]
+    },
+    {
+      num: 2, sks: 22,
+      mk: [
+        { nama: 'Kewarganegaraan',                    sks: 2, desc: 'Memahami hak dan kewajiban warga negara dalam kehidupan berbangsa, bernegara, dan berdemokrasi.' },
+        { nama: 'Bahasa Indonesia',                   sks: 2, desc: 'Meningkatkan kemampuan menulis karya ilmiah, laporan, dan komunikasi formal dalam bahasa Indonesia yang baik dan benar.' },
+        { nama: 'Bahasa Arab',                        sks: 2, desc: 'Dasar-dasar bahasa Arab untuk mendukung pemahaman literatur Islam dan sumber-sumber akademik berbahasa Arab.' },
+        { nama: 'Struktur Data',                      sks: 3, desc: 'Cara menyimpan dan mengorganisir data secara efisien: array, linked list, stack, queue, tree, graph, dan hash table.' },
+        { nama: 'Pengenalan Pemrograman',             sks: 3, desc: 'Penguatan konsep dasar pemrograman: variabel, tipe data, kondisi, perulangan, fungsi, dan modularisasi kode.' },
+        { nama: 'Organisasi dan Arsitektur Komputer', sks: 3, desc: 'Memahami cara kerja komputer di level hardware: CPU, memori, sistem bus, dan instruksi mesin.' },
+        { nama: 'Aljabar Linier',                     sks: 2, desc: 'Vektor, matriks, determinan, dan transformasi linier — fondasi penting untuk grafika komputer dan machine learning.' },
+        { nama: 'Basis Data',                         sks: 3, desc: 'Perancangan, implementasi, dan query basis data relasional menggunakan SQL serta konsep normalisasi.' },
+        { nama: 'Manajemen Informatika',              sks: 2, desc: 'Pengelolaan sistem informasi dalam organisasi dan peran strategis teknologi informasi dalam bisnis modern.' },
+      ]
+    },
+    {
+      num: 3, sks: 24,
+      mk: [
+        { nama: 'Rekayasa Perangkat Lunak',       sks: 3, desc: 'Metodologi pengembangan software: analisis kebutuhan, desain sistem, implementasi, pengujian, dan pemeliharaan.' },
+        { nama: 'Matematika Diskrit',              sks: 2, desc: 'Teori himpunan, relasi, fungsi, kombinatorika, dan teori graf yang menjadi fondasi ilmu komputer.' },
+        { nama: 'Pemrograman Berorientasi Objek', sks: 3, desc: 'Paradigma OOP: class, object, inheritance, polymorphism, encapsulation, dan abstraction.' },
+        { nama: 'Pemrograman Web',                sks: 3, desc: 'Dasar pengembangan web: HTML, CSS, JavaScript, dan konsep arsitektur client-server.' },
+        { nama: 'Statistika',                     sks: 2, desc: 'Analisis data statistik, distribusi probabilitas, uji hipotesis, dan inferensi statistik untuk sains data.' },
+        { nama: 'Bioinformatika',                 sks: 2, desc: 'Penerapan komputasi dalam analisis data biologis seperti sekuensing DNA, struktur protein, dan genomik.' },
+        { nama: 'Praktik Ibadah',                 sks: 2, desc: 'Pemantapan praktik ibadah dan pengamalan nilai-nilai Islam dalam kehidupan sehari-hari mahasiswa.' },
+        { nama: 'Jaringan Komputer',              sks: 3, desc: 'Arsitektur jaringan, model OSI, protokol TCP/IP, routing, switching, dan konfigurasi jaringan.' },
+        { nama: 'Keamanan Data dan Informasi',    sks: 2, desc: 'Konsep keamanan siber, kriptografi, enkripsi, ancaman digital, dan langkah perlindungan data.' },
+        { nama: 'Interaksi Manusia dan Komputer', sks: 2, desc: 'Prinsip desain antarmuka yang berpusat pada pengguna (UCD), evaluasi usability, dan aksesibilitas.' },
+      ]
+    },
+    {
+      num: 4, sks: 24,
+      mk: [
+        { nama: 'Analisis dan Desain Perangkat Lunak', sks: 3, desc: 'Teknik analisis kebutuhan sistem, pemodelan dengan UML, dan desain arsitektur perangkat lunak.' },
+        { nama: 'Pemrograman Berbasis Platform',        sks: 3, desc: 'Pengembangan aplikasi mobile dan desktop pada platform spesifik seperti Android atau iOS.' },
+        { nama: 'Pemrograman Web Lanjutan',             sks: 3, desc: 'Framework web modern, REST API, autentikasi, dan pengembangan aplikasi web full-stack.' },
+        { nama: 'Pengolahan Citra Digital',             sks: 3, desc: 'Teknik pemrosesan gambar digital: filtering, segmentasi, morphologi, dan deteksi tepi/objek.' },
+        { nama: 'Kecerdasan Buatan',                   sks: 3, desc: 'Konsep dasar AI: search algorithm, knowledge representation, logika fuzzy, dan pengantar machine learning.' },
+        { nama: 'Cloud Computing',                     sks: 3, desc: 'Konsep komputasi awan, layanan IaaS/PaaS/SaaS, virtualisasi, dan deployment aplikasi di cloud.' },
+        { nama: 'Kompleksitas Algoritma',              sks: 2, desc: 'Analisis efisiensi algoritma menggunakan notasi Big-O, kompleksitas waktu dan ruang, serta teknik optimasi.' },
+        { nama: 'Internet of Things',                  sks: 2, desc: 'Konsep IoT, sensor, mikrokontroler, protokol komunikasi, dan konektivitas perangkat pintar.' },
+        { nama: 'Design UI/UX',                        sks: 2, desc: 'Prinsip desain visual, wireframing, prototyping, dan pengujian usability produk digital.' },
+      ]
+    },
+    {
+      num: 5, sks: 22,
+      mk: [
+        { nama: 'Ilmu Al-Qur\'an dan Tafsir',           sks: 2, desc: 'Pemahaman ilmu tafsir Al-Qur\'an dan relevansi nilai-nilai Qur\'ani dalam kehidupan modern.' },
+        { nama: 'Kewirausahaan',                         sks: 2, desc: 'Membangun jiwa wirausaha, business model canvas, validasi ide, dan manajemen startup berbasis teknologi.' },
+        { nama: 'Pembelajaran Mesin (Machine Learning)', sks: 3, desc: 'Algoritma supervised, unsupervised, dan reinforcement learning, serta implementasinya menggunakan Python.' },
+        { nama: 'Metodologi Penelitian',                 sks: 2, desc: 'Merancang penelitian ilmiah: perumusan masalah, hipotesis, metodologi, dan penulisan laporan ilmiah.' },
+        { nama: 'Komputasi Paralel dan Terdistribusi',  sks: 2, desc: 'Teknik pemrosesan data secara paralel dan konsep sistem komputasi terdistribusi.' },
+        { nama: 'Natural Language Processing',           sks: 3, desc: 'Pemrosesan teks dan bahasa alami: tokenisasi, sentiment analysis, dan model bahasa berbasis transformer.' },
+        { nama: 'Robotika',                             sks: 3, desc: 'Desain, pemrograman, dan kendali robot serta integrasi sensor, aktuator, dan sistem kontrol.' },
+        { nama: 'Big Data',                             sks: 3, desc: 'Pengelolaan dan analisis dataset berskala besar menggunakan teknologi Hadoop, Spark, dan data pipeline.' },
+        { nama: 'Etika dan Profesi',                    sks: 2, desc: 'Tanggung jawab profesional, etika rekayasa perangkat lunak, hak kekayaan intelektual, dan aspek hukum TI.' },
+      ]
+    },
+    {
+      num: 6, sks: 19,
+      mk: [
+        { nama: 'Magang / Kerja Praktek',       sks: 4, desc: 'Pengalaman kerja nyata di perusahaan atau instansi selama beberapa bulan untuk mengaplikasikan ilmu yang telah dipelajari.' },
+        { nama: 'Kuliah Kerja Nyata (KUKERTA)', sks: 2, desc: 'Program pengabdian masyarakat berbasis ilmu teknologi di desa atau komunitas sebagai wujud tri dharma perguruan tinggi.' },
+        { nama: 'Capstone Project',             sks: 3, desc: 'Proyek akhir semester yang mengintegrasikan seluruh ilmu dalam satu produk nyata yang dikerjakan secara tim.' },
+        { nama: 'Technopreneurship',            sks: 2, desc: 'Mengembangkan produk teknologi berbasis wirausaha: pitching, validasi pasar, MVP, dan strategi go-to-market.' },
+        { nama: 'Sistem Digital',               sks: 2, desc: 'Logika digital, rangkaian kombinasional dan sekuensial, dan desain sistem komputer berbasis hardware.' },
+        { nama: 'Computer Vision',              sks: 3, desc: 'Teknik komputasi untuk memahami dan menginterpretasi konten visual dari gambar dan video secara otomatis.' },
+        { nama: 'Sistem Pakar',                 sks: 3, desc: 'Membangun sistem berbasis pengetahuan yang dapat meniru keahlian seorang pakar di bidang tertentu.' },
+      ]
+    },
+    { num: 7, placeholder: true },
+    { num: 8, placeholder: true, skripsi: true },
+  ]
+
+  const TRACKS = [
+    { emoji: '🌐', name: 'Web Development', color: '#7F77DD', sub: 'Frontend · Backend · Full-stack' },
+    { emoji: '📊', name: 'Data Scientist',   color: '#1D9E75', sub: 'ML · Analytics · AI' },
+    { emoji: '🛡️', name: 'Cyber Security',  color: '#D85A30', sub: 'Network · Forensic · Ethical Hack' },
+  ]
+
+  function renderTree() {
+    const tree = document.getElementById('rmTree')
+    if (!tree) return
+    let html = ''
+
+    SEMESTERS.forEach((sem, idx) => {
+      const isLeft = idx % 2 === 0
+
+      // Fork jalur karier sebelum semester 5
+      if (sem.num === 5) {
+        html += `
+          <div class="rm-row">
+            <div class="rm-fork-wrap" style="grid-column:1/-1;padding:12px 0;">
+              <div class="rm-fork-label">↓ Rekomendasi Jalur Karier</div>
+              <div class="rm-fork-grid">
+                ${TRACKS.map(t => `
+                  <div class="rm-track" style="background:${t.color}12;border:1.5px solid ${t.color}44;">
+                    <div class="rm-track-emoji">${t.emoji}</div>
+                    <div class="rm-track-name" style="color:${t.color}">${t.name}</div>
+                    <div class="rm-track-sub">${t.sub}</div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        `
+      }
+
+      const cardHtml = sem.placeholder ? `
+        <div class="rm-placeholder">
+          <div class="rm-ph-num">${sem.num}</div>
+          <p>${sem.skripsi
+            ? 'Semester 8 — Skripsi / Tugas Akhir &middot; Data segera hadir'
+            : `Semester ${sem.num} — Data segera hadir`}
+          </p>
+        </div>
+      ` : `
+        <div class="rm-card">
+          <div class="rm-card-header">
+            <div class="rm-card-num">${sem.num}</div>
+            <div class="rm-card-info">
+              <h3>Semester ${sem.num}</h3>
+              <p>${sem.mk.length} Mata Kuliah</p>
+            </div>
+            <span class="rm-sks-badge">${sem.sks} SKS</span>
+          </div>
+          <div class="rm-mk-list">
+            ${sem.mk.map((mk, mi) => `
+              <div class="rm-mk-item" onclick="openMkModal(${sem.num},${mi})">
+                <div class="rm-mk-accent"></div>
+                <span class="rm-mk-name">${mk.nama}</span>
+                <span class="rm-mk-sks">${mk.sks} SKS</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `
+
+      const dotHtml = `
+        <div class="rm-checkpoint">
+          <div class="rm-dot ${!sem.placeholder ? 'active' : ''}">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+        </div>
+      `
+
+      if (isLeft) {
+        html += `
+          <div class="rm-row">
+            <div class="rm-left">${cardHtml}</div>
+            ${dotHtml}
+            <div class="rm-empty rm-right"></div>
+          </div>
+        `
+      } else {
+        html += `
+          <div class="rm-row rm-row-right">
+            <div class="rm-empty rm-left"></div>
+            ${dotHtml}
+            <div class="rm-right">${cardHtml}</div>
+          </div>
+        `
+      }
+    })
+
+    tree.innerHTML = html
+  }
+
+  window.openMkModal = function(semNum, mkIdx) {
+    const sem = SEMESTERS.find(s => s.num === semNum)
+    const mk  = sem.mk[mkIdx]
+    document.getElementById('mkModalContent').innerHTML = `
+      <div class="mk-modal-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+          <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+        </svg>
+        ${mk.sks} SKS &middot; Semester ${semNum}
+      </div>
+      <h3 class="mk-modal-name">${mk.nama}</h3>
+      <p class="mk-modal-desc">${mk.desc}</p>
+      <div class="mk-modal-footer">
+        Bagian dari kurikulum Semester ${semNum} &mdash; Program Studi Informatika UIN SMH Banten
+      </div>
+    `
+    document.getElementById('mkModalOverlay').classList.remove('hidden')
+    document.body.style.overflow = 'hidden'
+  }
+
+  function closeMkModal() {
+    document.getElementById('mkModalOverlay').classList.add('hidden')
+    document.body.style.overflow = ''
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    renderTree()
+    document.getElementById('mkModalClose').onclick = closeMkModal
+    document.getElementById('mkModalOverlay').onclick = e => {
+      if (e.target === document.getElementById('mkModalOverlay')) closeMkModal()
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMkModal() })
+  })
+  </script>
 </body>
 </html>
