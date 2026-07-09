@@ -63,14 +63,14 @@ const NAV_STRUCTURE = [
       {
         title: 'Sampaikan',
         links: [
-          { label: 'Form Aspirasi', href: '#', icon: 'message', disabled: true },
+          { label: 'Form Aspirasi', href: 'https://docs.google.com/forms/d/e/1FAIpQLSdRL_BxokHh3lrgdUt88Uu_OG56KlPX08sH7WxjKOB0UIINuw/viewform?usp=publish-editor', icon: 'message', external: true },
         ]
       },
       {
         title: 'Khusus',
         links: [
           { label: 'Pengaduan UKT', href: '#', icon: 'file-invoice', disabled: true },
-          { label: 'RAPI (PP)', href: '#', icon: 'heart', disabled: true },
+          { label: 'RAPI (PP)', href: 'https://docs.google.com/forms/d/e/1FAIpQLSdRL_BxokHh3lrgdUt88Uu_OG56KlPX08sH7WxjKOB0UIINuw/viewform?usp=publish-editor', icon: 'heart', external: true },
         ]
       }
     ]
@@ -181,12 +181,12 @@ function buildNavItem(item) {
                     <span class="nav-badge">Ongoing</span>
                   </span>
                 ` : `
-                  <a href="${link.href}" class="mega-menu__link">
+                  <a href="${link.href}" class="mega-menu__link"${link.external ? ' target="_blank" rel="noopener"' : ''}>
                     <svg class="mega-menu__link-icon" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" stroke-width="2">
                       ${getIconPath(link.icon)}
                     </svg>
-                    ${link.label}
+                    ${link.label}${link.external ? `<svg style="width:10px;height:10px;margin-left:4px;opacity:0.5;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>` : ''}
                   </a>
                 `).join('')}
               </div>
