@@ -10,7 +10,6 @@ export default defineConfig({
         departemen: resolve(__dirname, 'departemen.html'),
         events: resolve(__dirname, 'events.html'),
         galeri: resolve(__dirname, 'galeri.html'),
-        aspirasi: resolve(__dirname, 'aspirasi.html'),
         roadmap: resolve(__dirname, 'roadmap.html'),
       }
     }
