@@ -1,5 +1,5 @@
 /* ============================================
-   HMPS INF — Floating Contact Button v2 (Modern)
+   HMPS INF — Floating Contact Button v3 (Speed Dial)
    ============================================ */
 
 .floating-contact {
@@ -8,217 +8,188 @@
   right: var(--space-6);
   z-index: var(--z-floating);
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 12px;
 }
 
-/* ── Trigger ── */
+/* ── Trigger (main FAB) ── */
 .floating-contact__trigger {
   width: 56px;
   height: 56px;
-  border-radius: var(--radius-full);
-  background: linear-gradient(135deg, #6366F1 0%, #818CF8 100%);
+  border-radius: 50%;
+  background: #2E3447;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow:
-    0 4px 16px rgba(99, 102, 241, 0.4),
-    0 1px 4px rgba(0,0,0,0.12),
-    inset 0 1px 0 rgba(255,255,255,0.2);
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    0 1px 4px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255,255,255,0.08);
   cursor: pointer;
   border: none;
+  outline: none;
   transition:
-    transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.25s ease,
     box-shadow 0.25s ease;
   position: relative;
-  outline: none;
-}
-
-/* Ripple ring */
-.floating-contact__trigger::before {
-  content: '';
-  position: absolute;
-  inset: -4px;
-  border-radius: var(--radius-full);
-  border: 2px solid rgba(99, 102, 241, 0);
-  transition: border-color 0.25s ease, inset 0.25s ease;
+  flex-shrink: 0;
 }
 
 .floating-contact__trigger:hover {
-  transform: scale(1.1) translateY(-2px);
+  transform: scale(1.1);
+  background: #3a4260;
   box-shadow:
-    0 10px 32px rgba(99, 102, 241, 0.5),
-    0 2px 8px rgba(0,0,0,0.15),
-    inset 0 1px 0 rgba(255,255,255,0.25);
-}
-
-.floating-contact__trigger:hover::before {
-  border-color: rgba(99, 102, 241, 0.35);
-  inset: -6px;
+    0 8px 28px rgba(0, 0, 0, 0.35),
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255,255,255,0.1);
 }
 
 .floating-contact.open .floating-contact__trigger {
-  transform: scale(1.05) rotate(0deg);
-  background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
+  background: #1e2436;
 }
 
 .floating-contact__trigger svg {
   width: 22px;
   height: 22px;
-  transition: opacity 0.2s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
 }
 
 .floating-contact__trigger .icon-close {
-  display: none;
+  position: absolute;
   opacity: 0;
+  transform: rotate(-90deg) scale(0.5);
+}
+
+.floating-contact__trigger .icon-contact {
+  position: absolute;
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
 }
 
 .floating-contact.open .floating-contact__trigger .icon-contact {
-  display: none;
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
 }
 
 .floating-contact.open .floating-contact__trigger .icon-close {
-  display: block;
   opacity: 1;
+  transform: rotate(0deg) scale(1);
 }
 
-/* ── Items container ── */
-.floating-contact__items {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 8px;
-  pointer-events: none;
-}
-
-/* ── Each item ── */
-.floating-contact__item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 11px 16px 11px 14px;
-  background: var(--color-surface);
-  border: 1.5px solid var(--color-border);
-  border-radius: 999px;
-  color: var(--color-text);
-  text-decoration: none;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06);
-  white-space: nowrap;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-
-  /* hidden by default */
-  opacity: 0;
-  transform: translateX(16px) scale(0.92);
-  transition:
-    opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
-}
-
-/* stagger animation */
-.floating-contact.open .floating-contact__item:nth-child(1) { opacity: 1; transform: none; transition-delay: 0.04s; }
-.floating-contact.open .floating-contact__item:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.08s; }
-.floating-contact.open .floating-contact__item:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.12s; }
-.floating-contact.open .floating-contact__item:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.16s; }
-.floating-contact.open .floating-contact__items { pointer-events: auto; }
-
-.floating-contact__item:hover {
-  border-color: var(--item-color, var(--color-primary));
-  box-shadow:
-    0 8px 24px color-mix(in srgb, var(--item-color, var(--color-primary)) 22%, transparent),
-    0 2px 6px rgba(0,0,0,0.08);
-  transform: translateX(-4px) scale(1.02);
-  background: color-mix(in srgb, var(--item-color, var(--color-primary)) 6%, var(--color-surface));
-}
-
-/* icon bubble */
-.floating-contact__item-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--item-color, var(--color-primary)) 14%, var(--color-surface));
-  color: var(--item-color, var(--color-primary));
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.floating-contact__item:hover .floating-contact__item-icon {
-  background: var(--item-color, var(--color-primary));
-  color: #fff;
-  transform: scale(1.08);
-}
-
-.floating-contact__item-icon svg {
-  width: 16px;
-  height: 16px;
-}
-
-/* label */
-.floating-contact__item-label {
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1;
-}
-
-/* sub label */
-.floating-contact__item-sub {
-  font-size: 11px;
-  color: var(--color-text-muted);
-  margin-top: 1px;
-}
-
-.floating-contact__item-text {
-  display: flex;
-  flex-direction: column;
-}
-
-/* arrow */
-.floating-contact__item-arrow {
-  width: 14px;
-  height: 14px;
-  color: var(--color-text-muted);
-  margin-left: 4px;
-  flex-shrink: 0;
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.floating-contact__item:hover .floating-contact__item-arrow {
-  color: var(--item-color, var(--color-primary));
-  transform: translate(2px, -2px);
-}
-
-/* ── Pulse animation on trigger (when closed) ── */
+/* ── Pulse ring (idle) ── */
 @keyframes pulseRing {
-  0%   { transform: scale(1);   opacity: 0.6; }
-  70%  { transform: scale(1.5); opacity: 0; }
-  100% { transform: scale(1.5); opacity: 0; }
+  0%   { transform: scale(1);   opacity: 0.5; }
+  70%  { transform: scale(1.65); opacity: 0; }
+  100% { transform: scale(1.65); opacity: 0; }
 }
 
 .floating-contact:not(.open) .floating-contact__trigger::after {
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: var(--radius-full);
-  background: rgba(99, 102, 241, 0.35);
-  animation: pulseRing 2.5s ease-out infinite;
+  border-radius: 50%;
+  background: rgba(46, 52, 71, 0.4);
+  animation: pulseRing 2.8s ease-out infinite;
   pointer-events: none;
+}
+
+/* ── Items container ── */
+.floating-contact__items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+}
+
+/* ── Each item — circle ── */
+.floating-contact__item {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--item-color, #6366F1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow:
+    0 4px 14px color-mix(in srgb, var(--item-color, #6366F1) 50%, transparent),
+    0 1px 4px rgba(0,0,0,0.15);
+
+  /* hidden by default */
+  opacity: 0;
+  transform: translateY(12px) scale(0.6);
+  transition:
+    opacity 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+/* stagger reveal */
+.floating-contact.open .floating-contact__item:nth-child(1) {
+  opacity: 1; transform: none; transition-delay: 0.00s;
+}
+.floating-contact.open .floating-contact__item:nth-child(2) {
+  opacity: 1; transform: none; transition-delay: 0.06s;
+}
+.floating-contact.open .floating-contact__item:nth-child(3) {
+  opacity: 1; transform: none; transition-delay: 0.12s;
+}
+.floating-contact.open .floating-contact__items {
+  pointer-events: auto;
+}
+
+.floating-contact__item svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.floating-contact__item:hover {
+  filter: brightness(1.12);
+  transform: scale(1.14) !important;
+  box-shadow:
+    0 8px 24px color-mix(in srgb, var(--item-color, #6366F1) 55%, transparent),
+    0 2px 8px rgba(0,0,0,0.18);
+}
+
+/* ── Tooltip label ── */
+.floating-contact__item-label {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-surface, #fff);
+  color: var(--color-text, #1a1a2e);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.08);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-50%) translateX(4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  border: 1px solid var(--color-border, #e5e7eb);
+}
+
+.floating-contact__item:hover .floating-contact__item-label {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
 }
 
 @media (max-width: 768px) {
   .floating-contact {
     bottom: var(--space-4);
     right: var(--space-4);
-  }
-  .floating-contact__trigger {
-    width: 52px;
-    height: 52px;
   }
 }
