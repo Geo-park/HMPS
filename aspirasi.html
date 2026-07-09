@@ -1,24 +1,24 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sampaikan aspirasi, kritik, dan saran kepada HMPS Informatika UIN SMH Banten melalui kanal resmi yang akan segera tersedia." />
+  <meta name="description" content="Sampaikan aspirasi, kritik, dan saran kepada HMPS Informatika UIN SMH Banten melalui kanal resmi." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
-  <meta name="keywords" content="HMPS Informatika,UIN SMH Banten,Himpunan Mahasiswa Informatika,Organisasi Mahasiswa,Informatika Banten" />
+  <meta name="keywords" content="HMPS Informatika,UIN SMH Banten,Himpunan Mahasiswa Informatika,Aspirasi,RAPI" />
   <meta name="author" content="HMPS Informatika UIN SMH Banten" />
-  <meta name="theme-color" content="#7F77DD" />
+  <meta name="theme-color" content="#6366F1" />
   <link rel="canonical" href="https://hmps-pink.vercel.app/aspirasi.html" />
   <meta property="og:title" content="Aspirasi HMPS Informatika UIN SMH Banten — Sampaikan Pendapat Anda" />
-  <meta property="og:description" content="Sampaikan aspirasi, kritik, dan saran kepada HMPS Informatika UIN SMH Banten melalui kanal resmi yang akan segera tersedia." />
+  <meta property="og:description" content="Sampaikan aspirasi, kritik, dan saran kepada HMPS Informatika UIN SMH Banten." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://hmps-pink.vercel.app/aspirasi.html" />
   <meta property="og:image" content="https://hmps-pink.vercel.app/asset/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Aspirasi HMPS Informatika UIN SMH Banten — Sampaikan Pendapat Anda" />
-  <meta name="twitter:description" content="Sampaikan aspirasi, kritik, dan saran kepada HMPS Informatika UIN SMH Banten melalui kanal resmi yang akan segera tersedia." />
+  <meta name="twitter:title" content="Aspirasi HMPS Informatika UIN SMH Banten" />
+  <meta name="twitter:description" content="Sampaikan aspirasi, kritik, dan saran kepada HMPS Informatika UIN SMH Banten." />
   <meta name="twitter:image" content="https://hmps-pink.vercel.app/asset/og-image.png" />
-  <title>Aspirasi HMPS Informatika UIN SMH Banten — Sampaikan Pendapat Anda</title>
+  <title>Aspirasi — HMPS Informatika UIN SMH Banten</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <script>
@@ -34,26 +34,667 @@
   <link rel="stylesheet" href="/src/css/floating-btn.css" />
   <link rel="icon" href="/logo.png" />
   <link rel="apple-touch-icon" href="/logo.png" />
+  <style>
+    /* ── Aspirasi Page ── */
+    .asp-hero {
+      padding: clamp(80px, 14vw, 140px) 0 clamp(48px, 8vw, 80px);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .asp-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% -10%, color-mix(in srgb, #6366F1 18%, transparent), transparent),
+        radial-gradient(ellipse 50% 40% at 85% 80%, color-mix(in srgb, #D4537E 12%, transparent), transparent);
+      pointer-events: none;
+    }
+
+    .asp-hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: color-mix(in srgb, #6366F1 12%, var(--color-surface));
+      border: 1.5px solid color-mix(in srgb, #6366F1 25%, transparent);
+      color: #6366F1;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+
+    .asp-hero__eyebrow span {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #6366F1;
+      animation: blink 1.4s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .asp-hero__title {
+      font-size: clamp(32px, 6vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      max-width: 720px;
+      margin: 0 auto 20px;
+    }
+
+    .asp-hero__title span {
+      background: linear-gradient(135deg, #6366F1, #818CF8, #D4537E);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .asp-hero__sub {
+      font-size: clamp(15px, 2vw, 18px);
+      color: var(--color-text-muted);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── Cards Grid ── */
+    .asp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      padding: 0 0 clamp(48px, 8vw, 80px);
+    }
+
+    /* ── Aspirasi Card ── */
+    .asp-card {
+      position: relative;
+      background: var(--color-surface);
+      border: 1.5px solid var(--color-border);
+      border-radius: 20px;
+      padding: 32px 28px 28px;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .asp-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.12);
+    }
+
+    .asp-card__glow {
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      opacity: 0.12;
+      filter: blur(40px);
+      transition: opacity 0.3s;
+    }
+
+    .asp-card:hover .asp-card__glow {
+      opacity: 0.2;
+    }
+
+    .asp-card__icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+    }
+
+    .asp-card__icon svg {
+      width: 24px; height: 24px;
+    }
+
+    .asp-card__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      width: fit-content;
+    }
+
+    .asp-card__title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .asp-card__desc {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 24px;
+    }
+
+    /* ── CTA Button ── */
+    .asp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+    }
+
+    .asp-btn:hover {
+      transform: translateY(-2px) scale(1.01);
+      filter: brightness(1.08);
+    }
+
+    .asp-btn:active {
+      transform: scale(0.98);
+    }
+
+    .asp-btn svg {
+      width: 18px; height: 18px;
+      flex-shrink: 0;
+    }
+
+    /* RAPI / PP card */
+    .asp-card--rapi {
+      border-color: color-mix(in srgb, #D4537E 30%, transparent);
+    }
+    .asp-card--rapi:hover {
+      border-color: #D4537E;
+      box-shadow: 0 20px 48px color-mix(in srgb, #D4537E 18%, transparent);
+    }
+    .asp-card--rapi .asp-card__glow { background: #D4537E; }
+    .asp-card--rapi .asp-card__icon { background: color-mix(in srgb, #D4537E 15%, var(--color-surface)); color: #D4537E; }
+    .asp-card--rapi .asp-card__badge { background: color-mix(in srgb, #D4537E 12%, var(--color-surface)); color: #D4537E; }
+    .asp-card--rapi .asp-btn { background: linear-gradient(135deg, #D4537E, #e07a9b); color: #fff; box-shadow: 0 8px 24px color-mix(in srgb, #D4537E 35%, transparent); }
+
+    /* WA card */
+    .asp-card--wa {
+      border-color: color-mix(in srgb, #25D366 30%, transparent);
+    }
+    .asp-card--wa:hover {
+      border-color: #25D366;
+      box-shadow: 0 20px 48px color-mix(in srgb, #25D366 18%, transparent);
+    }
+    .asp-card--wa .asp-card__glow { background: #25D366; }
+    .asp-card--wa .asp-card__icon { background: color-mix(in srgb, #25D366 15%, var(--color-surface)); color: #25D366; }
+    .asp-card--wa .asp-card__badge { background: color-mix(in srgb, #25D366 12%, var(--color-surface)); color: #25D366; }
+    .asp-card--wa .asp-btn { background: linear-gradient(135deg, #25D366, #1aab52); color: #fff; box-shadow: 0 8px 24px color-mix(in srgb, #25D366 35%, transparent); }
+
+    /* Umum / general card */
+    .asp-card--umum {
+      border-color: color-mix(in srgb, #6366F1 30%, transparent);
+    }
+    .asp-card--umum:hover {
+      border-color: #6366F1;
+      box-shadow: 0 20px 48px color-mix(in srgb, #6366F1 18%, transparent);
+    }
+    .asp-card--umum .asp-card__glow { background: #6366F1; }
+    .asp-card--umum .asp-card__icon { background: color-mix(in srgb, #6366F1 15%, var(--color-surface)); color: #6366F1; }
+    .asp-card--umum .asp-card__badge { background: color-mix(in srgb, #6366F1 12%, var(--color-surface)); color: #6366F1; }
+    .asp-card--umum .asp-btn { background: linear-gradient(135deg, #6366F1, #818CF8); color: #fff; box-shadow: 0 8px 24px color-mix(in srgb, #6366F1 35%, transparent); box-shadow: 0 8px 24px rgba(99,102,241,0.35); }
+
+    /* ── Medsos Section ── */
+    .asp-social {
+      padding: clamp(48px, 8vw, 80px) 0;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .asp-social__head {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .asp-social__label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--color-surface);
+      border: 1.5px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    .asp-social__title {
+      font-size: clamp(22px, 4vw, 32px);
+      margin-bottom: 8px;
+    }
+
+    .asp-social__sub {
+      font-size: 15px;
+      color: var(--color-text-muted);
+    }
+
+    .asp-social__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .asp-social__card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px;
+      background: var(--color-surface);
+      border: 1.5px solid var(--color-border);
+      border-radius: 16px;
+      text-decoration: none;
+      color: var(--color-text);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .asp-social__card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .asp-social__card:hover {
+      transform: translateY(-3px);
+      border-color: var(--sc-color);
+      box-shadow: 0 12px 32px color-mix(in srgb, var(--sc-color) 20%, transparent);
+    }
+
+    .asp-social__card:hover::before {
+      opacity: 1;
+      background: color-mix(in srgb, var(--sc-color) 5%, transparent);
+    }
+
+    .asp-social__icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: color-mix(in srgb, var(--sc-color) 12%, var(--color-surface));
+      color: var(--sc-color);
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+
+    .asp-social__card:hover .asp-social__icon {
+      transform: scale(1.08) rotate(-3deg);
+    }
+
+    .asp-social__icon svg {
+      width: 22px; height: 22px;
+    }
+
+    .asp-social__info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .asp-social__name {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .asp-social__handle {
+      font-size: 12px;
+      color: var(--color-text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .asp-social__arrow {
+      width: 20px; height: 20px;
+      color: var(--color-text-muted);
+      transition: transform 0.2s, color 0.2s;
+      flex-shrink: 0;
+    }
+
+    .asp-social__card:hover .asp-social__arrow {
+      color: var(--sc-color);
+      transform: translate(2px, -2px);
+    }
+
+    /* ── Info Section ── */
+    .asp-info {
+      padding: clamp(40px, 6vw, 64px) 0;
+    }
+
+    .asp-info__box {
+      background: color-mix(in srgb, #6366F1 6%, var(--color-surface));
+      border: 1.5px solid color-mix(in srgb, #6366F1 20%, transparent);
+      border-radius: 20px;
+      padding: 36px 40px;
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
+    .asp-info__icon {
+      width: 52px; height: 52px;
+      background: color-mix(in srgb, #6366F1 15%, var(--color-surface));
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: #6366F1;
+      flex-shrink: 0;
+    }
+
+    .asp-info__icon svg { width: 24px; height: 24px; }
+
+    .asp-info__title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .asp-info__text {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 640px) {
+      .asp-grid {
+        grid-template-columns: 1fr;
+      }
+      .asp-social__grid {
+        grid-template-columns: 1fr;
+      }
+      .asp-info__box {
+        flex-direction: column;
+        padding: 24px 20px;
+      }
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .asp-hero__eyebrow { animation: fadeUp .5s ease both; }
+    .asp-hero__title   { animation: fadeUp .55s .08s ease both; }
+    .asp-hero__sub     { animation: fadeUp .55s .16s ease both; }
+    .asp-grid          { animation: fadeUp .6s .22s ease both; }
+  </style>
 </head>
 <body>
   <header id="navbar" class="navbar" role="banner"></header>
 
   <main class="page-fade">
-    <section class="section-tight container">
-      <span class="eyebrow">Ongoing</span>
-      <h1 class="page-title">Halaman Aspirasi sedang dalam pengembangan.</h1>
-      <p class="page-lead">Kanal kritik, saran, dan aspirasi resmi akan segera tersedia.</p>
+
+    <!-- ── Hero ── -->
+    <section class="asp-hero">
+      <div class="container">
+        <div class="asp-hero__eyebrow">
+          <span></span>
+          Kanal Resmi HMPS INF
+        </div>
+        <h1 class="asp-hero__title">
+          Suaramu <span>Berarti</span><br>bagi Kami
+        </h1>
+        <p class="asp-hero__sub">
+          Sampaikan aspirasi, kritik, saran, atau pengaduan melalui kanal resmi HMPS Informatika. Kami mendengar.
+        </p>
+      </div>
     </section>
 
+    <!-- ── Cards ── -->
     <section class="section container">
-      <article class="card" style="padding:32px;">
-        <h2 class="section-title" style="font-size:clamp(24px,3vw,32px);">Apa yang bisa Anda kirimkan?</h2>
-        <p style="margin-top:12px;">Anda dapat menyampaikan ide, keluhan, usulan program, maupun kebutuhan terkait kegiatan mahasiswa Informatika melalui kanal resmi HMPS INF.</p>
-      </article>
+      <div class="asp-grid">
+
+        <!-- RAPI - PP -->
+        <article class="asp-card asp-card--rapi">
+          <div class="asp-card__glow"></div>
+          <div class="asp-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <span class="asp-card__badge">
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+            Dept. PP — Rutin
+          </span>
+          <h2 class="asp-card__title">RAPI — Ruang Aspirasi Perempuan Informatika</h2>
+          <p class="asp-card__desc">
+            Layanan aspirasi khusus berbasis form anonim, terbuka untuk semua mahasiswi Informatika UIN SMH Banten.
+            Semua respons ditangani langsung oleh Departemen PP.
+          </p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdRL_BxokHh3lrgdUt88Uu_OG56KlPX08sH7WxjKOB0UIINuw/viewform?usp=publish-editor"
+             target="_blank" rel="noopener"
+             class="asp-btn"
+             id="btn-rapi-form">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+            Buka Formulir RAPI
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:auto;">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+        </article>
+
+        <!-- WhatsApp -->
+        <article class="asp-card asp-card--wa">
+          <div class="asp-card__glow"></div>
+          <div class="asp-card__icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+            </svg>
+          </div>
+          <span class="asp-card__badge">
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+            Langsung — Real-time
+          </span>
+          <h2 class="asp-card__title">Hubungi via WhatsApp</h2>
+          <p class="asp-card__desc">
+            Punya pertanyaan mendesak atau ingin berdiskusi langsung? Chat kami melalui WhatsApp resmi HMPS INF. Kami siap membantu.
+          </p>
+          <a href="https://wa.me/6283866273495?text=Halo%20HMPS%20INF%2C%20saya%20ingin%20menyampaikan%20aspirasi."
+             target="_blank" rel="noopener"
+             class="asp-btn"
+             id="btn-wa-contact">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+            </svg>
+            Chat WhatsApp Sekarang
+          </a>
+        </article>
+
+        <!-- Aspirasi Umum -->
+        <article class="asp-card asp-card--umum">
+          <div class="asp-card__glow"></div>
+          <div class="asp-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <span class="asp-card__badge">
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+            Coming Soon
+          </span>
+          <h2 class="asp-card__title">Form Aspirasi Umum</h2>
+          <p class="asp-card__desc">
+            Kanal aspirasi umum untuk seluruh mahasiswa Informatika. Sampaikan ide, keluhan, usulan program, atau kebutuhan terkait kegiatan HMPS INF.
+          </p>
+          <button class="asp-btn" id="btn-umum-soon" style="opacity:0.7; cursor:not-allowed;" disabled>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            Segera Tersedia
+          </button>
+        </article>
+
+      </div>
     </section>
+
+    <!-- ── Medsos Section ── -->
+    <section class="asp-social">
+      <div class="container">
+        <div class="asp-social__head">
+          <div class="asp-social__label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+            </svg>
+            Ikuti Kami
+          </div>
+          <h2 class="asp-social__title">Terhubung dengan HMPS INF</h2>
+          <p class="asp-social__sub">Update terbaru, kegiatan, dan informasi seputar HMPS Informatika</p>
+        </div>
+
+        <div class="asp-social__grid">
+
+          <!-- Instagram -->
+          <a href="https://instagram.com/hmpsinformatikaa"
+             target="_blank" rel="noopener"
+             class="asp-social__card"
+             style="--sc-color: #E1306C"
+             id="social-instagram">
+            <div class="asp-social__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </div>
+            <div class="asp-social__info">
+              <div class="asp-social__name">Instagram</div>
+              <div class="asp-social__handle">@hmpsinformatikaa</div>
+            </div>
+            <svg class="asp-social__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+            </svg>
+          </a>
+
+          <!-- TikTok -->
+          <a href="https://tiktok.com/@hmps.informatika"
+             target="_blank" rel="noopener"
+             class="asp-social__card"
+             style="--sc-color: #010101"
+             id="social-tiktok">
+            <div class="asp-social__icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
+              </svg>
+            </div>
+            <div class="asp-social__info">
+              <div class="asp-social__name">TikTok</div>
+              <div class="asp-social__handle">@hmps.informatika</div>
+            </div>
+            <svg class="asp-social__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+            </svg>
+          </a>
+
+          <!-- Email -->
+          <a href="mailto:hmpsinformatikauinbanten@gmail.com"
+             class="asp-social__card"
+             style="--sc-color: #6366F1"
+             id="social-email">
+            <div class="asp-social__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="asp-social__info">
+              <div class="asp-social__name">Email Resmi</div>
+              <div class="asp-social__handle">hmpsinformatika...@gmail.com</div>
+            </div>
+            <svg class="asp-social__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+            </svg>
+          </a>
+
+          <!-- WhatsApp (juga di sosmed) -->
+          <a href="https://wa.me/6283866273495"
+             target="_blank" rel="noopener"
+             class="asp-social__card"
+             style="--sc-color: #25D366"
+             id="social-wa">
+            <div class="asp-social__icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+              </svg>
+            </div>
+            <div class="asp-social__info">
+              <div class="asp-social__name">WhatsApp</div>
+              <div class="asp-social__handle">+62 838-6627-3495</div>
+            </div>
+            <svg class="asp-social__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Info Box ── -->
+    <section class="asp-info">
+      <div class="container">
+        <div class="asp-info__box">
+          <div class="asp-info__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </div>
+          <div>
+            <div class="asp-info__title">Tentang Kerahasiaan Data</div>
+            <p class="asp-info__text">
+              Formulir RAPI bersifat <strong>anonim</strong> — identitas pengirim tidak akan diungkap kepada siapapun. 
+              Semua aspirasi yang masuk akan ditindaklanjuti oleh Departemen PP dan pengurus HMPS INF secara bertanggung jawab dan profesional.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer id="footer" class="footer" role="contentinfo">  <script type="application/ld+json">
+  <footer id="footer" class="footer" role="contentinfo"></footer>
+
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "CollegeOrUniversity",
@@ -63,5 +704,6 @@
   }
   </script>
 
+  <script type="module" src="/src/js/aspirasi.js"></script>
 </body>
 </html>

@@ -66,15 +66,15 @@
   <script>
 /* ── Data ── */
 const BPH_CORE = [
-  { name: '— Pending —', role: 'Ketua Umum',       level: 0, color: '#7F77DD' },
-  { name: '— Pending —', role: 'Sekretaris Umum',  level: 1, color: '#7F77DD' },
-  { name: '— Pending —', role: 'Bendahara Umum',   level: 1, color: '#7F77DD' },
+  { name: '— Pending —', role: 'Ketua Umum',       level: 0, color: '#6366F1' },
+  { name: '— Pending —', role: 'Sekretaris Umum',  level: 1, color: '#6366F1' },
+  { name: '— Pending —', role: 'Bendahara Umum',   level: 1, color: '#6366F1' },
 ]
 
 const DEPTS = [
   {
     id: 'internal', name: 'Internal', fullName: 'Departemen Internal',
-    color: '#7F77DD',
+    color: '#6366F1',
     icon: `<path d="M3 21h18M3 7l9-4 9 4M4 7v14M20 7v14M9 21V11h6v10"/>`,
     members: [
       { name: '— Pending —', role: 'Kepala Departemen', batch: '20XX' },
@@ -298,9 +298,9 @@ function drawConnectors() {
   const bendumEl = document.querySelector('#node-bendum .org-node-avatar')
 
   // Ketum → Sekum
-  drawCurve(ketumEl, sekumEl,  '#7F77DD', 0,   1.8)
+  drawCurve(ketumEl, sekumEl,  '#6366F1', 0,   1.8)
   // Ketum → Bendum
-  drawCurve(ketumEl, bendumEl, '#7F77DD', 0.4, 2.0)
+  drawCurve(ketumEl, bendumEl, '#6366F1', 0.4, 2.0)
 
   // Ketum → tiap Kadep
   DEPTS.forEach((d, i) => {

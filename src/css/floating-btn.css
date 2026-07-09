@@ -18,20 +18,21 @@
   width: 52px;
   height: 52px;
   border-radius: var(--radius-full);
-  background: #7F77DD;
+  background: linear-gradient(135deg, #6366F1, #818CF8);
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(127, 119, 221, 0.4);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.45);
   cursor: pointer;
   border: none;
-  transition: background var(--transition-fast), transform var(--transition-fast);
+  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .floating-contact__trigger:hover {
-  background: #6A61D4;
-  transform: scale(1.05);
+  background: linear-gradient(135deg, #4F46E5, #6366F1);
+  transform: scale(1.08);
+  box-shadow: 0 8px 28px rgba(99, 102, 241, 0.55);
 }
 
 .floating-contact__trigger svg {
