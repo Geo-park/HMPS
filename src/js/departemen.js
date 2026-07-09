@@ -32,7 +32,7 @@ const STATUS_COLOR = {
 const DEPTS = [
   {
     id: 'internal', name: 'Internal', fullName: 'Departemen Internal',
-    color: '#7F77DD',
+    color: '#6366F1',
     icon: `<path d="M3 21h18M3 7l9-4 9 4M4 7v14M20 7v14M9 21V11h6v10"/>`,
     desc: 'Menjaga kekompakan internal, mengurus administrasi, dan memastikan seluruh anggota HMPS INF terhubung dengan baik.',
     visi: 'Menciptakan lingkungan organisasi yang solid, harmonis, dan saling mendukung.',

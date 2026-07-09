@@ -9,7 +9,7 @@ import { initReveal } from './reveal.js'
 const DEPTS = [
 
   {
-    id: 'internal', name: 'Departemen Internal', color: '#7F77DD', members: [
+    id: 'internal', name: 'Departemen Internal', color: '#6366F1', members: [
       { role: 'Kepala Departemen', name: '—' },
       { role: 'Sekretaris Dept', name: '—' },
       { role: 'Anggota', name: '—' },

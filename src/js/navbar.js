@@ -3,7 +3,7 @@
    ============================================ */
 
 const DEPT_DATA = [
-  { id: 'internal', name: 'Internal', color: '#7F77DD', icon: 'building' },
+  { id: 'internal',  name: 'Internal',  color: '#6366F1', icon: 'building' },
   { id: 'kominfo', name: 'Kominfo', color: '#1D9E75', icon: 'speakerphone' },
   { id: 'mikat', name: 'Mikat', color: '#BA7517', icon: 'star' },
   { id: 'eksternal', name: 'Eksternal', color: '#378ADD', icon: 'world' },

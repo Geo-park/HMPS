@@ -10,7 +10,7 @@ import { initReveal } from './reveal.js'
 /* ── Data Event dari Kalender Proker 2026 ── */
 
 const DEPT_COLORS = {
-  'PAO':      '#7F77DD',
+  'PAO':      '#6366F1',
   'Internal': '#1D9E75',
   'External': '#378ADD',
   'Kominfo':  '#BA7517',
