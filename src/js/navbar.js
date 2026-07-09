@@ -3,7 +3,7 @@
    ============================================ */
 
 const DEPT_DATA = [
-  { id: 'internal',  name: 'Internal',  color: '#6366F1', icon: 'building' },
+  { id: 'internal', name: 'Internal', color: '#6366F1', icon: 'building' },
   { id: 'kominfo', name: 'Kominfo', color: '#1D9E75', icon: 'speakerphone' },
   { id: 'mikat', name: 'Mikat', color: '#BA7517', icon: 'star' },
   { id: 'eksternal', name: 'Eksternal', color: '#378ADD', icon: 'world' },
@@ -63,7 +63,7 @@ const NAV_STRUCTURE = [
       {
         title: 'Sampaikan',
         links: [
-          { label: 'Form Aspirasi', href: 'https://docs.google.com/forms/d/e/1FAIpQLSdRL_BxokHh3lrgdUt88Uu_OG56KlPX08sH7WxjKOB0UIINuw/viewform?usp=publish-editor', icon: 'message', external: true },
+          { label: 'Form Aspirasi', href: '#', disabled: true },
         ]
       },
       {
