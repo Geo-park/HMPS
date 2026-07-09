@@ -5,14 +5,13 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main:         resolve(__dirname, 'index.html'),
-        tentang:      resolve(__dirname, 'tentang.html'),
-        struktur:     resolve(__dirname, 'struktur.html'),
-        departemen:   resolve(__dirname, 'departemen.html'),
-        events:       resolve(__dirname, 'events.html'),
-        galeri:       resolve(__dirname, 'galeri.html'),
-        aspirasi:     resolve(__dirname, 'aspirasi.html'),
-        roadmap:      resolve(__dirname, 'roadmap.html'),
+        main: resolve(__dirname, 'index.html'),
+        tentang: resolve(__dirname, 'tentang.html'),
+        departemen: resolve(__dirname, 'departemen.html'),
+        events: resolve(__dirname, 'events.html'),
+        galeri: resolve(__dirname, 'galeri.html'),
+        aspirasi: resolve(__dirname, 'aspirasi.html'),
+        roadmap: resolve(__dirname, 'roadmap.html'),
       }
     }
   }

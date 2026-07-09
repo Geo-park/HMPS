@@ -175,7 +175,60 @@
         </div>
       </div>
     </section>
+    
+    <!-- ═══ KALENDER KEGIATAN ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">Agenda 2026</span>
+      <h2 class="section-title">Kalender Kegiatan</h2>
+      <p class="section-sub">Program kerja HMPS INF sepanjang periode 2026/2027.</p>
+    </div>
 
+    <div class="cal-section reveal">
+      <!-- Calendar -->
+      <div class="cal-card">
+        <div class="cal-header">
+          <button class="cal-nav-btn" id="calPrev">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </button>
+          <span class="cal-month-label" id="calMonthLabel"></span>
+          <button class="cal-nav-btn" id="calNext">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
+        </div>
+        <div class="cal-grid">
+          <div class="cal-days-header">
+            <div class="cal-day-label">Min</div>
+            <div class="cal-day-label">Sen</div>
+            <div class="cal-day-label">Sel</div>
+            <div class="cal-day-label">Rab</div>
+            <div class="cal-day-label">Kam</div>
+            <div class="cal-day-label">Jum</div>
+            <div class="cal-day-label">Sab</div>
+          </div>
+          <div class="cal-dates" id="calDates"></div>
+        </div>
+        <div class="cal-legend" id="calLegend"></div>
+      </div>
+
+      <!-- Event List -->
+      <div class="cal-events-card">
+        <div class="cal-events-header">
+          <div>
+            <div class="cal-events-title" id="calEventsTitle">Semua Event Mendatang</div>
+            <div class="cal-events-sub" id="calEventsSub">Klik tanggal untuk filter</div>
+          </div>
+        </div>
+        <div class="cal-events-list" id="calEventsList"></div>
+      </div>
+    </div>
+  </div>
+</section>
   </main>
 
   <!-- Footer -->
@@ -191,6 +244,7 @@
   }
   </script>
   <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/calender.js"></script>
 </body>
 
 </html>

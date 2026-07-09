@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="/src/css/footer.css" />
   <link rel="stylesheet" href="/src/css/floating-btn.css" />
   <link rel="stylesheet" href="/src/css/tentang.css" />
+  <link rel="stylesheet" href="/src/css/struktur.css" />
   <link rel="icon" href="/logo.png" />
   <link rel="apple-touch-icon" href="/logo.png" />
 </head>
@@ -60,9 +61,11 @@
     <section class="section-tight" id="sejarah">
       <div class="container about-grid">
         <div class="reveal">
-          <div class="ph" style="aspect-ratio:4/3; border-radius:var(--radius-card);">
-            <span>Foto Bersama Pengurus</span>
-          </div>
+          <img 
+          src="/asset/background.png" 
+          alt="Foto pengurus HMPS INF di depan Fakultas Sains dan Teknologi UIN SMH Banten"
+         style="width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center top; border-radius:var(--radius-card);"
+          class="reveal"/>
         </div>
         <div class="about-copy reveal">
           <h2>Rumah bagi mahasiswa Informatika.</h2>
@@ -180,8 +183,29 @@
       </div>
     </section>
 
+    <!-- Struktur Organisasi -->
+    <section class="section-tight" id="struktur" style="background:var(--color-bg-2);">
+      <div class="container">
+        <div class="reveal" style="margin-bottom:32px;">
+          <span class="eyebrow">Kepengurusan 2026/2027</span>
+          <h2 class="section-title">Struktur Organisasi</h2>
+          <p class="section-sub">Mengenal para penggerak HMPS INF periode 2026/2027.</p>
+        </div>
+        <div class="org-wrap reveal" id="orgWrap" style="margin-bottom: 48px;">
+          <svg id="orgSvg" xmlns="http://www.w3.org/2000/svg"></svg>
+          <div class="org-nodes" id="orgNodes"></div>
+        </div>
+
+        <div class="reveal" style="margin-bottom:24px; margin-top: 64px;">
+          <span class="eyebrow">Per Departemen</span>
+          <h2 class="section-title">Struktur Departemen</h2>
+        </div>
+        <div id="deptBlocks"></div>
+      </div>
+    </section>
+
     <!-- FAQ -->
-    <section class="section-tight" id="faq" style="background:var(--color-bg-2);">
+    <section class="section-tight" id="faq">
       <div class="container">
         <div class="reveal" style="margin-bottom:32px;">
           <span class="eyebrow">Pertanyaan Umum</span>

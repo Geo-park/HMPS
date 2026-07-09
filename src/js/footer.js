@@ -49,7 +49,7 @@ export function initFooter() {
           <div class="footer__col-title">Organisasi</div>
           <div class="footer__links">
             <a href="/tentang.html" class="footer__link">Tentang Kami</a>
-            <a href="/struktur.html" class="footer__link">Struktur Org</a>
+            <a href="/tentang.html#struktur" class="footer__link">Struktur Org</a>
             <a href="/departemen.html" class="footer__link">Departemen</a>
           </div>
         </div>

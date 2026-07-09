@@ -1,73 +1,279 @@
-/* ============================================
-   HMPS INF — Struktur Organisasi
-   ============================================ */
+/* ── Org Chart Container ── */
+    .org-wrap {
+      position: relative;
+      overflow: hidden;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      min-height: 600px;
+    }
 
-.struktur-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 24px;
-}
+    /* SVG connector layer */
+    #orgSvg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
 
-.struktur-card {
-  padding: 26px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
+    /* Connector lines */
+    .org-line {
+      stroke: var(--purple);
+      stroke-width: 1.5;
+      fill: none;
+      opacity: .25;
+    }
 
-.struktur-card .ph-avatar {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 8px;
-}
+    /* Pulse animation on lines */
+    .org-pulse {
+      stroke: var(--purple);
+      stroke-width: 2.5;
+      fill: none;
+      stroke-dasharray: 8 200;
+      stroke-dashoffset: 0;
+      opacity: .8;
+    }
 
-.struktur-role {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  margin-top: 8px;
-}
+    /* Nodes container */
+    .org-nodes {
+      position: relative;
+      z-index: 2;
+      padding: 40px 24px 48px;
+    }
 
-.struktur-name {
-  font-weight: 600;
-  font-size: 16px;
-  font-family: var(--font-display);
-}
+    /* Level rows */
+    .org-level {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 0;
+    }
 
-.struktur-batch {
-  font-size: 13px;
-  color: var(--color-text-3);
-}
+    /* Node card */
+    .org-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      cursor: default;
+      transition: transform .2s var(--ease);
+    }
 
-.dept-structure-section {
-  margin-bottom: 56px;
-}
+    .org-node:hover { transform: translateY(-4px); }
 
-.dept-structure-title {
-  margin-bottom: 24px;
-}
+    .org-node-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--color-border);
+      background: var(--color-bg-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--purple);
+      transition: border-color .2s, box-shadow .2s;
+      position: relative;
+      overflow: hidden;
+    }
 
-.dept-structure-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-}
+    .org-node:hover .org-node-avatar {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 4px var(--purple-soft), var(--shadow-md);
+    }
 
-@media (max-width: 900px) {
-  .struktur-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
+    /* Size variants */
+    .org-node.size-lg .org-node-avatar { width: 88px; height: 88px; font-size: 28px; }
+    .org-node.size-md .org-node-avatar { width: 72px; height: 72px; font-size: 22px; }
+    .org-node.size-sm .org-node-avatar { width: 60px; height: 60px; font-size: 18px; }
+    .org-node.size-xs .org-node-avatar { width: 52px; height: 52px; font-size: 15px; }
 
-@media (max-width: 600px) {
-  .struktur-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    .org-node-info { text-align: center; }
+
+    .org-node-name {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--color-text);
+      white-space: nowrap;
+    }
+
+    .org-node.size-lg .org-node-name { font-size: 15px; }
+
+    .org-node-role {
+      font-size: 11px;
+      color: var(--color-text-3);
+      margin-top: 1px;
+    }
+
+    .org-node-dept-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      border: 1.5px solid var(--color-surface);
+    }
+
+    /* Spacer between levels */
+    .org-spacer { height: 56px; }
+
+    /* Level label */
+    .org-level-label {
+      text-align: center;
+      font-family: var(--font-label);
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--color-text-3);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    /* Dept section */
+    .dept-section {
+      margin-top: 64px;
+    }
+
+    .dept-section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .dept-block {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .dept-block-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--color-border);
+      cursor: pointer;
+      transition: background .15s;
+    }
+
+    .dept-block-header:hover { background: var(--color-bg-2); }
+
+    .dept-block-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .dept-block-icon svg { width: 18px; height: 18px; }
+
+    .dept-block-name {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      flex: 1;
+    }
+
+    .dept-block-chev {
+      color: var(--color-text-3);
+      transition: transform .3s var(--ease);
+    }
+
+    .dept-block.open .dept-block-chev { transform: rotate(180deg); }
+
+    .dept-block-members-wrap {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows .35s var(--ease);
+    }
+
+    .dept-block.open .dept-block-members-wrap { grid-template-rows: 1fr; }
+
+    .dept-block-members {
+      overflow: hidden;
+    }
+
+    .dept-members-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 14px;
+      padding: 20px;
+    }
+
+    .dept-member-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 18px 12px;
+      background: var(--color-bg-2);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--color-border);
+      text-align: center;
+      transition: border-color .2s, transform .2s;
+    }
+
+    .dept-member-card:hover {
+      border-color: var(--accent, var(--purple));
+      transform: translateY(-2px);
+    }
+
+    .dept-member-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--color-surface);
+      border: 2px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent, var(--purple));
+      overflow: hidden;
+    }
+
+    .dept-member-name {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--color-text);
+    }
+
+    .dept-member-role {
+      font-size: 11px;
+      color: var(--color-text-3);
+    }
+
+    .dept-member-batch {
+      font-family: var(--font-label);
+      font-size: 10px;
+      color: var(--color-text-3);
+      letter-spacing: .04em;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .org-level { gap: 10px; flex-wrap: wrap; }
+      .org-node.size-lg .org-node-avatar { width: 72px; height: 72px; font-size: 22px; }
+      .org-node.size-md .org-node-avatar { width: 60px; height: 60px; font-size: 18px; }
+      .org-node.size-sm .org-node-avatar { width: 52px; height: 52px; font-size: 15px; }
+      .org-node.size-xs .org-node-avatar { width: 44px; height: 44px; font-size: 13px; }
+      .org-node-name { font-size: 11px; }
+    }
