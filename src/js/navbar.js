@@ -21,7 +21,7 @@ const NAV_STRUCTURE = [
       {
         title: 'Explore',
         links: [
-          { label: 'Sejarah', href: '/tentang.html#sejarah', icon: 'clock' },
+          { label: 'Tentang Kami', href: '/tentang.html#tentang', icon: 'clock' },
           { label: 'Nilai Organisasi', href: '/tentang.html#nilai', icon: 'award' },
           { label: 'Struktur Organisasi', href: '/tentang.html#struktur', icon: 'building' },
         ]

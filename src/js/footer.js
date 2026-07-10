@@ -69,7 +69,7 @@ export function initFooter() {
           <div class="footer__links">
             <a href="/aspirasi.html" class="footer__link">Form Aspirasi</a>
             <a href="/aspirasi.html#ukt" class="footer__link">Pengaduan UKT</a>
-            <a href="/aspirasi.html#rapi" class="footer__link">RAPI</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdRL_BxokHh3lrgdUt88Uu_OG56KlPX08sH7WxjKOB0UIINuw/viewform?usp=publish-editor#rapi" class="footer__link">RAPI</a>
           </div>
         </div>
 
