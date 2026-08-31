@@ -6,10 +6,10 @@
 
 :root {
   /* Brand */
-  --purple: #7F77DD;
-  --purple-600: #6A61D4;
-  --purple-700: #5A51C4;
-  --purple-soft: rgba(127, 119, 221, 0.12);
+  --purple: #374151;
+  --purple-600: #1f2937;
+  --purple-700: #111827;
+  --purple-soft: rgba(55, 65, 81, 0.12);
 
   /* Departemen */
   --color-internal: #7F77DD;
@@ -36,7 +36,7 @@
   --nav-border: rgba(22, 22, 29, 0.08);
 
   /* Hero */
-  --hero-shape: rgba(127, 119, 221, 0.10);
+  --hero-shape: rgba(55, 65, 81, 0.10);
 
   /* Placeholder */
   --placeholder-bg: #ECECF3;
@@ -119,8 +119,8 @@
   --nav-bg: rgba(20, 20, 27, 0.82);
   --nav-border: rgba(255, 255, 255, 0.08);
 
-  --hero-shape: rgba(127, 119, 221, 0.18);
-  --purple-soft: rgba(127, 119, 221, 0.18);
+  --hero-shape: rgba(156, 163, 175, 0.18);
+  --purple-soft: rgba(156, 163, 175, 0.18);
 
   --placeholder-bg: #1F1F2A;
   --placeholder-stripe: #262633;
