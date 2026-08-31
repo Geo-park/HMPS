@@ -17,13 +17,13 @@ export const departemenList = [
     slug: "pao",
     nama: "PAO",
     namaLengkap: "Pengembangan Aparatur Organisasi",
-    ketua: { nama: "Ahmad Fahmirifa Fahrurozi", nim: "241730025", foto: "" },
+    ketua: { nama: "Ahmad Fahmirifa Fahrurozi", nim: "241730025", foto: "/assets/pengurus/fahmi.PNG" },
     sekretaris: { nama: "Khotibul Umami", nim: "251603086", foto: "" },
     anggota: [
       { nama: "Bahrul Ulumudin", nim: "241730090", foto: "" },
       { nama: "Nujma Fatima Ghauri Varadis", nim: "251603102", foto: "" },
       { nama: "Farhan Tirta Firdaus", nim: "251603055", foto: "" },
-      { nama: "Dwi Rianti", nim: "251603018", foto: "" },
+      { nama: "Dwi Rianti", nim: "251603018", foto: "/assets/pengurus/dwi.PNG" },
     ],
     programKerja: [
       { nama: 'Upgrading & Rapat Kerja "Lazarus"', status: 'Selesai', tanggal: '21 Jun 2026', lokasi: 'TBA', pj: 'Dept. PAO', desc: 'Rapat kerja perdana dan upgrading pengurus HMPS INF periode 2026/2027.' },
