@@ -1,19 +1,20 @@
 // Data kalender kegiatan HMPS INF 2026
 export const DEPT_COLORS = {
-  'PAO': '#D85A30',
+  'PAO':      '#D85A30',
   'Internal': '#7F77DD',
   'External': '#378ADD',
-  'Kominfo': '#1D9E75',
-  'PP': '#D4537E',
-  'EKRAF': '#5865F2',
-  'Mikat': '#BA7517',
-  'Sekum': '#6B6B80',
+  'Kominfo':  '#1D9E75',
+  'PP':       '#D4537E',
+  'EKRAF':    '#5865F2',
+  'Mikat':    '#BA7517',
+  'Sekum':    '#6B6B80',
+  'Umum':     '#9CA3AF',
 }
 
 export const EVENTS = [
   { date: '2026-06-21', name: 'Upgrading & Rapat Kerja "Lazarus"', dept: 'PAO' },
   { date: '2026-06-26', name: 'Form Aspirasi PP', dept: 'PP' },
-  { date: '2026-07-01', name: 'PBAK' },
+  { date: '2026-09-01', name: 'PBAK', dept: 'Umum' },
   { date: '2026-07-26', name: 'Form Aspirasi PP', dept: 'PP' },
   { date: '2026-08-19', name: 'PIJAR DESA', dept: 'External' },
   { date: '2026-08-26', name: 'Form Aspirasi PP', dept: 'PP' },
@@ -33,10 +34,10 @@ export const EVENTS = [
 ]
 
 export const MONTHS = [
-  'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
-  'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+  'Januari','Februari','Maret','April','Mei','Juni',
+  'Juli','Agustus','September','Oktober','November','Desember'
 ]
 export const MONTHS_SHORT = [
-  'Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun',
-  'Jul', 'Agt', 'Sep', 'Okt', 'Nov', 'Des'
+  'Jan','Feb','Mar','Apr','Mei','Jun',
+  'Jul','Agt','Sep','Okt','Nov','Des'
 ]
