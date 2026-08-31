@@ -75,8 +75,8 @@ export default function Stats() {
               </span>
             </div>
             <div className="bento-event-date">
-              <b>22</b>
-              <span>Agustus<br/>2026</span>
+              <b>01</b>
+              <span>September<br />2026</span>
             </div>
             <h3>PBAK</h3>
             <p className="muted-row">
@@ -86,7 +86,7 @@ export default function Stats() {
               </svg>
               Lokasi: UIN SMH Banten
             </p>
-            <Link to="/tentang" className="link-btn" style={{marginTop: '16px'}}>
+            <Link to="/tentang" className="link-btn" style={{ marginTop: '16px' }}>
               Lihat semua event
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <line x1="5" y1="12" x2="19" y2="12" />
