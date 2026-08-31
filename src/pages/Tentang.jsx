@@ -33,10 +33,10 @@ export default function Tentang() {
 
       <AboutHeader />
       <Sejarah />
+      <StrukturOrganisasi />
       <Departemen />
       <VisiMisi />
       <NilaiOrganisasi />
-      <StrukturOrganisasi />
       <FAQ />
     </main>
   )
