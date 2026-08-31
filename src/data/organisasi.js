@@ -8,7 +8,7 @@
 export const bph = {
   ketua: { nama: "Muhammad Alief Rasyidin", nim: "241730010", foto: "/assets/pengurus/alief.png" },
   sekretaris: { nama: "Muhamad Arief Rachmatullah", nim: "241730035", foto: "/assets/pengurus/arief.png" },
-  bendahara: { nama: "Parhan Maulana", nim: "241730080", foto: "/assets/pengurus/parhan.png" },
+  bendahara: { nama: "Parhan Maulana", nim: "241730080", foto: "/assets/pengurus/parhan.PNG" },
 };
 
 // Urutan tab sesuai urutan di SK
@@ -18,11 +18,11 @@ export const departemenList = [
     nama: "PAO",
     namaLengkap: "Pengembangan Aparatur Organisasi",
     ketua: { nama: "Ahmad Fahmirifa Fahrurozi", nim: "241730025", foto: "/assets/pengurus/fahmi.PNG" },
-    sekretaris: { nama: "Khotibul Umami", nim: "251603086", foto: "" },
+    sekretaris: { nama: "Khotibul Umami", nim: "251603086", foto: "/assets/pengurus/umam.PNG" },
     anggota: [
-      { nama: "Bahrul Ulumudin", nim: "241730090", foto: "" },
-      { nama: "Nujma Fatima Ghauri Varadis", nim: "251603102", foto: "" },
-      { nama: "Farhan Tirta Firdaus", nim: "251603055", foto: "" },
+      { nama: "Bahrul Ulumudin", nim: "241730090", foto: "/assets/pengurus/bahrul.PNG" },
+      { nama: "Nujma Fatima Ghauri Varadis", nim: "251603102", foto: "/assets/pengurus/nujma.PNG" },
+      { nama: "Farhan Tirta Firdaus", nim: "251603055", foto: "/assets/pengurus/farhan.PNG" },
       { nama: "Dwi Rianti", nim: "251603018", foto: "/assets/pengurus/dwi.PNG" },
     ],
     programKerja: [
