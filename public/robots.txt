@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://hmps-pink.vercel.app/sitemap.xml
+
+Sitemap: https://hmps-two.vercel.app/sitemap.xml
