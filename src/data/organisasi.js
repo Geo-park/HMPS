@@ -8,7 +8,7 @@
 export const bph = {
   ketua: { nama: "Muhammad Alief Rasyidin", nim: "241730010", foto: "/assets/pengurus/alief.png" },
   sekretaris: { nama: "Muhamad Arief Rachmatullah", nim: "241730035", foto: "/assets/pengurus/arief.png" },
-  bendahara: { nama: "Parhan Maulana", nim: "241730080", foto: "/assets/pengurus/parhan.PNG" },
+  bendahara: { nama: "Parhan Maulana", nim: "241730080", foto: "/assets/pengurus/parhan.png" },
 };
 
 // Urutan tab sesuai urutan di SK
