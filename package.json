@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "sharp": "^0.35.4",
+    "to-ico": "^1.1.5",
     "vite": "^8.2.2"
   },
   "dependencies": {
