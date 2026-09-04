@@ -1,0 +1,30 @@
+# HMPS Informatika UIN SMH Banten
+
+> Website resmi Himpunan Mahasiswa Program Studi Informatika UIN Sultan Maulana Hasanuddin Banten.
+
+## Identity
+
+- Official name: HMPS Informatika UIN SMH Banten
+- Short name: HMPS INF
+- Institution: UIN Sultan Maulana Hasanuddin Banten
+- Location: Kota Serang, Banten, Indonesia
+- Period: 2026/2027
+- Tagline: Kita Satu, Kita Informatika.
+
+## Main pages
+
+- Home: https://hmps-two.vercel.app/
+- About, history, vision, mission, departments, organization structure, and FAQ: https://hmps-two.vercel.app/tentang
+- Activity gallery: https://hmps-two.vercel.app/galeri
+
+## Services
+
+- Ruang Aspirasi Perempuan Informatika: https://ruangaspirasiperempuaninformatika.netlify.app/
+- SIAKAD UIN Banten: https://neosiakad.uinbanten.ac.id/
+
+## Contact
+
+- Email: hmpsinformatikauinbanten@gmail.com
+- Instagram: https://instagram.com/hmpsinformatikaa
+- TikTok: https://tiktok.com/@hmps.informatika
+- Address: Jl. Syeh Nawawi Al Bantani No. 01, Gedung B FSAINS, UIN SMHB, Curug, Kota Serang, Banten

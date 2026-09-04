@@ -9,9 +9,18 @@ import VisiMisi from '../components/tentang/VisiMisi'
 import NilaiOrganisasi from '../components/tentang/NilaiOrganisasi'
 import StrukturOrganisasi from '../components/tentang/StrukturOrganisasi'
 import FAQ from '../components/tentang/FAQ'
+import { FAQ_DATA } from '../data/tentang'
 
 export default function Tentang() {
   const location = useLocation()
+  const faqItems = FAQ_DATA.flatMap(category => category.items).map(item => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
+    },
+  }))
 
   // Scroll to hash
   useEffect(() => {
@@ -29,6 +38,13 @@ export default function Tentang() {
         <title>Tentang Kami | HMPS Informatika UIN SMH Banten</title>
         <meta name="description" content="Kenali lebih dekat HMPS Informatika UIN Sultan Maulana Hasanuddin Banten — sejarah, visi misi, struktur kepengurusan, dan tujuh departemen yang bergerak untuk mahasiswa Informatika." />
         <link rel="canonical" href="https://hmps-two.vercel.app/tentang" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqItems,
+          })}
+        </script>
       </Helmet>
 
       <AboutHeader />

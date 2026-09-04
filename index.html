@@ -9,7 +9,12 @@
   <meta name="keywords"
     content="informatika uin, informatika, hmps informatika, hmps informatika uin banten, uin smh banten, himpunan mahasiswa informatika" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="google-extended" content="index,follow" />
   <meta name="author" content="HMPS Informatika UIN SMH Banten" />
+  <meta name="language" content="id" />
+  <meta name="geo.region" content="ID-BT" />
+  <meta name="geo.placename" content="Kota Serang, Banten" />
   <meta name="theme-color" content="#46515B" />
   <link rel="canonical" href="https://hmps-two.vercel.app/" />
 
@@ -20,6 +25,7 @@
     content="Website resmi HMPS Informatika UIN Sultan Maulana Hasanuddin Banten. Kepengurusan, program kerja, galeri, dan agenda HMPS Informatika." />
   <meta property="og:image" content="https://hmps-two.vercel.app/asset/og-image.png" />
   <meta property="og:url" content="https://hmps-two.vercel.app/" />
+  <meta property="og:locale" content="id_ID" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -49,12 +55,53 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "HMPS Informatika UIN SMH Banten",
-    "url": "https://hmps-two.vercel.app/",
-    "logo": "https://hmps-two.vercel.app/asset/og-image.png",
-    "sameAs": [],
-    "description": "Himpunan Mahasiswa Program Studi Informatika UIN Sultan Maulana Hasanuddin Banten"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://hmps-two.vercel.app/#organization",
+        "name": "HMPS Informatika UIN SMH Banten",
+        "alternateName": "HMPS INF",
+        "url": "https://hmps-two.vercel.app/",
+        "logo": "https://hmps-two.vercel.app/asset/og-image.png",
+        "sameAs": [
+          "https://instagram.com/hmpsinformatikaa",
+          "https://tiktok.com/@hmps.informatika"
+        ],
+        "email": "hmpsinformatikauinbanten@gmail.com",
+        "description": "Himpunan Mahasiswa Program Studi Informatika UIN Sultan Maulana Hasanuddin Banten.",
+        "parentOrganization": {
+          "@type": "CollegeOrUniversity",
+          "name": "UIN Sultan Maulana Hasanuddin Banten",
+          "url": "https://uinbanten.ac.id/"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Jl. Syeh Nawawi Al Bantani No. 01, Gedung B FSAINS",
+          "addressLocality": "Kota Serang",
+          "addressRegion": "Banten",
+          "addressCountry": "ID"
+        },
+        "knowsAbout": ["Informatika", "Organisasi mahasiswa", "Program kerja mahasiswa", "Kegiatan mahasiswa"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://hmps-two.vercel.app/#website",
+        "url": "https://hmps-two.vercel.app/",
+        "name": "HMPS Informatika UIN SMH Banten",
+        "inLanguage": "id-ID",
+        "publisher": { "@id": "https://hmps-two.vercel.app/#organization" },
+        "description": "Website resmi HMPS Informatika UIN SMH Banten untuk informasi organisasi, kegiatan, program kerja, galeri, dan layanan mahasiswa."
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://hmps-two.vercel.app/#webpage",
+        "url": "https://hmps-two.vercel.app/",
+        "name": "HMPS Informatika UIN SMH Banten",
+        "isPartOf": { "@id": "https://hmps-two.vercel.app/#website" },
+        "about": { "@id": "https://hmps-two.vercel.app/#organization" },
+        "inLanguage": "id-ID"
+      }
+    ]
   }
   </script>
 

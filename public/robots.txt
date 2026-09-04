@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
 
+# Permit indexing by common AI search crawlers.
+User-agent: Google-Extended
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
 Sitemap: https://hmps-two.vercel.app/sitemap.xml
