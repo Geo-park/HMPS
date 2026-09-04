@@ -4,6 +4,7 @@
 import { Helmet } from 'react-helmet-async'
 import { useReveal } from '../hooks/useReveal'
 import Hero from '../components/home/Hero'
+import Sponsorship from '../components/home/Sponsorship'
 import Stats from '../components/home/Stats'
 import KalenderKegiatan from '../components/home/KalenderKegiatan'
 import Reveal from '../components/common/Reveal'
@@ -20,6 +21,7 @@ export default function Home() {
       </Helmet>
 
       <Hero />
+      <Sponsorship />
       <Stats />
 
       {/* ═══ KALENDER KEGIATAN ═══ */}

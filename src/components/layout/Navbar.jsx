@@ -1,30 +1,9 @@
 /* ============================================
    HMPS INF — Navbar Component
    ============================================ */
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { NAV_STRUCTURE, DEPT_DATA, DEPT_ICON_PATHS, LINK_ICON_PATHS } from '../../data/nav'
-import ThemeToggle from '../common/ThemeToggle'
-
-function Icon({ name, isDept = false }) {
-  const path = isDept ? DEPT_ICON_PATHS[name] : LINK_ICON_PATHS[name]
-  if (!path) return null
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" dangerouslySetInnerHTML={{ __html: path }} />
-  )
-}
-
-function GridIcon() {
-  return (
-    <svg className="mega-menu__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
-      <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
-    </svg>
-  )
-}
-
-
-
+import { NAV_STRUCTURE, LINK_ICON_PATHS } from '../../data/nav'
 export default function Navbar() {
   const location = useLocation()
   const [scrolled, setScrolled] = useState(false)
@@ -32,8 +11,6 @@ export default function Navbar() {
   const [openMega, setOpenMega] = useState(null)
   const [openMobileAccordion, setOpenMobileAccordion] = useState(null)
   
-  const navRef = useRef(null)
-
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -104,7 +81,7 @@ export default function Navbar() {
                     <polyline points="6 9 12 15 18 9"/>
                   </svg>
                 </button>
-                <div className={`mega-menu ${item.accent ? `mega-menu--${item.accent}` : ''}`}>
+                <div className={`mega-menu ${item.compact ? 'mega-menu--compact' : ''} ${item.accent ? `mega-menu--${item.accent}` : ''}`}>
                   <div className="mega-menu__grid">
                     {item.cols.map((col, cIdx) => (
                       <div key={cIdx}>
@@ -142,7 +119,6 @@ export default function Navbar() {
         </nav>
 
         <div className="navbar__actions">
-          <ThemeToggle />
           <button 
             className={`navbar__hamburger ${mobileOpen ? 'open' : ''}`} 
             aria-label="Buka menu" 

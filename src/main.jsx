@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import App from './App.jsx'
-import { ThemeProvider } from './context/ThemeContext'
 
 // Import all styles
 import './css/tokens.css'
@@ -16,14 +15,14 @@ import './css/departemen.css'
 import './css/struktur.css'
 import './css/galeri.css'
 import './css/kalender.css'
+import './css/sponsorship.css'
+import './css/events.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HelmetProvider>
       <BrowserRouter>
-        <ThemeProvider>
-          <App />
-        </ThemeProvider>
+        <App />
       </BrowserRouter>
     </HelmetProvider>
   </StrictMode>,

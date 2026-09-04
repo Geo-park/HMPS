@@ -8,4 +8,11 @@ export const GALERI_FOLDERS = [
     drive: 'https://drive.google.com/drive/folders/1kPSaB6K-QQByCLqBWnLnEKJib2muvc8a',
     dept: 'internal',
   },
+  {
+    id: 'pbak-2026',
+    nama: 'PBAK 2026',
+    subtitle: 'PBAK Fakultas 2026',
+    drive: 'https://drive.google.com/drive/folders/1vSxh0XMCGaGAzvkXz83oKv2nvPbq1bMT',
+    dept: 'kominfo',
+  }
 ]
