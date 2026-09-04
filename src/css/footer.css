@@ -3,9 +3,9 @@
    ============================================ */
 
 .footer {
-  background: var(--color-surface);
+  background: linear-gradient(145deg, var(--color-surface) 0%, var(--color-bg-2) 100%);
   border-top: 1px solid var(--color-border);
-  padding: var(--space-16) 0 var(--space-8);
+  padding: 72px 0 28px;
   margin-top: var(--space-24);
 }
 
@@ -18,7 +18,7 @@
 .footer__grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: var(--space-12);
+  gap: 40px;
   margin-bottom: var(--space-12);
 }
 
@@ -27,7 +27,7 @@
   font-family: var(--font-display);
   font-weight: 800;
   font-size: var(--text-2xl);
-  color: var(--color-primary);
+  color: var(--color-text);
   letter-spacing: -0.02em;
   margin-bottom: var(--space-2);
 }
@@ -35,14 +35,14 @@
 .footer__brand-tagline {
   font-family: var(--font-label);
   font-size: var(--text-xs);
-  color: var(--color-text-muted);
+  color: var(--accent-teal);
   letter-spacing: 0.06em;
   margin-bottom: var(--space-4);
 }
 
 .footer__brand-desc {
   font-size: var(--text-sm);
-  color: var(--color-text-muted);
+  color: var(--color-text-2);
   line-height: 1.7;
   margin-bottom: var(--space-6);
 }
@@ -60,15 +60,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-text-muted);
+  color: var(--color-text-2);
   text-decoration: none;
   transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
 }
 
 .footer__social-link:hover {
-  color: var(--color-primary);
-  border-color: var(--color-primary);
-  background: rgba(108, 99, 255, 0.08);
+  color: var(--accent-teal);
+  border-color: var(--accent-teal);
+  background: rgba(77, 129, 119, 0.10);
 }
 
 .footer__social-link svg {
@@ -80,7 +80,7 @@
 .footer__col-title {
   font-family: var(--font-label);
   font-size: var(--text-xs);
-  color: var(--color-text-muted);
+  color: var(--color-text);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: var(--space-4);
@@ -94,13 +94,13 @@
 
 .footer__link {
   font-size: var(--text-sm);
-  color: var(--color-text-muted);
+  color: var(--color-text-2);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 .footer__link:hover {
-  color: var(--color-primary);
+  color: var(--accent-teal);
 }
 
 /* Bottom bar */
@@ -116,12 +116,12 @@
 
 .footer__copyright {
   font-size: var(--text-sm);
-  color: var(--color-text-muted);
+  color: var(--color-text-3);
 }
 
 .footer__address {
   font-size: var(--text-xs);
-  color: var(--color-text-muted);
+  color: var(--color-text-3);
   font-family: var(--font-label);
   text-align: right;
   line-height: 1.6;

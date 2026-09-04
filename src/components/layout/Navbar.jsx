@@ -76,11 +76,11 @@ export default function Navbar() {
                 )
               }
               return (
-                <div key={idx} className="nav-item">
+                <div key={idx} className={`nav-item ${item.accent ? `nav-item--${item.accent}` : ''}`}>
                   {item.href.startsWith('http') ? (
-                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="nav-link">{item.label}</a>
+                    <a href={item.href} target="_blank" rel="noopener noreferrer" className={`nav-link ${item.accent ? `nav-link--${item.accent}` : ''}`}>{item.label}</a>
                   ) : (
-                    <Link to={item.href} className={`nav-link ${isActive(item.href) ? 'active' : ''}`}>{item.label}</Link>
+                    <Link to={item.href} className={`nav-link ${item.accent ? `nav-link--${item.accent}` : ''} ${isActive(item.href) ? 'active' : ''}`}>{item.label}</Link>
                   )}
                 </div>
               )
@@ -89,13 +89,13 @@ export default function Navbar() {
             return (
               <div 
                 key={idx} 
-                className={`nav-item ${openMega === idx ? 'open' : ''}`} 
+                className={`nav-item ${item.accent ? `nav-item--${item.accent}` : ''} ${openMega === idx ? 'open' : ''}`} 
                 data-mega
                 onMouseEnter={() => setOpenMega(idx)}
                 onMouseLeave={() => setOpenMega(null)}
               >
                 <button 
-                  className={`nav-link ${item.cols.some(c => c.links.some(l => isActive(l.href))) ? 'active' : ''}`} 
+                  className={`nav-link ${item.accent ? `nav-link--${item.accent}` : ''} ${item.cols.some(c => c.links.some(l => isActive(l.href))) ? 'active' : ''}`} 
                   aria-haspopup="true" 
                   aria-expanded={openMega === idx}
                 >
@@ -104,23 +104,32 @@ export default function Navbar() {
                     <polyline points="6 9 12 15 18 9"/>
                   </svg>
                 </button>
-                <div className="mega-menu">
+                <div className={`mega-menu ${item.accent ? `mega-menu--${item.accent}` : ''}`}>
                   <div className="mega-menu__grid">
                     {item.cols.map((col, cIdx) => (
                       <div key={cIdx}>
                         <div className="mega-menu__col-title">{col.title}</div>
                         <div className="mega-menu__links">
                           {col.links.map((link, lIdx) => (
-                            <Link 
-                              key={lIdx} 
-                              to={link.href} 
-                              className={`mega-menu__link ${isActive(link.href) ? 'active' : ''}`}
-                            >
-                              <svg className="mega-menu__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                {LINK_ICON_PATHS[link.icon] && <g dangerouslySetInnerHTML={{ __html: LINK_ICON_PATHS[link.icon] }} />}
-                              </svg>
-                              {link.label}
-                            </Link>
+                            link.href.startsWith('http') ? (
+                              <a key={lIdx} href={link.href} target="_blank" rel="noopener noreferrer" className="mega-menu__link">
+                                <svg className="mega-menu__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                  {LINK_ICON_PATHS[link.icon] && <g dangerouslySetInnerHTML={{ __html: LINK_ICON_PATHS[link.icon] }} />}
+                                </svg>
+                                {link.label}
+                              </a>
+                            ) : (
+                              <Link 
+                                key={lIdx} 
+                                to={link.href} 
+                                className={`mega-menu__link ${isActive(link.href) ? 'active' : ''}`}
+                              >
+                                <svg className="mega-menu__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                  {LINK_ICON_PATHS[link.icon] && <g dangerouslySetInnerHTML={{ __html: LINK_ICON_PATHS[link.icon] }} />}
+                                </svg>
+                                {link.label}
+                              </Link>
+                            )
                           ))}
                         </div>
                       </div>
@@ -160,7 +169,7 @@ export default function Navbar() {
           return (
             <div key={idx}>
               <button 
-                className={`mobile-accordion__trigger ${openMobileAccordion === idx ? 'open' : ''}`}
+                className={`mobile-accordion__trigger ${item.accent ? `mobile-accordion__trigger--${item.accent}` : ''} ${openMobileAccordion === idx ? 'open' : ''}`}
                 onClick={() => setOpenMobileAccordion(openMobileAccordion === idx ? null : idx)}
               >
                 {item.label}
@@ -170,7 +179,9 @@ export default function Navbar() {
               </button>
               <div className={`mobile-accordion__content ${openMobileAccordion === idx ? 'open' : ''}`}>
                 {allLinks.map((l, lIdx) => (
-                  <Link key={lIdx} to={l.href} className="mobile-accordion__link">{l.label}</Link>
+                  l.href.startsWith('http') ?
+                    <a key={lIdx} href={l.href} target="_blank" rel="noopener noreferrer" className="mobile-accordion__link">{l.label}</a> :
+                    <Link key={lIdx} to={l.href} className="mobile-accordion__link">{l.label}</Link>
                 ))}
               </div>
             </div>

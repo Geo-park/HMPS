@@ -39,11 +39,20 @@ export default function Footer() {
           </div>
 
           <div>
+            <div className="footer__col-title">Jelajah</div>
+            <div className="footer__links">
+              <Link to="/" className="footer__link">Beranda</Link>
+              <Link to="/tentang#tentang" className="footer__link">Tentang Kami</Link>
+              <Link to="/galeri" className="footer__link">Galeri</Link>
+            </div>
+          </div>
+
+          <div>
             <div className="footer__col-title">Organisasi</div>
             <div className="footer__links">
-              <Link to="/tentang#tentang" className="footer__link">Tentang Kami</Link>
               <Link to="/tentang#struktur" className="footer__link">Struktur Org</Link>
               <Link to="/tentang#departemen" className="footer__link">Departemen</Link>
+              <Link to="/tentang#visi-misi" className="footer__link">Visi & Misi</Link>
             </div>
           </div>
 
@@ -51,7 +60,8 @@ export default function Footer() {
             <div className="footer__col-title">Layanan</div>
             <div className="footer__links">
               <Link to="/tentang#faq" className="footer__link">Pertanyaan Umum</Link>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdRL_BxokHh3lrgdUt88Uu_OG56KlPX08sH7WxjKOB0UIINuw/viewform?usp=publish-editor#rapi" target="_blank" rel="noopener noreferrer" className="footer__link">RAPI (Ruang Aspirasi)</a>
+              <a href="https://ruangaspirasiperempuaninformatika.netlify.app/" target="_blank" rel="noopener noreferrer" className="footer__link">Ruang Aspirasi Perempuan</a>
+              <a href="https://neosiakad.uinbanten.ac.id/" target="_blank" rel="noopener noreferrer" className="footer__link">SIAKAD</a>
             </div>
           </div>
 

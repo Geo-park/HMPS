@@ -1,16 +1,23 @@
 import sharp from 'sharp';
+import toIco from 'to-ico';
+import { writeFile } from 'fs/promises';
 
-// Create proper 32x32 favicon.png
-sharp('public/favicon-cropped.png')
-  .resize(32, 32, {
-    fit: 'cover',
-    position: 'center'
-  })
-  .png()
-  .toFile('public/favicon.png')
-  .then(() => {
-    console.log('✓ favicon.png created successfully');
-  })
-  .catch((err) => {
-    console.error('Error creating favicon:', err);
-  });
+const source = sharp('public/favicon-cropped.png').resize({
+  fit: 'cover',
+  position: 'center'
+});
+
+const createFavicons = async () => {
+  const pngs = await Promise.all(
+    [16, 32, 48].map((size) => source.clone().resize(size, size).png().toBuffer())
+  );
+
+  await writeFile('public/favicon.png', pngs[1]);
+  await writeFile('public/favicon.ico', await toIco(pngs));
+  console.log('Favicon PNG and ICO created successfully');
+};
+
+createFavicons().catch((error) => {
+  console.error('Error creating favicons:', error);
+  process.exitCode = 1;
+});

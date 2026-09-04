@@ -5,10 +5,22 @@
 
 :root {
   /* Brand */
-  --purple: #374151;
-  --purple-600: #1f2937;
-  --purple-700: #111827;
-  --purple-soft: rgba(55, 65, 81, 0.12);
+  --purple: #46515B;
+  --purple-600: #35404A;
+  --purple-700: #252D35;
+  --purple-soft: rgba(70, 81, 91, 0.12);
+
+  /* Muted accents */
+  --accent-rose: #B45F78;
+  --accent-rose-soft: #F6E8ED;
+  --accent-sage: #A7B98A;
+  --accent-sage-soft: #EEF3E7;
+  --accent-teal: #4D8177;
+  --accent-amber: #B48953;
+
+  /* Legacy aliases used by footer and older components */
+  --color-primary: var(--purple);
+  --color-text-muted: var(--color-text-2);
 
   /* Departemen */
   --color-internal: #7F77DD;
@@ -20,31 +32,31 @@
   --color-ekraf: #5865F2;
 
   /* Light theme */
-  --color-bg: #F6F6FA;
-  --color-bg-2: #EFEFF5;
+  --color-bg: #F3F4F2;
+  --color-bg-2: #E8EBE9;
   --color-surface: #FFFFFF;
-  --color-surface-2: #FBFBFE;
-  --color-text: #16161D;
-  --color-text-2: #5B5B69;
-  --color-text-3: #8C8C9A;
-  --color-border: rgba(22, 22, 29, 0.08);
-  --color-border-2: rgba(22, 22, 29, 0.12);
+  --color-surface-2: #F8F9F7;
+  --color-text: #20252A;
+  --color-text-2: #596169;
+  --color-text-3: #858C91;
+  --color-border: rgba(32, 37, 42, 0.10);
+  --color-border-2: rgba(32, 37, 42, 0.16);
 
   /* Navbar glass */
-  --nav-bg: rgba(255, 255, 255, 0.72);
-  --nav-border: rgba(22, 22, 29, 0.08);
+  --nav-bg: rgba(255, 255, 255, 0.84);
+  --nav-border: rgba(32, 37, 42, 0.10);
 
   /* Hero */
-  --hero-shape: rgba(55, 65, 81, 0.10);
+  --hero-shape: rgba(77, 129, 119, 0.12);
 
   /* Placeholder */
   --placeholder-bg: #ECECF3;
   --placeholder-stripe: #E2E2EC;
 
   /* Shadows */
-  --shadow-card: 0 1px 2px rgba(22, 22, 29, 0.04), 0 8px 24px rgba(22, 22, 29, 0.05);
-  --shadow-pop: 0 12px 40px rgba(22, 22, 29, 0.14);
-  --shadow-lg: 0 8px 32px rgba(22, 22, 29, 0.12);
+  --shadow-card: 0 1px 2px rgba(32, 37, 42, 0.04), 0 8px 24px rgba(32, 37, 42, 0.06);
+  --shadow-pop: 0 12px 40px rgba(32, 37, 42, 0.14);
+  --shadow-lg: 0 8px 32px rgba(32, 37, 42, 0.12);
 
   /* Glass (navbar + modal) */
   --glass-bg-light: rgba(255, 255, 255, 0.72);
@@ -105,21 +117,21 @@
 
 /* ── Dark Mode ── */
 [data-theme="dark"] {
-  --color-bg: #0F0F14;
-  --color-bg-2: #14141B;
-  --color-surface: #1A1A23;
-  --color-surface-2: #20202B;
-  --color-text: #ECECF2;
-  --color-text-2: #A7A7B6;
-  --color-text-3: #71717F;
+  --color-bg: #171A1D;
+  --color-bg-2: #202529;
+  --color-surface: #242A2E;
+  --color-surface-2: #2B3236;
+  --color-text: #F0F1EF;
+  --color-text-2: #B4BBB9;
+  --color-text-3: #858E8D;
   --color-border: rgba(255, 255, 255, 0.08);
   --color-border-2: rgba(255, 255, 255, 0.14);
 
-  --nav-bg: rgba(20, 20, 27, 0.82);
+  --nav-bg: rgba(29, 34, 37, 0.88);
   --nav-border: rgba(255, 255, 255, 0.08);
 
-  --hero-shape: rgba(156, 163, 175, 0.18);
-  --purple-soft: rgba(156, 163, 175, 0.18);
+  --hero-shape: rgba(123, 157, 145, 0.16);
+  --purple-soft: rgba(180, 191, 188, 0.16);
 
   --placeholder-bg: #1F1F2A;
   --placeholder-stripe: #262633;

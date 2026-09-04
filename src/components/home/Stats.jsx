@@ -1,9 +1,35 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCounter } from '../../hooks/useCounter'
+import { EVENTS, MONTHS } from '../../data/events'
+
+function getTodayKey() {
+  const today = new Date()
+  return `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`
+}
+
+function getNextEvent(todayKey) {
+  return [...EVENTS]
+    .filter(event => event.date >= todayKey)
+    .sort((a, b) => a.date.localeCompare(b.date))[0]
+}
 
 export default function Stats() {
   const memberCountRef = useCounter(45)
   const programCountRef = useCounter(8)
+  const [todayKey, setTodayKey] = useState(getTodayKey)
+
+  useEffect(() => {
+    const now = new Date()
+    const nextDay = new Date(now)
+    nextDay.setHours(24, 0, 1, 0)
+    const timer = window.setTimeout(() => setTodayKey(getTodayKey()), nextDay.getTime() - now.getTime())
+
+    return () => window.clearTimeout(timer)
+  }, [todayKey])
+
+  const nextEvent = getNextEvent(todayKey)
+  const nextEventDate = nextEvent ? new Date(`${nextEvent.date}T00:00:00`) : null
 
   return (
     <section className="section">
@@ -75,16 +101,22 @@ export default function Stats() {
               </span>
             </div>
             <div className="bento-event-date">
-              <b>01</b>
-              <span>September<br />2026</span>
+              {nextEventDate ? (
+                <>
+                  <b>{nextEventDate.getDate()}</b>
+                  <span>{MONTHS[nextEventDate.getMonth()]}<br />{nextEventDate.getFullYear()}</span>
+                </>
+              ) : (
+                <span>Belum ada event mendatang</span>
+              )}
             </div>
-            <h3>PBAK</h3>
+            <h3>{nextEvent?.name || 'Belum ada event'}</h3>
             <p className="muted-row">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
               </svg>
-              Lokasi: UIN SMH Banten
+              {nextEvent ? `Departemen: ${nextEvent.dept}` : 'Pantau terus agenda HMPS INF'}
             </p>
             <Link to="/tentang" className="link-btn" style={{ marginTop: '16px' }}>
               Lihat semua event
