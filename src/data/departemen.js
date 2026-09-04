@@ -16,7 +16,6 @@ export const STATUS_COLOR = {
   'Direncanakan': '#BA7517',
   'Berjalan':     '#378ADD',
   'Selesai':      '#1D9E75',
-  'Rutin':        '#7F77DD',
   'Upcoming':     '#D85A30',
 }
 
@@ -28,15 +27,9 @@ export const DEPTS = [
     desc: 'Menjaga kekompakan internal, mengurus administrasi, dan memastikan seluruh anggota HMPS INF terhubung dengan baik.',
     visi: 'Menciptakan lingkungan organisasi yang solid, harmonis, dan saling mendukung.',
     misi: ['Mengelola administrasi dan data keanggotaan', 'Menyelenggarakan kegiatan pembinaan anggota', 'Memastikan komunikasi internal berjalan lancar'],
-    struktur: [
-      { role: 'Kepala Departemen', name: 'Naufal Afaf Ekayana',   batch: '2024' },
-      { role: 'Wakil Kepala',      name: 'Fierren Al-hilal', batch: '2024' },
-      { role: 'Staff',             name: 'Anggota 1',    batch: '2024' },
-      { role: 'Staff',             name: 'Anggota 2',    batch: '2024' },
-    ],
     proker: [
       { nama: 'IT Camp',          status: 'Upcoming', tanggal: '13–14 Sep 2026', lokasi: 'TBA', pj: 'Dept. Internal', desc: 'Kegiatan kemah dan pelatihan kepemimpinan untuk anggota HMPS INF.' },
-      { nama: 'Informatika Care', status: 'Upcoming', tanggal: 'TBA 2026',       lokasi: 'TBA', pj: 'Dept. Internal', desc: 'Kegiatan sosial dan kepedulian antar anggota himpunan.' },
+      { nama: 'Informatika Care', status: 'Berjalan', tanggal: '2026',            lokasi: 'TBA', pj: 'Dept. Internal', desc: 'Kegiatan sosial dan kepedulian antar anggota himpunan.' },
     ]
   },
   {
@@ -46,15 +39,10 @@ export const DEPTS = [
     desc: 'Mengelola informasi, dokumentasi, dan komunikasi publik HMPS INF kepada seluruh sivitas akademik dan masyarakat luas.',
     visi: 'Menjadi pusat informasi yang terpercaya dan kreatif untuk HMPS INF.',
     misi: ['Mengelola media sosial dan website resmi', 'Mendokumentasikan seluruh kegiatan HMPS INF', 'Menyebarkan informasi beasiswa dan akademik'],
-    struktur: [
-      { role: 'Kepala Departemen', name: 'Muhammad Sulthan Fajri Rabbani', batch: '2024' },
-      { role: 'Wakil Kepala',      name: 'Aab Abdulah', batch: '2024' },
-      { role: 'Staff',             name: '—', batch: '2024' },
-    ],
     proker: [
-      { nama: 'Informatika Update', status: 'Rutin', tanggal: 'Rutin 2026', lokasi: 'Online',         pj: 'Muhammad Sulthan Fajri Rabbani', desc: 'Konten rutin update informasi akademik dan organisasi di media sosial.' },
-      { nama: 'Informatika Moment', status: 'Rutin', tanggal: 'Rutin 2026', lokasi: 'Online',         pj: 'Dept. Kominfo',                  desc: 'Dokumentasi momen penting kegiatan HMPS INF.' },
-      { nama: 'Beasiswa Corner',    status: 'Rutin', tanggal: 'Rutin 2026', lokasi: 'Online/Offline', pj: 'Muhammad Sulthan Fajri Rabbani', desc: 'Menyebarkan informasi beasiswa aktif kepada mahasiswa Informatika.' },
+      { nama: 'Informatika Update', status: 'Berjalan', tanggal: '2026', lokasi: 'Online',         pj: 'Muhammad Sulthan Fajri Rabbani', desc: 'Konten rutin update informasi akademik dan organisasi di media sosial.' },
+      { nama: 'Informatika Moment', status: 'Berjalan', tanggal: '2026', lokasi: 'Online',         pj: 'Dept. Kominfo',                  desc: 'Dokumentasi momen penting kegiatan HMPS INF.' },
+      { nama: 'Beasiswa Corner',    status: 'Berjalan', tanggal: '2026', lokasi: 'Online/Offline', pj: 'Muhammad Sulthan Fajri Rabbani', desc: 'Menyebarkan informasi beasiswa aktif kepada mahasiswa Informatika.' },
     ]
   },
   {
@@ -64,11 +52,6 @@ export const DEPTS = [
     desc: 'Mengembangkan potensi, minat, dan bakat mahasiswa Informatika melalui program pelatihan dan kompetisi.',
     visi: 'Menjadi inkubator bakat mahasiswa Informatika yang berdaya saing.',
     misi: ['Memfasilitasi pengembangan minat dan bakat', 'Menyelenggarakan pelatihan skill teknis', 'Mendorong partisipasi kompetisi mahasiswa'],
-    struktur: [
-      { role: 'Kepala Departemen', name: 'Revan Sabilillah', batch: '2024' },
-      { role: 'Wakil Kepala',      name: 'Mochamad Nurul Ayatullah', batch: '2024' },
-      { role: 'Staff',             name: '—', batch: '2025' },
-    ],
     proker: [
       { nama: 'INFORMATIKA SKILL-UP', status: 'Upcoming', tanggal: '20 Sep – 12 Des 2026', lokasi: 'TBA', pj: 'Dept. Mikat', desc: 'Program pelatihan skill intensif dengan 5 track: Coding, Desain Digital, Database, Jaringan, dan Project Dev.' },
     ]
@@ -80,11 +63,6 @@ export const DEPTS = [
     desc: 'Membangun jejaring dan kolaborasi HMPS INF dengan pihak eksternal — lembaga, komunitas, dan masyarakat.',
     visi: 'Menjadi jembatan kolaborasi antara HMPS INF dan dunia luar.',
     misi: ['Membangun kerjasama dengan organisasi lain', 'Menyelenggarakan kegiatan pengabdian masyarakat', 'Memperluas jaringan mahasiswa Informatika'],
-    struktur: [
-      { role: 'Kepala Departemen', name: 'Muhammad Rifki Hidayatulloh', batch: '2024' },
-      { role: 'Wakil Kepala',      name: 'Athalla Rizqy Erlangga', batch: '2024' },
-      { role: 'Staff',             name: '—', batch: '2025' },
-    ],
     proker: [
       { nama: 'PIJAR DESA',      status: 'Upcoming', tanggal: 'Agt 2026', lokasi: 'TBA', pj: 'Dept. Eksternal', desc: 'Program pengabdian masyarakat berbasis teknologi informasi untuk desa di sekitar UIN SMH Banten.' },
       { nama: 'LENTERA DIGITAL', status: 'Upcoming', tanggal: 'Sep 2026', lokasi: 'TBA', pj: 'Dept. Eksternal', desc: 'Kegiatan literasi digital untuk masyarakat umum.' },
@@ -98,17 +76,12 @@ export const DEPTS = [
     desc: 'Meningkatkan kapasitas, kapabilitas, dan kualitas seluruh pengurus dan anggota HMPS INF.',
     visi: 'Membentuk kader organisasi yang tangguh, profesional, dan berintegritas.',
     misi: ['Menyelenggarakan pelatihan kepemimpinan', 'Melakukan evaluasi kinerja organisasi', 'Membangun sistem kaderisasi yang berkelanjutan'],
-    struktur: [
-      { role: 'Kepala Departemen', name: 'Ahmad Fahmirifa Fahrurozi', batch: '2024' },
-      { role: 'Wakil Kepala',      name: 'Khotibul Umami', batch: '2025' },
-      { role: 'Staff',             name: '—', batch: '2025' },
-    ],
     proker: [
       { nama: 'Upgrading & Rapat Kerja "Lazarus"', status: 'Selesai',  tanggal: '21 Jun 2026', lokasi: 'TBA',            pj: 'Dept. PAO', desc: 'Rapat kerja perdana dan upgrading pengurus HMPS INF periode 2026/2027.' },
-      { nama: 'Rapat Evaluasi',                    status: 'Rutin',    tanggal: 'Rutin 2026',  lokasi: 'Sekretariat',    pj: 'Dept. PAO', desc: 'Evaluasi berkala kinerja seluruh departemen.' },
+      { nama: 'Rapat Evaluasi',                    status: 'Berjalan',  tanggal: '2026',        lokasi: 'Sekretariat',    pj: 'Dept. PAO', desc: 'Evaluasi berkala kinerja seluruh departemen.' },
       { nama: 'Pleno Tengah',                      status: 'Upcoming', tanggal: '3 Okt 2026',  lokasi: 'TBA',            pj: 'Dept. PAO', desc: 'Sidang pleno pertanggungjawaban tengah periode.' },
       { nama: 'Pleno Akhir',                       status: 'Upcoming', tanggal: '26 Des 2026', lokasi: 'TBA',            pj: 'Dept. PAO', desc: 'Sidang pleno akhir dan laporan pertanggungjawaban.' },
-      { nama: 'Best of The Month',                 status: 'Rutin',    tanggal: 'Rutin 2026',  lokasi: 'Online/Offline', pj: 'Dept. PAO', desc: 'Apresiasi bulanan untuk pengurus/anggota terbaik.' },
+      { nama: 'Best of The Month',                 status: 'Berjalan',  tanggal: '2026',        lokasi: 'Online/Offline', pj: 'Dept. PAO', desc: 'Apresiasi bulanan untuk pengurus/anggota terbaik.' },
     ]
   },
   {
@@ -118,14 +91,9 @@ export const DEPTS = [
     desc: 'Mendorong peran aktif mahasiswi Informatika dalam organisasi dan memberikan ruang aman untuk beraspirasi.',
     visi: 'Mewujudkan kesetaraan dan keberdayaan perempuan dalam ekosistem Informatika UIN SMH Banten.',
     misi: ['Menyelenggarakan kegiatan pemberdayaan perempuan', 'Menyediakan layanan aspirasi khusus', 'Mendorong partisipasi aktif mahasiswi dalam organisasi'],
-    struktur: [
-      { role: 'Kepala Departemen', name: 'Riska Nurnajmah', batch: '2024' },
-      { role: 'Wakil Kepala',      name: 'Lucy Amanda', batch: '2024' },
-      { role: 'Staff',             name: '—', batch: '2025' },
-    ],
     proker: [
       { nama: 'Informabeauty',            status: 'Upcoming', tanggal: '10 Nov 2026', lokasi: 'TBA',    pj: 'Dept. PP', desc: 'Kegiatan perawatan diri, pengembangan karakter, dan pemberdayaan perempuan.' },
-      { nama: 'RAPI (Ruang Aspirasi)',    status: 'Rutin',    tanggal: 'Rutin 2026',  lokasi: 'Online', pj: 'Dept. PP', desc: 'Layanan aspirasi khusus melalui form anonim untuk mahasiswi Informatika.' },
+      { nama: 'RAPI (Ruang Aspirasi)',    status: 'Berjalan',  tanggal: '2026',        lokasi: 'Online', pj: 'Dept. PP', desc: 'Layanan aspirasi khusus melalui form anonim untuk mahasiswi Informatika.' },
       { nama: 'Kajian Kesetaraan Gender', status: 'Upcoming', tanggal: '14 Nov 2026', lokasi: 'TBA',    pj: 'Dept. PP', desc: 'Diskusi dan kajian mengenai kesetaraan gender dalam dunia teknologi.' },
     ]
   },
@@ -136,14 +104,9 @@ export const DEPTS = [
     desc: 'Mengembangkan jiwa kewirausahaan, kreativitas, dan inovasi mahasiswa Informatika melalui kolaborasi dan produk digital.',
     visi: 'Menjadi penggerak ekonomi kreatif berbasis teknologi di lingkungan HMPS INF.',
     misi: ['Mengembangkan produk dan layanan kreatif', 'Menyelenggarakan workshop kewirausahaan', 'Membangun ekosistem ekonomi kreatif mahasiswa'],
-    struktur: [
-      { role: 'Kepala Departemen', name: 'Rudi Ramdhan Fadhillah', batch: '2024' },
-      { role: 'Wakil Kepala',      name: 'Ahmad Jibril Abdul Qudus', batch: '2024' },
-      { role: 'Staff',             name: '—', batch: '2025' },
-    ],
     proker: [
       { nama: 'Pembuatan Website Himpunan', status: 'Berjalan', tanggal: '2026',     lokasi: 'Online', pj: 'Dept. EKRAF', desc: 'Pembangunan website resmi HMPS INF sebagai wajah digital organisasi.' },
-      { nama: 'Workshop Kreatif',           status: 'Upcoming', tanggal: 'TBA 2026', lokasi: 'TBA',    pj: 'Dept. EKRAF', desc: 'Workshop desain, konten kreatif, dan kewirausahaan digital.' },
+      { nama: 'Workshop Kreatif',           status: 'Berjalan', tanggal: 'TBA 2026', lokasi: 'TBA',    pj: 'Dept. EKRAF', desc: 'Workshop desain, konten kreatif, dan kewirausahaan digital.' },
     ]
   },
 ]

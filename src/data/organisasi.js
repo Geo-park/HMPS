@@ -27,10 +27,10 @@ export const departemenList = [
     ],
     programKerja: [
       { nama: 'Upgrading & Rapat Kerja "Lazarus"', status: 'Selesai', tanggal: '21 Jun 2026', lokasi: 'TBA', pj: 'Dept. PAO', desc: 'Rapat kerja perdana dan upgrading pengurus HMPS INF periode 2026/2027.' },
-      { nama: 'Rapat Evaluasi', status: 'Rutin', tanggal: 'Rutin 2026', lokasi: 'Sekretariat', pj: 'Dept. PAO', desc: 'Evaluasi berkala kinerja seluruh departemen.' },
+      { nama: 'Rapat Evaluasi', status: 'Berjalan', tanggal: '2026', lokasi: 'Sekretariat', pj: 'Dept. PAO', desc: 'Evaluasi berkala kinerja seluruh departemen.' },
       { nama: 'Pleno Tengah', status: 'Upcoming', tanggal: '3 Okt 2026', lokasi: 'TBA', pj: 'Dept. PAO', desc: 'Sidang pleno pertanggungjawaban tengah periode.' },
       { nama: 'Pleno Akhir', status: 'Upcoming', tanggal: '26 Des 2026', lokasi: 'TBA', pj: 'Dept. PAO', desc: 'Sidang pleno akhir dan laporan pertanggungjawaban.' },
-      { nama: 'Best of The Month', status: 'Rutin', tanggal: 'Rutin 2026', lokasi: 'Online/Offline', pj: 'Dept. PAO', desc: 'Apresiasi bulanan untuk pengurus/anggota terbaik.' },
+      { nama: 'Best of The Month', status: 'Berjalan', tanggal: '2026', lokasi: 'Online/Offline', pj: 'Dept. PAO', desc: 'Apresiasi bulanan untuk pengurus/anggota terbaik.' },
     ]
   },
   {
@@ -49,7 +49,7 @@ export const departemenList = [
     ],
     programKerja: [
       { nama: 'IT Camp', status: 'Upcoming', tanggal: '13–14 Sep 2026', lokasi: 'TBA', pj: 'Dept. Internal', desc: 'Kegiatan kemah dan pelatihan kepemimpinan untuk anggota HMPS INF.' },
-      { nama: 'Informatika Care', status: 'Upcoming', tanggal: 'TBA 2026', lokasi: 'TBA', pj: 'Dept. Internal', desc: 'Kegiatan sosial dan kepedulian antar anggota himpunan.' },
+      { nama: 'Informatika Care', status: 'Berjalan', tanggal: '2026', lokasi: 'TBA', pj: 'Dept. Internal', desc: 'Kegiatan sosial dan kepedulian antar anggota himpunan.' },
     ]
   },
   {
@@ -86,9 +86,9 @@ export const departemenList = [
       { nama: "Rayshard Fadlan Maulani", nim: "251603051", foto: "" },
     ],
     programKerja: [
-      { nama: 'Informatika Update', status: 'Rutin', tanggal: 'Rutin 2026', lokasi: 'Online', pj: 'Muhammad Sulthan Fajri Rabbani', desc: 'Konten rutin update informasi akademik dan organisasi di media sosial.' },
-      { nama: 'Informatika Moment', status: 'Rutin', tanggal: 'Rutin 2026', lokasi: 'Online', pj: 'Dept. Kominfo', desc: 'Dokumentasi momen penting kegiatan HMPS INF.' },
-      { nama: 'Beasiswa Corner', status: 'Rutin', tanggal: 'Rutin 2026', lokasi: 'Online/Offline', pj: 'Muhammad Sulthan Fajri Rabbani', desc: 'Menyebarkan informasi beasiswa aktif kepada mahasiswa Informatika.' },
+      { nama: 'Informatika Update', status: 'Berjalan', tanggal: '2026', lokasi: 'Online', pj: 'Muhammad Sulthan Fajri Rabbani', desc: 'Konten rutin update informasi akademik dan organisasi di media sosial.' },
+      { nama: 'Informatika Moment', status: 'Berjalan', tanggal: '2026', lokasi: 'Online', pj: 'Dept. Kominfo', desc: 'Dokumentasi momen penting kegiatan HMPS INF.' },
+      { nama: 'Beasiswa Corner', status: 'Berjalan', tanggal: '2026', lokasi: 'Online/Offline', pj: 'Muhammad Sulthan Fajri Rabbani', desc: 'Menyebarkan informasi beasiswa aktif kepada mahasiswa Informatika.' },
     ]
   },
   {
@@ -121,7 +121,7 @@ export const departemenList = [
     ],
     programKerja: [
       { nama: 'Informabeauty', status: 'Upcoming', tanggal: '10 Nov 2026', lokasi: 'TBA', pj: 'Dept. PP', desc: 'Kegiatan perawatan diri, pengembangan karakter, dan pemberdayaan perempuan.' },
-      { nama: 'RAPI (Ruang Aspirasi)', status: 'Rutin', tanggal: 'Rutin 2026', lokasi: 'Online', pj: 'Dept. PP', desc: 'Layanan aspirasi khusus melalui form anonim untuk mahasiswi Informatika.' },
+      { nama: 'RAPI (Ruang Aspirasi)', status: 'Berjalan', tanggal: '2026', lokasi: 'Online', pj: 'Dept. PP', desc: 'Layanan aspirasi khusus melalui form anonim untuk mahasiswi Informatika.' },
       { nama: 'Kajian Kesetaraan Gender', status: 'Upcoming', tanggal: '14 Nov 2026', lokasi: 'TBA', pj: 'Dept. PP', desc: 'Diskusi dan kajian mengenai kesetaraan gender dalam dunia teknologi.' },
     ]
   },
@@ -139,7 +139,7 @@ export const departemenList = [
     ],
     programKerja: [
       { nama: 'Pembuatan Website Himpunan', status: 'Berjalan', tanggal: '2026', lokasi: 'Online', pj: 'Dept. EKRAF', desc: 'Pembangunan website resmi HMPS INF sebagai wajah digital organisasi.' },
-      { nama: 'Workshop Kreatif', status: 'Upcoming', tanggal: 'TBA 2026', lokasi: 'TBA', pj: 'Dept. EKRAF', desc: 'Workshop desain, konten kreatif, dan kewirausahaan digital.' },
+      { nama: 'Workshop Kreatif', status: 'Berjalan', tanggal: '2026', lokasi: 'TBA', pj: 'Dept. EKRAF', desc: 'Workshop desain, konten kreatif, dan kewirausahaan digital.' },
     ]
   },
 ];
