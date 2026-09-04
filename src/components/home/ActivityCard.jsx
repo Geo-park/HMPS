@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { Calendar, MapPin } from "lucide-react";
 
 const statusStyle = {
-  selesai: "bg-slate-900/70 text-white",
-  "akan-datang": "bg-emerald-500 text-white",
-  berlangsung: "bg-amber-500 text-white",
+  Upcoming: "bg-orange-500 text-white",
+  Berjalan: "bg-blue-500 text-white",
+  Selesai: "bg-slate-900/70 text-white",
 };
 
 export default function ActivityCard({ item, index = 0 }) {
@@ -18,7 +18,7 @@ export default function ActivityCard({ item, index = 0 }) {
         <span
           className={`absolute top-4 left-4 text-[10px] font-semibold uppercase tracking-wide px-3 py-1 rounded-full ${statusStyle[item.status]}`}
         >
-          {item.status.replace("-", " ")}
+          {item.status}
         </span>
         <span className="absolute top-4 left-1/2 -translate-x-1/2 text-white/90 text-xs font-bold tracking-widest uppercase">
           {item.kategori}

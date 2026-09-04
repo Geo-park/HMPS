@@ -13,10 +13,9 @@ export const DEPT_ANIMATIONS = {
 }
 
 export const STATUS_COLOR = {
-  'Direncanakan': '#BA7517',
+  'Upcoming':     '#D85A30',
   'Berjalan':     '#378ADD',
   'Selesai':      '#1D9E75',
-  'Upcoming':     '#D85A30',
 }
 
 export const DEPTS = [
