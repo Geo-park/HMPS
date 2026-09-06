@@ -1,0 +1,128 @@
+.announcement-page {
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.announcement-page__hero {
+  padding: 148px 0 72px;
+  background:
+    radial-gradient(circle at 12% 30%, rgba(180, 137, 83, 0.12), transparent 28%),
+    radial-gradient(circle at 88% 20%, rgba(77, 129, 119, 0.10), transparent 30%),
+    var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.announcement-page__title {
+  margin-top: 8px;
+  color: var(--color-text);
+  font-size: clamp(38px, 6vw, 72px);
+  letter-spacing: -0.06em;
+}
+
+.announcement-page__intro {
+  max-width: 620px;
+  margin-top: 20px;
+  color: var(--color-text-2);
+  font-size: 17px;
+}
+
+.announcement-page__list {
+  min-height: 420px;
+  background-image: linear-gradient(rgba(77, 129, 119, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(77, 129, 119, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.announcement-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.announcement-card {
+  display: flex;
+  gap: 22px;
+  height: 100%;
+  padding: 28px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.announcement-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(180, 137, 83, 0.42);
+  box-shadow: var(--shadow-pop);
+}
+
+.announcement-card__icon {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  place-items: center;
+  border-radius: 15px;
+  background: var(--purple-soft);
+  color: var(--purple);
+}
+
+.announcement-card__icon svg {
+  width: 27px;
+  height: 27px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.announcement-card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.announcement-card__label {
+  color: var(--purple);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.announcement-card h2 {
+  margin-top: 10px;
+  font-size: 28px;
+}
+
+.announcement-card p {
+  margin-top: 10px;
+  color: var(--color-text-2);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.announcement-card__link {
+  margin-top: 22px;
+}
+
+.announcement-card__link svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+@media (max-width: 700px) {
+  .announcement-page__hero {
+    padding-top: 124px;
+  }
+
+  .announcement-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .announcement-card {
+    padding: 22px;
+  }
+}

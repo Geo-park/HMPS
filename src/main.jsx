@@ -17,6 +17,7 @@ import './css/galeri.css'
 import './css/kalender.css'
 import './css/sponsorship.css'
 import './css/events.css'
+import './css/pengumuman.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
