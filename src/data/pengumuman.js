@@ -20,4 +20,11 @@ export const PENGUMUMAN_DATA = [
     href: 'https://www.benihbaik.com/beasiswa-grab',
     image: 'https://image.idn.media/post/20240620/homebannergrab2024-5edff2e0c08860cbea9d66df09da0130.jpg',
   },
+  {
+    id: 'pedoman-karya-ilmiah',
+    title: 'Pedoman Karya Ilmiah',
+    summary: 'Pedoman Karya Ilmiah untuk mahasiswa Informatika melalui folder Google Drive berikut.',
+    href: 'https://drive.google.com/file/d/1S95a6PxerCbKiHKB6ibsra03vyvRqRHj/view?usp=sharing',
+    label: 'Buka Pedoman Karya Ilmiah',
+  },
 ]

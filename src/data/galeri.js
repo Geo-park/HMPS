@@ -14,5 +14,12 @@ export const GALERI_FOLDERS = [
     subtitle: 'PBAK Fakultas 2026',
     drive: 'https://drive.google.com/drive/folders/1vSxh0XMCGaGAzvkXz83oKv2nvPbq1bMT',
     dept: 'kominfo',
+  },
+  {
+    id: 'wordpress-campus-connect',
+    nama: 'WORDPRESS CAMPUS CONNECT',
+    subtitle: 'WordPress Campus Connect',
+    drive: 'https://drive.google.com/drive/folders/1cSkIgt0n4UUtnmQW9pw7M-IiXnP0HX6a',
+    dept: 'eksternal',
   }
 ]
