@@ -68,13 +68,11 @@
   color: var(--color-text);
   opacity: 1;
   text-align: center;
-  filter: grayscale(1);
-  transition: opacity var(--transition-base), filter var(--transition-base), transform var(--transition-base);
+  transition: opacity var(--transition-base), transform var(--transition-base);
 }
 
 .sponsor-logo:hover {
   opacity: 1;
-  filter: grayscale(0);
   transform: translateY(-3px);
 }
 

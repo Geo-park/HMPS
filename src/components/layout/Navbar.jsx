@@ -38,7 +38,7 @@ export default function Navbar() {
     <header id="navbar" className={`navbar ${scrolled ? 'scrolled' : ''}`} role="banner">
       <div className="navbar__inner">
         <Link to="/" className="navbar__logo">
-          <img src="/asset/logo_hmps.png" alt="Logo HMPS" loading="lazy" className="navbar__logo-mark" />
+          <img src="/asset/logo_hmps.svg" alt="Logo HMPS" loading="eager" className="navbar__logo-mark" />
           <span className="navbar__logo-text"><b>HMPS</b> INF</span>
         </Link>
 

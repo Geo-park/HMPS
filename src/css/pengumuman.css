@@ -1,128 +1,249 @@
-.announcement-page {
+﻿.mading-page {
   min-height: 100vh;
-  background: var(--color-bg);
+  padding: 120px 20px 80px;
+  background-color: #f8f6f0; /* Off-white textured look */
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h18v2H22v18H0v-2h20v-2H0v-2h20v-2H0v-2h20v-2H0v-2h20v-2H0v-2h20v-2H0v-2h20v-2H0v-2h20z' fill='%23e0dcd3' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-.announcement-page__hero {
-  padding: 148px 0 72px;
-  background:
-    radial-gradient(circle at 12% 30%, rgba(180, 137, 83, 0.12), transparent 28%),
-    radial-gradient(circle at 88% 20%, rgba(77, 129, 119, 0.10), transparent 30%),
-    var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.announcement-page__title {
-  margin-top: 8px;
-  color: var(--color-text);
-  font-size: clamp(38px, 6vw, 72px);
-  letter-spacing: -0.06em;
-}
-
-.announcement-page__intro {
-  max-width: 620px;
-  margin-top: 20px;
-  color: var(--color-text-2);
-  font-size: 17px;
-}
-
-.announcement-page__list {
-  min-height: 420px;
-  background-image: linear-gradient(rgba(77, 129, 119, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(77, 129, 119, 0.035) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
-.announcement-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.announcement-card {
-  display: flex;
-  gap: 22px;
-  height: 100%;
-  padding: 28px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+.mading-board {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  background-color: #d4a373; /* Light wood color */
   border-radius: 20px;
-  box-shadow: var(--shadow-card);
-  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  padding: 60px 40px;
+  box-shadow: 4px 8px 24px rgba(0,0,0,0.15), inset 0 0 40px rgba(139, 69, 19, 0.1);
+  border: 1px solid #bc8a5f;
 }
 
-.announcement-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(180, 137, 83, 0.42);
-  box-shadow: var(--shadow-pop);
+/* Clipboard Clip at the top */
+.mading-board::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 40px;
+  background: linear-gradient(to bottom, #cfd8dc, #90a4ae);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 20;
+  border: 2px solid #78909c;
+}
+.mading-board::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: #37474f;
+  border-radius: 50%;
+  z-index: 21;
 }
 
-.announcement-card__icon {
-  display: grid;
-  width: 52px;
-  height: 52px;
-  flex: 0 0 52px;
-  place-items: center;
-  border-radius: 15px;
-  background: var(--purple-soft);
-  color: var(--purple);
-}
-
-.announcement-card__icon svg {
-  width: 27px;
-  height: 27px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-}
-
-.announcement-card__content {
+.mading-header {
+  text-align: center;
+  margin-bottom: 60px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 
-.announcement-card__label {
-  color: var(--purple);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+.mading-title {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.mading-title .letter {
+  display: inline-block;
+  font-size: clamp(36px, 8vw, 64px);
+  font-weight: 900;
   text-transform: uppercase;
+  padding: 8px 16px;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+  transform: rotate(calc(var(--rot, 0) * 1deg));
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', cursive;
 }
 
-.announcement-card h2 {
-  margin-top: 10px;
-  font-size: 28px;
+/* Accent Colors from Image */
+.mading-title .letter-1 { background-color: #1565c0; --rot: -2; } /* Blue */
+.mading-title .letter-2 { background-color: #ff3d00; --rot: 2; }  /* Orange */
+.mading-title .letter-3 { background-color: #651fff; --rot: -1; } /* Purple */
+.mading-title .letter-4 { background-color: #ffc107; --rot: 3; }  /* Yellow */
+.mading-title .letter-5 { background-color: #1565c0; --rot: -3; } /* Blue */
+.mading-title .letter-6 { background-color: #ff3d00; --rot: 2; }  /* Orange */
+
+.mading-subtitle-container {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 8px 24px;
+  border-radius: 30px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  transform: rotate(-1deg);
+  border: 2px solid #1565c0;
 }
 
-.announcement-card p {
-  margin-top: 10px;
-  color: var(--color-text-2);
+.mading-subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1565c0;
+  letter-spacing: 1px;
+}
+
+.mading-content {
+  margin-top: 20px;
+}
+
+.mading-masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+  align-items: start;
+}
+
+.mading-paper {
+  position: relative;
+  padding: 40px 24px 24px;
+  background-color: #fff;
+  background-image: linear-gradient(to bottom, #fffdf0 0%, #ffffff 40px); /* Yellowish gradient at top */
+  box-shadow: 2px 4px 12px rgba(0,0,0,0.1);
+  transform: rotate(var(--rotate));
+  transition: transform 0.3s ease, z-index 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.mading-paper:hover {
+  transform: rotate(0deg) scale(1.02);
+  z-index: 10;
+  box-shadow: 4px 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Tape instead of pin */
+.paper-pin {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 80px;
+  height: 24px;
+  background-color: rgba(238, 238, 238, 0.85); /* Translucent tape */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border-left: 2px dashed rgba(0,0,0,0.1);
+  border-right: 2px dashed rgba(0,0,0,0.1);
+  z-index: 5;
+}
+/* Tape accent color (red/blue like in image) */
+.paper-pin::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 40%;
+  height: 4px;
+  background-color: #d32f2f;
+}
+.paper-pin::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 10%;
+  width: 30%;
+  height: 4px;
+  background-color: #1976d2;
+}
+
+
+.paper-header {
+  margin-bottom: 16px;
+}
+
+.paper-category {
+  display: inline-block;
+  color: #ff3d00;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.paper-category::before {
+  content: '— ';
+  color: #ffc107;
+}
+
+.paper-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1565c0; /* Deep blue from image */
+  line-height: 1.2;
+}
+
+.paper-image-container {
+  margin: 16px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.paper-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.paper-text {
   font-size: 14px;
-  line-height: 1.65;
+  color: #455a64;
+  line-height: 1.6;
+  margin-bottom: 24px;
 }
 
-.announcement-card__link {
-  margin-top: 22px;
+.paper-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #1565c0;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s;
 }
 
-.announcement-card__link svg {
-  width: 18px;
-  height: 18px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
+.paper-link:hover {
+  background-color: #0d47a1;
+}
+
+.paper-link svg {
+  width: 16px;
+  height: 16px;
+  margin-left: 6px;
 }
 
 @media (max-width: 700px) {
-  .announcement-page__hero {
-    padding-top: 124px;
+  .mading-page {
+    padding-top: 100px;
   }
-
-  .announcement-grid {
+  .mading-board {
+    padding: 40px 20px;
+    border-radius: 12px;
+  }
+  .mading-title .letter {
+    font-size: 28px;
+    padding: 6px 10px;
+  }
+  .mading-masonry {
     grid-template-columns: 1fr;
-  }
-
-  .announcement-card {
-    padding: 22px;
+    gap: 30px;
   }
 }

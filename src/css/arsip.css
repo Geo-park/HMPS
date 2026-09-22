@@ -1,0 +1,141 @@
+﻿
+.arsip-page {
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.arsip-hero {
+  padding: 148px 0 72px;
+  background:
+    radial-gradient(circle at 12% 30%, rgba(180, 137, 83, 0.12), transparent 28%),
+    radial-gradient(circle at 88% 20%, rgba(77, 129, 119, 0.10), transparent 30%),
+    var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.arsip-hero__title {
+  margin-top: 8px;
+  color: var(--color-text);
+  font-size: clamp(38px, 6vw, 72px);
+  letter-spacing: -0.06em;
+}
+
+.arsip-hero__intro {
+  max-width: 620px;
+  margin-top: 20px;
+  color: var(--color-text-2);
+  font-size: 17px;
+}
+
+.arsip-content {
+  min-height: 420px;
+  background-image: linear-gradient(rgba(77, 129, 119, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(77, 129, 119, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.arsip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.arsip-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.arsip-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(180, 137, 83, 0.42);
+  box-shadow: var(--shadow-pop);
+}
+
+.arsip-card__icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--purple-soft);
+  color: var(--purple);
+}
+
+.arsip-card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.arsip-card__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.arsip-card__category {
+  color: var(--purple);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.arsip-card__title {
+  margin-top: 4px;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.arsip-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  color: var(--color-text-2);
+  font-size: 13px;
+}
+
+.arsip-card__meta .separator {
+  font-size: 10px;
+}
+
+.arsip-card__action {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  transition: all 0.2s;
+}
+
+.arsip-card__action:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-text);
+}
+
+.arsip-card__action svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 700px) {
+  .arsip-hero {
+    padding-top: 124px;
+  }
+  
+  .arsip-grid {
+    grid-template-columns: 1fr;
+  }
+}

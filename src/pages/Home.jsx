@@ -17,7 +17,7 @@ export default function Home() {
       <Helmet>
         <title>HMPS Informatika UIN SMH Banten | Himpunan Mahasiswa Program Studi</title>
         <meta name="description" content="Website resmi HMPS Informatika UIN Sultan Maulana Hasanuddin Banten. Temukan informasi terbaru seputar Informatika UIN, kepengurusan, program kerja, dan agenda HMPS Informatika." />
-        <link rel="canonical" href="https://hmps-two.vercel.app/" />
+        <link rel="canonical" href="https://hmps-inf.fsainsuinbanten.my.id/" />
       </Helmet>
 
       <Hero />

@@ -37,7 +37,7 @@ export default function Tentang() {
       <Helmet>
         <title>Tentang Kami | HMPS Informatika UIN SMH Banten</title>
         <meta name="description" content="Kenali lebih dekat HMPS Informatika UIN Sultan Maulana Hasanuddin Banten — sejarah, visi misi, struktur kepengurusan, dan tujuh departemen yang bergerak untuk mahasiswa Informatika." />
-        <link rel="canonical" href="https://hmps-two.vercel.app/tentang" />
+        <link rel="canonical" href="https://hmps-inf.fsainsuinbanten.my.id/tentang" />
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',

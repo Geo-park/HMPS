@@ -8,7 +8,7 @@ export default function Galeri() {
       <Helmet>
         <title>Galeri Kegiatan | HMPS Informatika UIN SMH Banten</title>
         <meta name="description" content="Dokumentasi foto dan video kegiatan HMPS Informatika UIN SMH Banten — dari program kerja departemen, acara tahunan, hingga momen kebersamaan mahasiswa Informatika." />
-        <link rel="canonical" href="https://hmps-two.vercel.app/galeri" />
+        <link rel="canonical" href="https://hmps-inf.fsainsuinbanten.my.id/galeri" />
       </Helmet>
 
       <section className="section-tight">

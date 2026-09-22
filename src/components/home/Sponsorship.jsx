@@ -5,8 +5,12 @@ function SponsorSet({ hidden = false }) {
   return (
     <div className="sponsorship__set" aria-hidden={hidden}>
       {SPONSORS.map((sponsor) => (
-        <div className={`sponsor-logo sponsor-logo--${sponsor.style}`} key={sponsor.name}>
-          <strong>{sponsor.name}</strong>
+        <div className={`sponsor-logo${sponsor.style ? ` sponsor-logo--${sponsor.style}` : ''}`} key={sponsor.name}>
+          {sponsor.src ? (
+            <img src={sponsor.src} alt={sponsor.name} style={{ maxHeight: '80px', width: 'auto', objectFit: 'contain' }} />
+          ) : (
+            <strong>{sponsor.name}</strong>
+          )}
           {sponsor.caption && <small>{sponsor.caption}</small>}
         </div>
       ))}

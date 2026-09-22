@@ -47,6 +47,7 @@ export const NAV_STRUCTURE = [
           { label: 'Pengumuman', href: '/pengumuman', icon: 'megaphone' },
           { label: 'Event', href: '/event', icon: 'clock' },
           { label: 'Galeri', href: '/galeri', icon: 'image' },
+          { label: 'Arsip', href: '/arsip', icon: 'archive' },
           { label: 'SIAKAD', href: 'https://neosiakad.uinbanten.ac.id/', icon: 'external' },
         ]
       }
@@ -64,4 +65,5 @@ export const LINK_ICON_PATHS = {
   megaphone: `<path d="M3 11v2a2 2 0 0 0 2 2h2l7 4V5l-7 4H5a2 2 0 0 0-2 2z"/><path d="M18 9a4 4 0 0 1 0 6"/>`,
   image: `<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>`,
   external: `<path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>`,
+  archive: `<polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/>`,
 }

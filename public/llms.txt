@@ -13,9 +13,9 @@
 
 ## Main pages
 
-- Home: https://hmps-two.vercel.app/
-- About, history, vision, mission, departments, organization structure, and FAQ: https://hmps-two.vercel.app/tentang
-- Activity gallery: https://hmps-two.vercel.app/galeri
+- Home: https://hmps-inf.fsainsuinbanten.my.id/
+- About, history, vision, mission, departments, organization structure, and FAQ: https://hmps-inf.fsainsuinbanten.my.id/tentang
+- Activity gallery: https://hmps-inf.fsainsuinbanten.my.id/galeri
 
 ## Services
 

@@ -159,7 +159,8 @@
 .event-detail__image {
   position: relative;
   display: grid;
-  min-height: 220px;
+  aspect-ratio: 4 / 3;
+  width: 100%;
   place-items: center;
   overflow: hidden;
   background: linear-gradient(145deg, #edf2f0, #dce3e0);
@@ -319,7 +320,7 @@
 }
 
 .event-detail__image {
-  min-height: 430px;
+  aspect-ratio: 16 / 9;
   border-radius: 20px;
 }
 

@@ -13,49 +13,60 @@ function ArrowIcon() {
 
 export default function Pengumuman() {
   return (
-    <main className="announcement-page">
+    <main className="mading-page">
       <Helmet>
-        <title>Pengumuman | HMPS Informatika UIN SMH Banten</title>
-        <meta name="description" content="Pengumuman terbaru untuk mahasiswa Informatika UIN SMH Banten." />
+        <title>Mading Pengumuman | HMPS Informatika UIN SMH Banten</title>
+        <meta name="description" content="Mading Pengumuman terbaru untuk mahasiswa Informatika UIN SMH Banten." />
       </Helmet>
 
-      <section className="announcement-page__hero">
-        <div className="container">
-          <Reveal>
-            <span className="eyebrow">Informasi terbaru</span>
-            <h1 className="announcement-page__title">Pengumuman</h1>
-            <p className="announcement-page__intro">Temukan informasi penting dan pembaruan terbaru untuk mahasiswa Informatika.</p>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="announcement-page__list section-tight">
-        <div className="container">
-          <div className="announcement-grid">
-            {PENGUMUMAN_DATA.map((announcement, index) => (
-              <Reveal key={announcement.id} delay={index * 80}>
-                <article className="announcement-card">
-                  <div className="announcement-card__icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                      <path d="M3 11v2a2 2 0 0 0 2 2h2l7 4V5l-7 4H5a2 2 0 0 0-2 2z" />
-                      <path d="M18 9a4 4 0 0 1 0 6" />
-                    </svg>
-                  </div>
-                  <div className="announcement-card__content">
-                    <span className="announcement-card__label">Pengumuman akademik</span>
-                    <h2>{announcement.title}</h2>
-                    <p>{announcement.summary}</p>
-                    <a className="btn btn-primary announcement-card__link" href={announcement.href} target="_blank" rel="noreferrer">
-                      {announcement.label}
-                      <ArrowIcon />
-                    </a>
-                  </div>
-                </article>
-              </Reveal>
-            ))}
+      <div className="mading-board">
+        <header className="mading-header">
+          <h1 className="mading-title">
+            <span className="letter letter-1">M</span>
+            <span className="letter letter-2">A</span>
+            <span className="letter letter-3">D</span>
+            <span className="letter letter-4">I</span>
+            <span className="letter letter-5">N</span>
+            <span className="letter letter-6">G</span>
+          </h1>
+          <div className="mading-subtitle-container">
+            <span className="mading-subtitle">PENGUMUMAN INFORMATIKA</span>
           </div>
-        </div>
-      </section>
+        </header>
+
+        <section className="mading-content">
+          <div className="mading-masonry">
+            {PENGUMUMAN_DATA.map((announcement, index) => {
+              // Assign a random-looking rotation and color based on index
+              const rotation = (index % 2 === 0 ? 1 : -1) * ((index % 3) + 1);
+              const colorClass = `paper-color-${(index % 4) + 1}`;
+              
+              return (
+                <Reveal key={announcement.id} delay={index * 80}>
+                  <article className={`mading-paper ${colorClass}`} style={{ '--rotate': `${rotation}deg` }}>
+                    <div className="paper-pin"></div>
+                    <header className="paper-header">
+                      <span className="paper-category">Info {index + 1}</span>
+                      <h2 className="paper-title">{announcement.title}</h2>
+                    </header>
+                    {announcement.image && (
+                      <div className="paper-image-container">
+                        <img src={announcement.image} alt={announcement.title} className="paper-image" onError={(e) => e.target.style.display = 'none'} />
+                      </div>
+                    )}
+                    <div className="paper-body">
+                      <p className="paper-text">{announcement.summary}</p>
+                      <a className="paper-link" href={announcement.href} target="_blank" rel="noreferrer">
+                        BACA SELENGKAPNYA <ArrowIcon />
+                      </a>
+                    </div>
+                  </article>
+                </Reveal>
+              );
+            })}
+          </div>
+        </section>
+      </div>
     </main>
   )
 }

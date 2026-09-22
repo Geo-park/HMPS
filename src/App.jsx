@@ -13,6 +13,8 @@ import Event from './pages/Event'
 import EventDetail from './pages/EventDetail'
 import Pengumuman from './pages/Pengumuman'
 
+import Arsip from './pages/Arsip'
+
 export default function App() {
   return (
     <>
@@ -24,6 +26,7 @@ export default function App() {
         <Route path="/event" element={<Event />} />
         <Route path="/event/:slug" element={<EventDetail />} />
         <Route path="/pengumuman" element={<Pengumuman />} />
+        <Route path="/arsip" element={<Arsip />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <Footer />
