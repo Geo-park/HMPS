@@ -441,10 +441,7 @@
   justify-content: center;
 }
 
-.bph-tree-top>.team-card,
-.bph-tree-bottom>.team-card {
-  /* width handled by .team-card */
-}
+
 
 .bph-connector {
   display: none;
@@ -532,9 +529,7 @@
   margin: 0 auto 40px;
 }
 
-.dept-heads .team-card {
-  /* width handled by .team-card */
-}
+
 
 @media (min-width: 640px) {
   .dept-heads {
@@ -560,8 +555,4 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 16px;
-}
-
-.dept-anggota-grid .team-card {
-  /* width handled by .team-card */
 }
