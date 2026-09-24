@@ -3,10 +3,10 @@
   --servis-cyan: #11A59A;
   --servis-cyan-hover: #0d877d;
   --servis-dark-navy: #062030;
-  --servis-bg-light: #ffffff;
-  --servis-bg-light-alt: #f4f7f6;
-  --servis-text-dark: #222222;
-  --servis-text-muted: #666666;
+  --servis-bg-light: var(--color-bg);
+  --servis-bg-light-alt: var(--color-bg-2);
+  --servis-text-dark: var(--color-text);
+  --servis-text-muted: var(--color-text-2);
   --servis-text-light: #ffffff;
   --servis-text-light-muted: rgba(255, 255, 255, 0.7);
   
@@ -52,7 +52,7 @@
   transform: translateY(-2px);
 }
 .btn-white {
-  background: #fff;
+  background: var(--color-surface);
   color: var(--servis-text-dark) !important;
   font-weight: bold;
   padding: 14px 28px;

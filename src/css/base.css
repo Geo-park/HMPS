@@ -213,7 +213,7 @@ main > .section:nth-of-type(odd) {
 
 /* ── Card ── */
 .card {
-  background: #FFFFFF; /* white over cream bg = poster paper feel */
+  background: var(--color-surface); /* white over cream bg = poster paper feel */
   border: 1px solid var(--color-border-2);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);

@@ -1,5 +1,22 @@
 export const EVENT_PAGE_DATA = [
   {
+    slug: 'IT Camp',
+    title: 'IT Camp',
+    status: 'Buka',
+    statusTone: 'open',
+    registration: 'open',
+    registrationLabel: 'Daftar Sekarang',
+    dateLabel: '1 Oktober - 2 oktober 2026',
+    time: '-',
+    place: '-',
+    image: '/event/itcamp.webp',
+    photoFolder: 'https://drive.google.com/drive/folders/1kPSaB6K-QQByCLqBWnLnEKJib2muvc8a',
+    registrationContact: '895-3373-64474',
+    registrationContactName: 'Nuafal Afaf Ekayana',
+    summary: 'IT Camp adalah kegiatan untuk mempererat hubungan antar mahasiswa baru sekaligus memberikan pengalaman awal tentang dunia Informatika dan IT melalui mentoring, sharing, dan kegiatan bersama.',
+    description: 'IT Camp adalah kegiatan yang menjadi wadah bagi mahasiswa baru Informatika untuk saling mengenal, membangun relasi, dan beradaptasi dengan lingkungan perkuliahan. Kegiatan ini dikemas secara santai dan interaktif melalui mentoring, sharing, games, serta pembahasan seputar dunia IT dan Informatika Melalui IT Camp, mahasiswa baru nggak cuma dapat teman baru, tapi juga bisa mendapatkan gambaran dan pengalaman awal tentang dunia Informatika dari mahasiswa yang lebih dulu menjalaninya.',
+  },
+  {
     slug: 'meet-and-greet-pbak',
     title: 'Meet and Greet PBAK',
     status: 'Selesai',
@@ -26,7 +43,7 @@ export const EVENT_PAGE_DATA = [
     dateLabel: '1 - 4 September 2026',
     time: '06:00 - 17:00 WIB',
     place: 'UIN SMH Banten',
-    image: '/asset/pbak.png',
+    image: '/event/pbak.png',
     photoFolder: 'https://drive.google.com/drive/folders/1vSxh0XMCGaGAzvkXz83oKv2nvPbq1bMT',
     registrationLink: '',
     summary: 'Rangkaian pengenalan kehidupan kampus bagi mahasiswa baru Informatika.',
@@ -60,7 +77,7 @@ export const EVENT_PAGE_DATA = [
     dateLabel: 'Jumat, 18 September 2026',
     time: '08:00 - 12:00 WIB',
     place: 'MAN Nurul Huda',
-    image: '/asset/goes to school.png',
+    image: '/event/goes to school.png',
     photoFolder: 'https://drive.google.com/drive/folders/1JcH3FGkaf3wmRwucmSb1fgEZrppoVDjD',
     registrationContact: '+62 896-3592-5237',
     registrationContactName: 'Alfiana',
@@ -68,6 +85,7 @@ export const EVENT_PAGE_DATA = [
     summary: 'Kunjungan edukasi dan promosi kampus untuk mengenalkan dunia IoT dan teknologi kepada siswa MAN Nurul Huda.',
     description: 'Program Goes to School hadir di MAN Nurul Huda untuk mempromosikan kampus dan program studi Informatika. Dalam kegiatan ini, siswa/i diajak mengenal lebih dekat dunia teknologi, khususnya Internet of Things (IoT), agar mereka lebih siap dan antusias menghadapi perkembangan era digital.',
   },
+
 ]
 
 export function getEventBySlug(slug) {

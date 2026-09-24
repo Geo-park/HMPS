@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="footer__inner">
         <div className="footer__grid">
           <div>
-            <div className="footer__brand-name">HMPS INF</div>
+            <div className="footer__brand-name"><span style={{ color: 'var(--purple)' }}>HMPS</span> INF</div>
             <div className="footer__brand-tagline">Kita Satu, Kita Informatika.</div>
             <p className="footer__brand-desc">
               Himpunan Mahasiswa Program Studi Informatika<br/>
@@ -59,6 +59,7 @@ export default function Footer() {
           <div>
             <div className="footer__col-title">Layanan</div>
             <div className="footer__links">
+              <Link to="/servis" className="footer__link">Servis Elektronik</Link>
               <Link to="/tentang#faq" className="footer__link">Pertanyaan Umum</Link>
               <a href="https://ruangaspirasiperempuaninformatika.netlify.app/" target="_blank" rel="noopener noreferrer" className="footer__link">Ruang Aspirasi Perempuan</a>
               <a href="https://neosiakad.uinbanten.ac.id/" target="_blank" rel="noopener noreferrer" className="footer__link">SIAKAD</a>

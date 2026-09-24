@@ -83,7 +83,7 @@
 
 .mading-subtitle-container {
   margin-top: 20px;
-  background-color: #fff;
+  background-color: var(--color-surface);
   padding: 8px 24px;
   border-radius: 30px;
   box-shadow: 2px 2px 8px rgba(26, 20, 16, 0.10);
@@ -112,8 +112,8 @@
 .mading-paper {
   position: relative;
   padding: 40px 24px 24px;
-  background-color: #fff;
-  background-image: linear-gradient(to bottom, #fffdf0 0%, #ffffff 40px); /* Yellowish gradient at top */
+  background-color: var(--color-surface);
+  background-image: linear-gradient(to bottom, var(--color-surface-2) 0%, var(--color-surface) 40px);
   box-shadow: 2px 4px 12px rgba(0,0,0,0.1);
   transform: rotate(var(--rotate));
   transition: transform 0.3s ease, z-index 0.3s ease, box-shadow 0.3s ease;
@@ -135,10 +135,10 @@
   transform: translateX(-50%) rotate(-2deg);
   width: 80px;
   height: 24px;
-  background-color: rgba(238, 238, 238, 0.85); /* Translucent tape */
+  background-color: var(--color-border);
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  border-left: 2px dashed rgba(0,0,0,0.1);
-  border-right: 2px dashed rgba(0,0,0,0.1);
+  border-left: 2px dashed rgba(0,0,0,0.2);
+  border-right: 2px dashed rgba(0,0,0,0.2);
   z-index: 5;
 }
 /* Tape accent color (red/blue like in image) */

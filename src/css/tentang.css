@@ -2,6 +2,134 @@
    HMPS INF — Tentang Kami
    ============================================ */
 
+/* Hero Section & Slider */
+.tentang-hero {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 80px; /* Offset for navbar */
+  margin-bottom: 60px;
+}
+.tentang-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  z-index: 1;
+}
+.tentang-hero__bg.active {
+  opacity: 1;
+  z-index: 2;
+}
+.tentang-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.tentang-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+}
+.tentang-hero__content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  padding: 0 24px;
+}
+.tentang-hero__title {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+.tentang-hero__subtitle {
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+/* Slider Controls */
+.tentang-hero__control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  font-size: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 20;
+  transition: background 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tentang-hero__control:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: translateY(-50%) scale(1.1);
+}
+.tentang-hero__control.prev {
+  left: 24px;
+}
+.tentang-hero__control.next {
+  right: 24px;
+}
+
+.tentang-hero__dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 20;
+}
+.tentang-hero__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0;
+}
+.tentang-hero__dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+.tentang-hero__dot.active {
+  background: #fff;
+  border-color: #fff;
+  width: 30px;
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .tentang-hero__control {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+  .tentang-hero__control.prev {
+    left: 10px;
+  }
+  .tentang-hero__control.next {
+    right: 10px;
+  }
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1.1fr;

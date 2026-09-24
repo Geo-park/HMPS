@@ -36,11 +36,20 @@ export default function Event() {
 
       <section className="event-page__hero">
         <div className="container">
-          <Reveal>
-            <span className="eyebrow">Agenda mahasiswa</span>
-            <h1 className="event-page__title">Event HMPS Informatika</h1>
-            <p className="event-page__intro">Temukan informasi kegiatan, waktu pelaksanaan, dan cerita di balik event HMPS Informatika.</p>
-          </Reveal>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px', alignItems: 'center' }}>
+            <Reveal>
+              <span className="eyebrow">Agenda mahasiswa</span>
+              <h1 className="event-page__title">Event HMPS Informatika</h1>
+              <p className="event-page__intro">Temukan informasi kegiatan, waktu pelaksanaan, dan cerita di balik event HMPS Informatika.</p>
+            </Reveal>
+            <Reveal delay={200}>
+              <img 
+                src="/asset/event.webp" 
+                alt="Dokumentasi Event HMPS Informatika"
+                style={{ width: '100%', borderRadius: 'var(--radius-card)', boxShadow: 'var(--shadow-card)', aspectRatio: '16/9', objectFit: 'cover' }}
+              />
+            </Reveal>
+          </div>
         </div>
       </section>
 
