@@ -351,6 +351,10 @@
   border-radius: var(--radius-card);
   overflow: hidden;
   transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  height: 349.9px;
 }
 
 .team-card:hover {
@@ -361,11 +365,7 @@
 .team-card-photo {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--purple) 0%, var(--purple-600) 100%);
-  aspect-ratio: 4 / 5;
-}
-
-.team-card.size-sm .team-card-photo {
+  background: var(--color-bg-2) url('/asset/logo_lazarus.png') center/cover no-repeat;
   aspect-ratio: 1 / 1;
 }
 
@@ -405,33 +405,29 @@
 
 .team-card-body {
   text-align: center;
-  padding: 16px;
-}
-
-.team-card.size-sm .team-card-body {
   padding: 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .team-card-name {
   font-weight: 700;
   color: var(--color-text);
-  font-size: 15px;
-}
-
-.team-card.size-sm .team-card-name {
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .team-card-jabatan {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--color-text-2);
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
 .team-card-nim {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--color-text-3);
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 /* BPH tree layout */
@@ -447,7 +443,7 @@
 
 .bph-tree-top>.team-card,
 .bph-tree-bottom>.team-card {
-  width: 170px;
+  /* width handled by .team-card */
 }
 
 .bph-connector {
@@ -537,7 +533,7 @@
 }
 
 .dept-heads .team-card {
-  width: 170px;
+  /* width handled by .team-card */
 }
 
 @media (min-width: 640px) {
@@ -567,5 +563,5 @@
 }
 
 .dept-anggota-grid .team-card {
-  width: 145px;
+  /* width handled by .team-card */
 }

@@ -61,7 +61,7 @@ export const EVENT_PAGE_DATA = [
     time: '08:00 - 12:00 WIB',
     place: 'MAN Nurul Huda',
     image: '/asset/goes to school.png',
-    photoFolder: '',
+    photoFolder: 'https://drive.google.com/drive/folders/1JcH3FGkaf3wmRwucmSb1fgEZrppoVDjD',
     registrationContact: '+62 896-3592-5237',
     registrationContactName: 'Alfiana',
     registrationLink: '',

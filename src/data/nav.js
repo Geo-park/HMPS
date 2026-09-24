@@ -31,6 +31,7 @@ export const NAV_STRUCTURE = [
       {
         title: 'Layanan',
         links: [
+          { label: 'Servis Elektronik', href: '/servis', icon: 'smartphone' },
           { label: 'Ruang Aspirasi Perempuan', href: 'https://ruangaspirasiperempuaninformatika.netlify.app/', icon: 'heart' },
         ]
       }
@@ -66,4 +67,6 @@ export const LINK_ICON_PATHS = {
   image: `<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>`,
   external: `<path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>`,
   archive: `<polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/>`,
+  laptop: `<rect x="3" y="4" width="18" height="12" rx="2"/><line x1="2" y1="20" x2="22" y2="20"/>`,
+  smartphone: `<rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>`,
 }

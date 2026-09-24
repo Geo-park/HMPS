@@ -10,7 +10,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openMega, setOpenMega] = useState(null)
   const [openMobileAccordion, setOpenMobileAccordion] = useState(null)
-  
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -64,21 +64,21 @@ export default function Navbar() {
             }
 
             return (
-              <div 
-                key={idx} 
-                className={`nav-item ${item.accent ? `nav-item--${item.accent}` : ''} ${openMega === idx ? 'open' : ''}`} 
+              <div
+                key={idx}
+                className={`nav-item ${item.accent ? `nav-item--${item.accent}` : ''} ${openMega === idx ? 'open' : ''}`}
                 data-mega
                 onMouseEnter={() => setOpenMega(idx)}
                 onMouseLeave={() => setOpenMega(null)}
               >
-                <button 
-                  className={`nav-link ${item.accent ? `nav-link--${item.accent}` : ''} ${item.cols.some(c => c.links.some(l => isActive(l.href))) ? 'active' : ''}`} 
-                  aria-haspopup="true" 
+                <button
+                  className={`nav-link ${item.accent ? `nav-link--${item.accent}` : ''} ${item.cols.some(c => c.links.some(l => isActive(l.href))) ? 'active' : ''}`}
+                  aria-haspopup="true"
                   aria-expanded={openMega === idx}
                 >
                   {item.label}
                   <svg className="nav-link__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <polyline points="6 9 12 15 18 9"/>
+                    <polyline points="6 9 12 15 18 9" />
                   </svg>
                 </button>
                 <div className={`mega-menu ${item.compact ? 'mega-menu--compact' : ''} ${item.accent ? `mega-menu--${item.accent}` : ''}`}>
@@ -96,9 +96,9 @@ export default function Navbar() {
                                 {link.label}
                               </a>
                             ) : (
-                              <Link 
-                                key={lIdx} 
-                                to={link.href} 
+                              <Link
+                                key={lIdx}
+                                to={link.href}
                                 className={`mega-menu__link ${isActive(link.href) ? 'active' : ''}`}
                               >
                                 <svg className="mega-menu__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -119,9 +119,9 @@ export default function Navbar() {
         </nav>
 
         <div className="navbar__actions">
-          <button 
-            className={`navbar__hamburger ${mobileOpen ? 'open' : ''}`} 
-            aria-label="Buka menu" 
+          <button
+            className={`navbar__hamburger ${mobileOpen ? 'open' : ''}`}
+            aria-label="Buka menu"
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen(!mobileOpen)}
           >
@@ -136,7 +136,7 @@ export default function Navbar() {
             if (item.disabled) {
               return <span key={idx} className="mobile-nav-link mobile-nav-link--disabled">{item.label}<span className="nav-badge">Ongoing</span></span>
             }
-            return item.href.startsWith('http') ? 
+            return item.href.startsWith('http') ?
               <a key={idx} href={item.href} target="_blank" rel="noopener noreferrer" className="mobile-nav-link">{item.label}</a> :
               <Link key={idx} to={item.href} className="mobile-nav-link">{item.label}</Link>
           }
@@ -144,13 +144,13 @@ export default function Navbar() {
           const allLinks = item.cols.flatMap(c => c.links)
           return (
             <div key={idx}>
-              <button 
+              <button
                 className={`mobile-accordion__trigger ${item.accent ? `mobile-accordion__trigger--${item.accent}` : ''} ${openMobileAccordion === idx ? 'open' : ''}`}
                 onClick={() => setOpenMobileAccordion(openMobileAccordion === idx ? null : idx)}
               >
                 {item.label}
                 <svg className="nav-link__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <polyline points="6 9 12 15 18 9"/>
+                  <polyline points="6 9 12 15 18 9" />
                 </svg>
               </button>
               <div className={`mobile-accordion__content ${openMobileAccordion === idx ? 'open' : ''}`}>

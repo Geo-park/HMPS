@@ -55,10 +55,9 @@ export default function StrukturOrganisasi() {
           <TeamCard {...activeStruktur.sekretaris} jabatan="Sekretaris Departemen" />
         </Reveal>
 
-        <Reveal className="dept-anggota-label">Anggota</Reveal>
         <Reveal className="dept-anggota-grid">
           {activeStruktur.anggota.map(a => (
-            <TeamCard key={a.nim} {...a} size="sm" />
+            <TeamCard key={a.nim} {...a} jabatan="Anggota" size="sm" />
           ))}
         </Reveal>
       </div>

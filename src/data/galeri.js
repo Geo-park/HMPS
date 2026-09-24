@@ -21,5 +21,12 @@ export const GALERI_FOLDERS = [
     subtitle: 'WordPress Campus Connect',
     drive: 'https://drive.google.com/drive/folders/1cSkIgt0n4UUtnmQW9pw7M-IiXnP0HX6a',
     dept: 'eksternal',
+  },
+  {
+    id: 'goes-to-school',
+    nama: 'GOES TO SCHOOL',
+    subtitle: 'Goes To School',
+    drive: 'https://drive.google.com/drive/folders/1JcH3FGkaf3wmRwucmSb1fgEZrppoVDjD',
+    dept: 'eksternal',
   }
 ]
