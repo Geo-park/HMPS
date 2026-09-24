@@ -18,15 +18,15 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: #2E3447;
+  background: var(--purple);
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow:
-    0 4px 20px rgba(0, 0, 0, 0.3),
-    0 1px 4px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255,255,255,0.08);
+    0 4px 20px rgba(133, 45, 201, 0.35),
+    0 1px 4px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255,255,255,0.12);
   cursor: pointer;
   border: none;
   outline: none;
@@ -40,15 +40,15 @@
 
 .floating-contact__trigger:hover {
   transform: scale(1.1);
-  background: #3a4260;
+  background: var(--purple-600);
   box-shadow:
-    0 8px 28px rgba(0, 0, 0, 0.35),
-    0 2px 8px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255,255,255,0.1);
+    0 8px 28px rgba(133, 45, 201, 0.45),
+    0 2px 8px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255,255,255,0.15);
 }
 
 .floating-contact.open .floating-contact__trigger {
-  background: #1e2436;
+  background: var(--purple-700);
 }
 
 .floating-contact__trigger svg {
@@ -91,7 +91,7 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: rgba(46, 52, 71, 0.4);
+  background: rgba(133, 45, 201, 0.4);
   animation: pulseRing 2.8s ease-out infinite;
   pointer-events: none;
 }

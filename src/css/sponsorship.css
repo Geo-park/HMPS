@@ -1,11 +1,11 @@
 .sponsorship {
   overflow: hidden;
   background:
-    radial-gradient(circle at 12% 45%, rgba(180, 137, 83, 0.10), transparent 22%),
-    radial-gradient(circle at 88% 55%, rgba(77, 129, 119, 0.08), transparent 24%),
+    radial-gradient(circle at 12% 45%, var(--accent-amber-soft), transparent 22%),
+    radial-gradient(circle at 88% 55%, var(--accent-teal-soft),  transparent 24%),
     var(--color-bg);
-  border-top: 1px solid rgba(180, 137, 83, 0.16);
-  border-bottom: 1px solid rgba(180, 137, 83, 0.12);
+  border-top: 1px solid color-mix(in srgb, var(--accent-amber) 20%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent-amber) 15%, transparent);
 }
 
 .sponsorship__intro {
@@ -79,7 +79,7 @@
 .sponsor-logo strong {
   display: block;
   font-family: var(--font-display);
-  color: #15191C;
+  color: var(--color-text);
   font-size: 18px;
   font-weight: 700;
   line-height: 1;

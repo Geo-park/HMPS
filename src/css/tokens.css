@@ -4,19 +4,25 @@
    ============================================ */
 
 :root {
-  /* Brand */
-  --purple: #46515B;
-  --purple-600: #35404A;
-  --purple-700: #252D35;
-  --purple-soft: rgba(70, 81, 91, 0.12);
+  /* Brand — Primary purple (HMPS INF identity) */
+  --purple: #852DC9;
+  --purple-600: #6E22A8;
+  --purple-700: #531A7E;
+  --purple-soft: rgba(133, 45, 201, 0.10);
 
-  /* Muted accents */
-  --accent-rose: #B45F78;
-  --accent-rose-soft: #F6E8ED;
-  --accent-sage: #A7B98A;
-  --accent-sage-soft: #EEF3E7;
-  --accent-teal: #4D8177;
-  --accent-amber: #B48953;
+  /* Brand accents */
+  --accent-amber:      #E5A827;
+  --accent-amber-soft: rgba(229, 168, 39, 0.12);
+  --accent-red:        #E64B2F;
+  --accent-red-soft:   rgba(230, 75, 47, 0.10);
+  --accent-teal:       #19ABA0;
+  --accent-teal-soft:  rgba(25, 171, 160, 0.12);
+
+  /* Legacy aliases (kept for backwards compat) */
+  --accent-rose:      #E64B2F;
+  --accent-rose-soft: rgba(230, 75, 47, 0.10);
+  --accent-sage:      #19ABA0;
+  --accent-sage-soft: rgba(25, 171, 160, 0.12);
 
   /* Legacy aliases used by footer and older components */
   --color-primary: var(--purple);
@@ -32,35 +38,35 @@
   --color-ekraf: #5865F2;
 
   /* Light theme */
-  --color-bg: #FFFFFF;
-  --color-bg-2: #F7FAF9;
-  --color-surface: #FFFFFF;
-  --color-surface-2: #FBFCFB;
-  --color-text: #15191C;
-  --color-text-2: #3C454B;
-  --color-text-3: #626D73;
-  --color-border: rgba(32, 37, 42, 0.10);
-  --color-border-2: rgba(32, 37, 42, 0.16);
+  --color-bg:       #F3F2EE;
+  --color-bg-2:     #ECEAE5;
+  --color-surface:  #FAFAF7;
+  --color-surface-2:#F3F2EE;
+  --color-text:     #1A1410;
+  --color-text-2:   #3D3830;
+  --color-text-3:   #6B645A;
+  --color-border:   rgba(60, 48, 36, 0.10);
+  --color-border-2: rgba(60, 48, 36, 0.16);
 
   /* Navbar glass */
-  --nav-bg: rgba(255, 255, 255, 0.84);
-  --nav-border: rgba(32, 37, 42, 0.10);
+  --nav-bg: rgba(243, 242, 238, 0.88);
+  --nav-border: rgba(60, 48, 36, 0.10);
 
   /* Hero */
-  --hero-shape: rgba(77, 129, 119, 0.12);
+  --hero-shape: rgba(133, 45, 201, 0.10);
 
   /* Placeholder */
-  --placeholder-bg: #ECECF3;
-  --placeholder-stripe: #E2E2EC;
+  --placeholder-bg:     #E5E3DC;
+  --placeholder-stripe: #D8D5CC;
 
   /* Shadows */
-  --shadow-card: 0 1px 2px rgba(32, 37, 42, 0.05), 0 10px 28px rgba(32, 37, 42, 0.09);
-  --shadow-pop: 0 16px 44px rgba(32, 37, 42, 0.18), 0 0 0 1px rgba(180, 137, 83, 0.12);
-  --shadow-lg: 0 8px 32px rgba(32, 37, 42, 0.12);
+  --shadow-card: 0 1px 2px rgba(26, 20, 16, 0.05), 0 10px 28px rgba(26, 20, 16, 0.08);
+  --shadow-pop:  0 16px 44px rgba(26, 20, 16, 0.18), 0 0 0 1px rgba(133, 45, 201, 0.14);
+  --shadow-lg:   0 8px 32px rgba(26, 20, 16, 0.12);
 
   /* Glass (navbar + modal) */
-  --glass-bg-light: rgba(255, 255, 255, 0.72);
-  --glass-border-light: rgba(22, 22, 29, 0.08);
+  --glass-bg-light:     rgba(243, 242, 238, 0.76);
+  --glass-border-light: rgba(60, 48, 36, 0.08);
   --glass-blur: 16px;
 
   /* Typography */
@@ -91,12 +97,13 @@
   --space-24: 6rem;
 
   /* Radius */
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-btn: 8px;
-  --radius-card: 12px;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
+  --radius-sm:   0.375rem;
+  --radius-md:   0.5rem;
+  --radius-btn:  10px;
+  --radius-card: 16px;
+  --radius-lg:   1rem;
+  --radius-xl:   1.5rem;
+  --radius-2xl:  2rem;
   --radius-pill: 999px;
 
   /* Misc */

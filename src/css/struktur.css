@@ -20,21 +20,22 @@
 
 /* Connector lines */
 .org-line {
-  stroke: var(--purple);
+  stroke: var(--accent-amber);
   stroke-width: 1.5;
   fill: none;
-  opacity: .25;
+  opacity: .3;
 }
 
 /* Pulse animation on lines */
 .org-pulse {
-  stroke: var(--purple);
+  stroke: var(--accent-amber);
   stroke-width: 2.5;
   fill: none;
   stroke-dasharray: 8 200;
   stroke-dashoffset: 0;
   opacity: .8;
 }
+
 
 /* Nodes container */
 .org-nodes {
@@ -360,7 +361,7 @@
 .team-card-photo {
   position: relative;
   overflow: hidden;
-  background: var(--purple);
+  background: linear-gradient(135deg, var(--purple) 0%, var(--purple-600) 100%);
   aspect-ratio: 4 / 5;
 }
 

@@ -27,7 +27,7 @@ export const EVENT_PAGE_DATA = [
     time: '06:00 - 17:00 WIB',
     place: 'UIN SMH Banten',
     image: '/asset/pbak.png',
-    photoFolder: '',
+    photoFolder: 'https://drive.google.com/drive/folders/1vSxh0XMCGaGAzvkXz83oKv2nvPbq1bMT',
     registrationLink: '',
     summary: 'Rangkaian pengenalan kehidupan kampus bagi mahasiswa baru Informatika.',
     description: 'PBAK 2026 menjadi rangkaian kegiatan untuk membantu mahasiswa baru mengenal kampus, program studi, budaya akademik, serta keluarga besar Informatika.',

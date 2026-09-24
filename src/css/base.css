@@ -28,6 +28,8 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   transition: background var(--transition-base), color var(--transition-base);
+  /* subtle paper noise feel */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23F3F2EE'/%3E%3Ccircle cx='1' cy='1' r='0.4' fill='%23E8E6E1' opacity='.5'/%3E%3Ccircle cx='3' cy='3' r='0.4' fill='%23E8E6E1' opacity='.5'/%3E%3C/svg%3E");
 }
 
 /* ── Typography ── */
@@ -95,8 +97,8 @@ select {
 main > .section:nth-of-type(odd) {
   background-color: var(--color-bg);
   background-image:
-    linear-gradient(rgba(77, 129, 119, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(77, 129, 119, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(25, 171, 160, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(25, 171, 160, 0.04) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
@@ -108,22 +110,26 @@ main > .section:nth-of-type(odd) {
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--purple);
+  color: var(--accent-amber);
   margin-bottom: 16px;
+  font-family: var(--font-label);
 }
 
-.eyebrow::before {
+.eyebrow::before,
+.eyebrow::after {
   content: "";
-  width: 22px;
+  flex: 0 0 18px;
   height: 2px;
-  background: var(--purple);
+  background: var(--accent-amber);
   border-radius: 2px;
+  display: block;
 }
+
 
 /* ── Section titles ── */
 .section-title {
@@ -142,17 +148,18 @@ main > .section:nth-of-type(odd) {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 22px;
-  border-radius: var(--radius-btn);
-  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
   font-size: 15px;
   line-height: 1;
-  border: 1px solid transparent;
+  border: 1.5px solid transparent;
   transition:
     transform 0.18s var(--ease),
     background 0.2s,
     border-color 0.2s,
     box-shadow 0.2s;
+  letter-spacing: 0.01em;
 }
 
 .btn:active {
@@ -162,22 +169,25 @@ main > .section:nth-of-type(odd) {
 .btn-primary {
   background: var(--purple);
   color: #fff;
+  box-shadow: 0 4px 14px rgba(133, 45, 201, 0.30);
 }
 
 .btn-primary:hover {
   background: var(--purple-600);
-  box-shadow: 0 8px 22px var(--purple-soft);
+  box-shadow: 0 8px 24px rgba(133, 45, 201, 0.42);
+  transform: translateY(-2px);
 }
 
 .btn-outline {
   border-color: var(--color-border-2);
   color: var(--color-text);
-  background: var(--color-surface);
+  background: #FFFFFF;
 }
 
 .btn-outline:hover {
   border-color: var(--purple);
   color: var(--purple);
+  background: var(--purple-soft);
 }
 
 .btn-ghost:hover {
@@ -185,23 +195,26 @@ main > .section:nth-of-type(odd) {
 }
 
 .btn-sm {
-  padding: 9px 16px;
-  font-size: 14px;
+  padding: 8px 16px;
+  font-size: 13px;
 }
 
 .btn-wa {
   background: #25D366;
   color: #fff;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.28);
 }
 
 .btn-wa:hover {
   background: #1FB957;
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.38);
+  transform: translateY(-2px);
 }
 
 /* ── Card ── */
 .card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: #FFFFFF; /* white over cream bg = poster paper feel */
+  border: 1px solid var(--color-border-2);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
   transition:
@@ -211,9 +224,12 @@ main > .section:nth-of-type(odd) {
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-pop);
-  border-color: color-mix(in srgb, var(--accent-amber) 55%, var(--color-border-2));
+  transform: translateY(-5px);
+  box-shadow:
+    0 2px 4px rgba(26, 20, 16, 0.04),
+    0 20px 48px rgba(26, 20, 16, 0.12),
+    0 0 0 1.5px color-mix(in srgb, var(--accent-amber) 50%, transparent);
+  border-color: color-mix(in srgb, var(--accent-amber) 60%, var(--color-border-2));
 }
 
 /* ── Link button ── */
@@ -628,12 +644,29 @@ body {
 .bento-icon {
   width: 46px;
   height: 46px;
-  border-radius: 11px;
+  border-radius: 12px;
   display: grid;
   place-items: center;
+  background: var(--accent-amber-soft);
+  color: var(--accent-amber);
+  margin-bottom: 18px;
+  flex-shrink: 0;
+}
+
+/* Per-card icon color variants for bento */
+.bento-stat:nth-child(2) .bento-icon {
+  background: var(--accent-teal-soft);
+  color: var(--accent-teal);
+}
+
+.bento-stat:nth-child(3) .bento-icon {
   background: var(--purple-soft);
   color: var(--purple);
-  margin-bottom: 18px;
+}
+
+.bento-event .bento-icon {
+  background: var(--accent-red-soft);
+  color: var(--accent-red);
 }
 
 .bento-lg {
@@ -804,14 +837,30 @@ body {
   height: 80px;
 }
 
+/* Icon Boxes — Accent Variants */
 .icon-box-purple {
   background: var(--purple-soft);
   color: var(--purple);
 }
 
+.icon-box-amber {
+  background: var(--accent-amber-soft);
+  color: var(--accent-amber);
+}
+
+.icon-box-red {
+  background: var(--accent-red-soft);
+  color: var(--accent-red);
+}
+
+.icon-box-teal {
+  background: var(--accent-teal-soft);
+  color: var(--accent-teal);
+}
+
 .icon-box-green {
-  background: rgba(29, 158, 117, 0.12);
-  color: #1D9E75;
+  background: var(--accent-teal-soft);
+  color: var(--accent-teal);
 }
 
 .icon-box-blue {
@@ -830,8 +879,8 @@ body {
 }
 
 .icon-box-instagram {
-  background: rgba(225, 48, 108, 0.12);
-  color: #E1306C;
+  background: rgba(230, 75, 47, 0.10);
+  color: var(--accent-red);
 }
 
 /* Grid / Layout Utils */
@@ -923,8 +972,8 @@ body {
 }
 
 .vm-icon-green {
-  background: rgba(37, 211, 102, 0.12);
-  color: #25D366;
+  background: var(--accent-teal-soft);
+  color: var(--accent-teal);
 }
 
 .vm-icon-blue {
@@ -933,8 +982,23 @@ body {
 }
 
 .vm-icon-gold {
-  background: rgba(186, 117, 23, 0.12);
-  color: #BA7517;
+  background: var(--accent-amber-soft);
+  color: var(--accent-amber);
+}
+
+.vm-icon-amber {
+  background: var(--accent-amber-soft);
+  color: var(--accent-amber);
+}
+
+.vm-icon-red {
+  background: var(--accent-red-soft);
+  color: var(--accent-red);
+}
+
+.vm-icon-teal {
+  background: var(--accent-teal-soft);
+  color: var(--accent-teal);
 }
 
 /* ── vm-list check icon ── */
@@ -1333,4 +1397,218 @@ body {
   .cal-events-list {
     max-height: 300px;
   }
+}
+
+/* ═══════════════════════════════════════
+   POSTER AESTHETIC — Utility Classes
+   Inspired by HMPS INF poster design DNA
+═══════════════════════════════════════ */
+
+/* Tag pill — seperti info row di poster (tanggal, lokasi, kuota) */
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.tag-pill-amber {
+  background: var(--accent-amber-soft);
+  color: color-mix(in srgb, var(--accent-amber) 85%, #000);
+  border: 1px solid color-mix(in srgb, var(--accent-amber) 30%, transparent);
+}
+
+.tag-pill-teal {
+  background: var(--accent-teal-soft);
+  color: color-mix(in srgb, var(--accent-teal) 85%, #000);
+  border: 1px solid color-mix(in srgb, var(--accent-teal) 30%, transparent);
+}
+
+.tag-pill-red {
+  background: var(--accent-red-soft);
+  color: var(--accent-red);
+  border: 1px solid color-mix(in srgb, var(--accent-red) 25%, transparent);
+}
+
+.tag-pill-purple {
+  background: var(--purple-soft);
+  color: var(--purple);
+  border: 1px solid color-mix(in srgb, var(--purple) 25%, transparent);
+}
+
+/* Badge burst — starburst dekoratif seperti di poster */
+.badge-burst {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background: var(--accent-red);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.2;
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%, 68% 57%,
+    79% 91%, 50% 70%, 21% 91%, 32% 57%,
+    2% 35%, 39% 35%
+  );
+}
+
+.badge-burst-amber {
+  background: var(--accent-amber);
+  color: #1A1410;
+}
+
+.badge-burst-purple {
+  background: var(--purple);
+  color: #fff;
+}
+
+/* Bento chip — event badge lebih poster-like */
+.bento-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--accent-red);
+  background: var(--accent-red-soft);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.04em;
+  border: 1px solid color-mix(in srgb, var(--accent-red) 20%, transparent);
+}
+
+.bento-chip .dot {
+  background: var(--accent-red);
+}
+
+/* Stat number — amber accent untuk angka besar */
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+  background: linear-gradient(135deg, var(--color-text) 40%, var(--accent-amber));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Link button — poster feel */
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--purple);
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 14px;
+  transition: gap 0.2s, color 0.2s;
+}
+
+.link-btn:hover {
+  gap: 10px;
+  color: var(--purple-600);
+}
+
+/* Section alternate warm */
+.section-alt-warm {
+  background: var(--color-bg-2);
+}
+
+/* Doodle divider — garis dekoratif wavy seperti underline di poster */
+.doodle-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.doodle-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-amber);
+  border-radius: 2px;
+  transform: rotate(-0.5deg);
+}
+
+/* Floating ornament dots */
+.ornament-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.ornament-dot-amber { background: var(--accent-amber); }
+.ornament-dot-teal  { background: var(--accent-teal);  }
+.ornament-dot-red   { background: var(--accent-red);   }
+.ornament-dot-purple{ background: var(--purple);       }
+
+/* Info row — seperti baris info di poster (icon + text) */
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.info-row__icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.info-row__icon-teal {
+  background: var(--accent-teal-soft);
+  color: var(--accent-teal);
+}
+
+.info-row__icon-red {
+  background: var(--accent-red-soft);
+  color: var(--accent-red);
+}
+
+.info-row__icon-amber {
+  background: var(--accent-amber-soft);
+  color: var(--accent-amber);
+}
+
+.info-row__icon-purple {
+  background: var(--purple-soft);
+  color: var(--purple);
+}
+
+.info-row__label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-3);
+  font-family: var(--font-label);
+  margin-bottom: 2px;
+}
+
+.info-row__value {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.3;
 }

@@ -10,7 +10,7 @@
   left: 0;
   right: 0;
   z-index: var(--z-navbar);
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(243, 242, 238, 0.82);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   backdrop-filter: blur(12px) saturate(140%);
   transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
@@ -23,7 +23,7 @@
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   backdrop-filter: blur(16px) saturate(180%);
   border-bottom: 1px solid var(--nav-border);
-  box-shadow: 0 8px 24px rgba(32, 37, 42, 0.06);
+  box-shadow: 0 8px 24px rgba(26, 20, 16, 0.07);
 }
 
 .navbar__inner {
@@ -76,8 +76,11 @@
 }
 
 .navbar__logo-text b {
-  font-weight: 700;
-  color: var(--purple);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--purple) 0%, var(--purple-600) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* ── Nav Links ── */
@@ -351,15 +354,15 @@
   display: grid;
   place-items: center;
   color: #fff;
-  border: 1px solid #fefdff;
-  background: #4A3F9F;
+  border: 1px solid transparent;
+  background: var(--accent-amber);
   cursor: pointer;
   transition: color 0.2s, border-color 0.2s, transform 0.2s, background 0.2s;
 }
 
 .icon-btn:hover {
-  background: #3D3480;
-  border-color: #3D3480;
+  background: #C8921A;
+  border-color: #C8921A;
 }
 
 .icon-btn svg {

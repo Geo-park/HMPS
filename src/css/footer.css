@@ -68,7 +68,7 @@
 .footer__social-link:hover {
   color: var(--accent-teal);
   border-color: var(--accent-teal);
-  background: rgba(77, 129, 119, 0.10);
+  background: var(--accent-teal-soft);
 }
 
 .footer__social-link svg {
