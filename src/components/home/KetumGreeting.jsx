@@ -67,7 +67,7 @@ export default function KetumGreeting() {
 
       {/* Foto Ketum */}
       <div className="ketum-photo-container">
-        <img src="/asset/ketum.png" alt="Ketua Umum HMPS" className="ketum-photo" />
+        <img src="/assets/umum/ketum.png" alt="Ketua Umum HMPS" className="ketum-photo" />
       </div>
 
     </div>

@@ -44,7 +44,7 @@ export default function Event() {
             </Reveal>
             <Reveal delay={200}>
               <img 
-                src="/asset/event.webp" 
+                src="/assets/umum/event.webp" 
                 alt="Dokumentasi Event HMPS Informatika"
                 style={{ width: '100%', borderRadius: 'var(--radius-card)', boxShadow: 'var(--shadow-card)', aspectRatio: '16/9', objectFit: 'cover' }}
               />

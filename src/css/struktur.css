@@ -365,7 +365,7 @@
 .team-card-photo {
   position: relative;
   overflow: hidden;
-  background: var(--color-bg-2) url('/asset/logo_lazarus.png') center/cover no-repeat;
+  background: var(--color-bg-2) url('/assets/umum/logo_lazarus.png') center/cover no-repeat;
   aspect-ratio: 1 / 1;
 }
 

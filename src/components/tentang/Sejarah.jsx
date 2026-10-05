@@ -6,7 +6,7 @@ export default function Sejarah() {
       <div className="container about-grid">
         <Reveal>
           <img
-            src="/asset/background.webp"
+            src="/assets/umum/background.webp"
             alt="Foto pengurus HMPS INF"
             style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', objectPosition: 'center top', borderRadius: 'var(--radius-card)' }}
           />

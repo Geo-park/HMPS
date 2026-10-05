@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react'
 import Reveal from '../common/Reveal'
 
 const HERO_IMAGES = [
-  '/asset/lazarus.png',
-  '/asset/mahasiswa.webp',
-  '/asset/sekolah.webp'
+  '/assets/umum/lazarus.png',
+  '/assets/umum/mahasiswa.webp',
+  '/assets/umum/sekolah.webp'
 ]
 
 export default function AboutHeader() {
