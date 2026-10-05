@@ -6,8 +6,8 @@
 // berupa lingkaran berisi inisial nama.
 
 export const bph = {
-  ketua: { nama: "Muhammad Alief Rasyidin", nim: "241730010", foto: "/assets/pengurus/alief.png" },
-  sekretaris: { nama: "Muhamad Arief Rachmatullah", nim: "241730035", foto: "/assets/pengurus/arief.png" },
+  ketua: { nama: "Muhammad Alief Rasyidin", nim: "241730010", foto: "/assets/pengurus/Alief.png" },
+  sekretaris: { nama: "Muhamad Arief Rachmatullah", nim: "241730035", foto: "/assets/pengurus/Arief.png" },
   bendahara: { nama: "Parhan Maulana", nim: "241730080", foto: "/assets/pengurus/parhan.PNG" },
 };
 
@@ -17,8 +17,8 @@ export const departemenList = [
     slug: "pao",
     nama: "PAO",
     namaLengkap: "Pengembangan Aparatur Organisasi",
-    ketua: { nama: "Ahmad Fahmirifa Fahrurozi", nim: "241730025", foto: "/assets/pengurus/fahmi.PNG" },
-    sekretaris: { nama: "Khotibul Umami", nim: "251603086", foto: "/assets/pengurus/umam.PNG" },
+    ketua: { nama: "Ahmad Fahmirifa Fahrurozi", nim: "241730025", foto: "/assets/pengurus/Fahmi.PNG" },
+    sekretaris: { nama: "Khotibul Umami", nim: "251603086", foto: "/assets/pengurus/Umam.PNG" },
     anggota: [
       { nama: "Bahrul Ulumudin", nim: "241730090", foto: "/assets/pengurus/Ulumudin.png" },
       { nama: "Nujma Fatima Ghauri Varadis", nim: "251603102", foto: "/assets/pengurus/nujma.PNG" },
