@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Helmet } from 'react-helmet-async'
 import Reveal from '../components/common/Reveal'
 
 const SERVICES = [
@@ -13,7 +14,6 @@ const SERVICES = [
 export default function Servis() {
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.title = 'Servis Elektronik | HMPS INF'
   }, [])
 
   const whatsappNumber = "6283192893467"
@@ -21,6 +21,54 @@ export default function Servis() {
 
   return (
     <main className="page-servis">
+      <Helmet>
+        <title>Servis HP &amp; Laptop HMPS Informatika UIN Banten | Servis Elektronik Murah Serang</title>
+        <meta name="description" content="Layanan servis HP, laptop, ganti LCD, instal ulang Windows, dan servis elektronik terjangkau di Kota Serang Banten. Dikerjakan oleh mahasiswa Informatika UIN Sultan Maulana Hasanuddin Banten yang berpengalaman." />
+        <meta name="keywords" content="servis hp serang, servis laptop serang banten, instal windows serang, ganti lcd hp serang, servis elektronik mahasiswa informatika uin banten, hmps informatika servis" />
+        <link rel="canonical" href="https://hmps-inf.fsainsuinbanten.my.id/servis" />
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://hmps-inf.fsainsuinbanten.my.id/' },
+                { '@type': 'ListItem', position: 2, name: 'Servis Elektronik', item: 'https://hmps-inf.fsainsuinbanten.my.id/servis' },
+              ]
+            },
+            {
+              '@type': 'LocalBusiness',
+              '@id': 'https://hmps-inf.fsainsuinbanten.my.id/servis#localbusiness',
+              name: 'Servis Elektronik HMPS Informatika UIN Banten',
+              description: 'Layanan servis HP, laptop, ganti LCD, instal ulang Windows, dan berbagai kebutuhan elektronik mahasiswa di Kota Serang, Banten.',
+              url: 'https://hmps-inf.fsainsuinbanten.my.id/servis',
+              telephone: '+6283192893467',
+              priceRange: '$$',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'Jl. Syeh Nawawi Al Bantani No. 01, Gedung B FSAINS',
+                addressLocality: 'Kota Serang',
+                addressRegion: 'Banten',
+                addressCountry: 'ID',
+              },
+              parentOrganization: { '@id': 'https://hmps-inf.fsainsuinbanten.my.id/#organization' },
+              hasOfferCatalog: {
+                '@type': 'OfferCatalog',
+                name: 'Layanan Servis Elektronik',
+                itemListElement: [
+                  { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Servis HP' } },
+                  { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Servis Laptop' } },
+                  { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Ganti Pasta Thermal' } },
+                  { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Ganti LCD HP' } },
+                  { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Instal Ulang Windows' } },
+                  { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Instal Microsoft Office' } },
+                ]
+              }
+            }
+          ]
+        })}</script>
+      </Helmet>
+
       {/* Hero Section */}
       <section className="servis-hero">
         <div className="servis-hero-bg">

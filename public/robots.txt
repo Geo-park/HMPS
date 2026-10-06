@@ -1,14 +1,52 @@
 User-agent: *
 Allow: /
+Crawl-delay: 1
 
-# Permit indexing by common AI search crawlers.
+# === Google ===
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Izinkan Google AI (Gemini, SGE) mengindex konten
 User-agent: Google-Extended
 Allow: /
 
+# === OpenAI / ChatGPT ===
 User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: GPTBot
+Allow: /
+
+# === Perplexity AI ===
+User-agent: PerplexityBot
+Allow: /
+
+# === Microsoft / Bing / Copilot ===
+User-agent: Bingbot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+# === Meta AI ===
+User-agent: FacebookBot
+Allow: /
+
+# === Common SEO Crawlers ===
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Sitemap
 Sitemap: https://hmps-inf.fsainsuinbanten.my.id/sitemap.xml

@@ -27,8 +27,37 @@ export default function EventDetail() {
   return (
     <main className="event-detail-page">
       <Helmet>
-        <title>{event.title} | HMPS Informatika</title>
-        <meta name="description" content={event.summary} />
+        <title>{event.title} | HMPS Informatika UIN Banten</title>
+        <meta name="description" content={`${event.summary} — Agenda kegiatan HMPS Informatika UIN Sultan Maulana Hasanuddin Banten. ${event.dateLabel ? `Tanggal: ${event.dateLabel}.` : ''} ${event.place ? `Lokasi: ${event.place}.` : ''}`} />
+        <meta name="keywords" content={`${event.title.toLowerCase()}, event hmps informatika, kegiatan mahasiswa informatika uin banten, ${event.place ? event.place.toLowerCase() : ''}`} />
+        <link rel="canonical" href={`https://hmps-inf.fsainsuinbanten.my.id/event/${event.slug}`} />
+        <meta property="og:title" content={`${event.title} | HMPS Informatika`} />
+        <meta property="og:description" content={event.summary} />
+        {event.image && <meta property="og:image" content={event.image} />}
+        <meta property="og:url" content={`https://hmps-inf.fsainsuinbanten.my.id/event/${event.slug}`} />
+        <meta property="og:type" content="article" />
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://hmps-inf.fsainsuinbanten.my.id/' },
+                { '@type': 'ListItem', position: 2, name: 'Event & Kegiatan', item: 'https://hmps-inf.fsainsuinbanten.my.id/event' },
+                { '@type': 'ListItem', position: 3, name: event.title, item: `https://hmps-inf.fsainsuinbanten.my.id/event/${event.slug}` },
+              ]
+            },
+            {
+              '@type': 'Event',
+              name: event.title,
+              description: event.summary,
+              url: `https://hmps-inf.fsainsuinbanten.my.id/event/${event.slug}`,
+              image: event.image || undefined,
+              location: event.place ? { '@type': 'Place', name: event.place } : undefined,
+              organizer: { '@id': 'https://hmps-inf.fsainsuinbanten.my.id/#organization' },
+            }
+          ]
+        })}</script>
       </Helmet>
 
       <section className="event-detail__hero">

@@ -15,8 +15,18 @@ export default function Pengumuman() {
   return (
     <main className="mading-page">
       <Helmet>
-        <title>Mading Pengumuman | HMPS Informatika UIN SMH Banten</title>
-        <meta name="description" content="Mading Pengumuman terbaru untuk mahasiswa Informatika UIN SMH Banten." />
+        <title>Pengumuman Terbaru HMPS Informatika UIN Banten | Info Mahasiswa Informatika</title>
+        <meta name="description" content="Pengumuman dan informasi terbaru dari HMPS Informatika UIN Sultan Maulana Hasanuddin Banten. Cek mading digital untuk update beasiswa, lowongan, lomba, dan informasi penting seputar mahasiswa Informatika." />
+        <meta name="keywords" content="pengumuman hmps informatika, info mahasiswa informatika uin banten, berita informatika uin smh banten, mading informatika" />
+        <link rel="canonical" href="https://hmps-inf.fsainsuinbanten.my.id/pengumuman" />
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://hmps-inf.fsainsuinbanten.my.id/' },
+            { '@type': 'ListItem', position: 2, name: 'Pengumuman', item: 'https://hmps-inf.fsainsuinbanten.my.id/pengumuman' },
+          ]
+        })}</script>
       </Helmet>
 
       <div className="mading-board">

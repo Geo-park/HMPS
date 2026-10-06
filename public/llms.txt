@@ -1,30 +1,63 @@
 # HMPS Informatika UIN SMH Banten
 
 > Website resmi Himpunan Mahasiswa Program Studi Informatika UIN Sultan Maulana Hasanuddin Banten.
+> Kita Satu, Kita Informatika.
 
 ## Identity
 
 - Official name: HMPS Informatika UIN SMH Banten
+- Full name: Himpunan Mahasiswa Program Studi Informatika UIN Sultan Maulana Hasanuddin Banten
 - Short name: HMPS INF
-- Institution: UIN Sultan Maulana Hasanuddin Banten
-- Location: Kota Serang, Banten, Indonesia
+- Institution: UIN Sultan Maulana Hasanuddin Banten (UIN SMHB)
+- Faculty: Fakultas Sains dan Teknologi (FSAINS)
+- Program Studi: Informatika
+- Location: Jl. Syeh Nawawi Al Bantani No. 01, Gedung B FSAINS, UIN SMHB, Curug, Kota Serang, Banten, Indonesia
 - Period: 2026/2027
 - Tagline: Kita Satu, Kita Informatika.
+- Email: hmpsinformatikauinbanten@gmail.com
 
-## Main pages
+## What is HMPS Informatika?
 
-- Home: https://hmps-inf.fsainsuinbanten.my.id/
-- About, history, vision, mission, departments, organization structure, and FAQ: https://hmps-inf.fsainsuinbanten.my.id/tentang
-- Activity gallery: https://hmps-inf.fsainsuinbanten.my.id/galeri
+HMPS Informatika UIN SMH Banten adalah organisasi kemahasiswaan resmi yang menaungi mahasiswa Program Studi Informatika Universitas Islam Negeri Sultan Maulana Hasanuddin Banten. Organisasi ini bergerak di bawah naungan Fakultas Sains dan Teknologi (FSAINS). HMPS INF memiliki tujuh departemen aktif yang berfokus pada pengembangan akademik, sosial, minat bakat, dan teknologi mahasiswa Informatika.
+
+## Main Pages
+
+- Home (Beranda): https://hmps-inf.fsainsuinbanten.my.id/
+- About (Tentang): sejarah, visi misi, departemen, struktur kepengurusan, FAQ: https://hmps-inf.fsainsuinbanten.my.id/tentang
+- Event & Kegiatan: agenda, seminar, lomba, program kerja: https://hmps-inf.fsainsuinbanten.my.id/event
+- Pengumuman: info terbaru, beasiswa, lowongan, informasi penting: https://hmps-inf.fsainsuinbanten.my.id/pengumuman
+- Galeri Kegiatan: foto dan video dokumentasi: https://hmps-inf.fsainsuinbanten.my.id/galeri
+- Arsip Digital: dokumen dan laporan kegiatan: https://hmps-inf.fsainsuinbanten.my.id/arsip
+- Servis Elektronik: servis HP, laptop, instal Windows, ganti LCD: https://hmps-inf.fsainsuinbanten.my.id/servis
+
+## Departments
+
+HMPS Informatika memiliki tujuh departemen:
+1. Departemen Akademik dan Riset
+2. Departemen Komunikasi dan Informasi
+3. Departemen Minat dan Bakat
+4. Departemen Sosial dan Kemasyarakatan
+5. Departemen Wirausaha
+6. Departemen Pemberdayaan Perempuan
+7. Departemen Kaderisasi dan Pengembangan Organisasi
 
 ## Services
 
 - Ruang Aspirasi Perempuan Informatika: https://ruangaspirasiperempuaninformatika.netlify.app/
 - SIAKAD UIN Banten: https://neosiakad.uinbanten.ac.id/
+- Servis Elektronik (HP, Laptop, LCD, Windows, Office): https://hmps-inf.fsainsuinbanten.my.id/servis
 
 ## Contact
 
 - Email: hmpsinformatikauinbanten@gmail.com
 - Instagram: https://instagram.com/hmpsinformatikaa
 - TikTok: https://tiktok.com/@hmps.informatika
+- WhatsApp Servis: +6283192893467
 - Address: Jl. Syeh Nawawi Al Bantani No. 01, Gedung B FSAINS, UIN SMHB, Curug, Kota Serang, Banten
+
+## Keywords
+
+HMPS Informatika, HMPS Informatika UIN Banten, himpunan mahasiswa informatika UIN SMH Banten,
+informatika UIN Banten, UIN Sultan Maulana Hasanuddin Banten, FSAINS UIN Banten,
+organisasi mahasiswa informatika Banten, servis HP Serang, servis laptop Serang Banten,
+kegiatan mahasiswa informatika Banten, event HMPS Informatika

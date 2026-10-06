@@ -35,14 +35,26 @@ export default function Tentang() {
   return (
     <main className="page-fade">
       <Helmet>
-        <title>Tentang Kami | HMPS Informatika UIN SMH Banten</title>
-        <meta name="description" content="Kenali lebih dekat HMPS Informatika UIN Sultan Maulana Hasanuddin Banten — sejarah, visi misi, struktur kepengurusan, dan tujuh departemen yang bergerak untuk mahasiswa Informatika." />
+        <title>Tentang HMPS Informatika UIN Banten | Sejarah, Visi Misi &amp; Struktur Kepengurusan</title>
+        <meta name="description" content="Kenali HMPS Informatika UIN Sultan Maulana Hasanuddin Banten — sejarah berdirinya, visi misi organisasi, tujuh departemen, struktur kepengurusan 2026/2027, dan FAQ mahasiswa Informatika UIN Banten." />
+        <meta name="keywords" content="tentang hmps informatika uin banten, sejarah hmps informatika, visi misi hmps informatika, struktur kepengurusan hmps informatika uin smh banten, departemen hmps informatika" />
         <link rel="canonical" href="https://hmps-inf.fsainsuinbanten.my.id/tentang" />
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqItems,
+            '@graph': [
+              {
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                  { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://hmps-inf.fsainsuinbanten.my.id/' },
+                  { '@type': 'ListItem', position: 2, name: 'Tentang Kami', item: 'https://hmps-inf.fsainsuinbanten.my.id/tentang' },
+                ]
+              },
+              {
+                '@type': 'FAQPage',
+                mainEntity: faqItems,
+              }
+            ]
           })}
         </script>
       </Helmet>

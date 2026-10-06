@@ -30,8 +30,18 @@ export default function Event() {
   return (
     <main className="event-page">
       <Helmet>
-        <title>Event | HMPS Informatika UIN SMH Banten</title>
-        <meta name="description" content="Informasi event dan kegiatan untuk mahasiswa Informatika UIN SMH Banten." />
+        <title>Event &amp; Kegiatan HMPS Informatika UIN Banten | Agenda Mahasiswa Informatika</title>
+        <meta name="description" content="Daftar lengkap event, seminar, lomba, dan kegiatan HMPS Informatika UIN Sultan Maulana Hasanuddin Banten. Temukan agenda terbaru, jadwal pendaftaran, dan informasi kegiatan mahasiswa Informatika." />
+        <meta name="keywords" content="event hmps informatika, kegiatan hmps informatika uin banten, agenda mahasiswa informatika, seminar informatika uin, lomba informatika banten" />
+        <link rel="canonical" href="https://hmps-inf.fsainsuinbanten.my.id/event" />
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://hmps-inf.fsainsuinbanten.my.id/' },
+            { '@type': 'ListItem', position: 2, name: 'Event & Kegiatan', item: 'https://hmps-inf.fsainsuinbanten.my.id/event' },
+          ]
+        })}</script>
       </Helmet>
 
       <section className="event-page__hero">

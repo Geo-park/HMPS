@@ -6,9 +6,18 @@ export default function Galeri() {
   return (
     <main className="page-fade" style={{ paddingTop: '80px' }}>
       <Helmet>
-        <title>Galeri Kegiatan | HMPS Informatika UIN SMH Banten</title>
-        <meta name="description" content="Dokumentasi foto dan video kegiatan HMPS Informatika UIN SMH Banten — dari program kerja departemen, acara tahunan, hingga momen kebersamaan mahasiswa Informatika." />
+        <title>Galeri Kegiatan HMPS Informatika UIN Banten | Dokumentasi Foto &amp; Video</title>
+        <meta name="description" content="Galeri foto dan video dokumentasi kegiatan HMPS Informatika UIN Sultan Maulana Hasanuddin Banten — program kerja departemen, acara tahunan, seminar, dan momen kebersamaan mahasiswa Informatika UIN Banten." />
+        <meta name="keywords" content="galeri hmps informatika, foto kegiatan informatika uin banten, dokumentasi hmps inf, kegiatan mahasiswa informatika banten" />
         <link rel="canonical" href="https://hmps-inf.fsainsuinbanten.my.id/galeri" />
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://hmps-inf.fsainsuinbanten.my.id/' },
+            { '@type': 'ListItem', position: 2, name: 'Galeri Kegiatan', item: 'https://hmps-inf.fsainsuinbanten.my.id/galeri' },
+          ]
+        })}</script>
       </Helmet>
 
       <section className="section-tight">

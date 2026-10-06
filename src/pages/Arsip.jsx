@@ -29,8 +29,18 @@ export default function Arsip() {
   return (
     <main className="arsip-page">
       <Helmet>
-        <title>Arsip Digital | HMPS Informatika UIN SMH Banten</title>
-        <meta name="description" content="Pusat arsip dan dokumen digital HMPS Informatika UIN SMH Banten." />
+        <title>Arsip Digital HMPS Informatika UIN Banten | Dokumen &amp; Laporan Kegiatan</title>
+        <meta name="description" content="Pusat arsip dan dokumen digital HMPS Informatika UIN Sultan Maulana Hasanuddin Banten. Unduh laporan kegiatan, dokumen program kerja, dan berkas penting mahasiswa Informatika UIN Banten." />
+        <meta name="keywords" content="arsip hmps informatika, dokumen informatika uin banten, laporan kegiatan hmps inf, download berkas informatika uin smh banten" />
+        <link rel="canonical" href="https://hmps-inf.fsainsuinbanten.my.id/arsip" />
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://hmps-inf.fsainsuinbanten.my.id/' },
+            { '@type': 'ListItem', position: 2, name: 'Arsip Digital', item: 'https://hmps-inf.fsainsuinbanten.my.id/arsip' },
+          ]
+        })}</script>
       </Helmet>
 
       <section className="arsip-hero">
