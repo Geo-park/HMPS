@@ -1,0 +1,387 @@
+/* ============================================
+   Roadmap Matkul Styles - Interactive Timeline
+   ============================================ */
+
+.roadmap-page {
+  background-color: var(--color-bg);
+  /* Optional light grid background like screenshot */
+  background-image: linear-gradient(var(--color-border) 1px, transparent 1px), linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center top;
+  padding-top: 120px;
+  padding-bottom: 80px;
+  min-height: 100vh;
+}
+
+[data-theme='dark'] .roadmap-page {
+  background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+}
+
+/* Timeline */
+.roadmap-timeline {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  padding: 0 20px;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 24px;
+  left: 40px;
+  right: 40px;
+  height: 2px;
+  background-color: var(--color-border);
+  z-index: 1;
+}
+
+.timeline-node {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  gap: 12px;
+  transition: transform 0.2s;
+}
+
+.timeline-node:hover {
+  transform: translateY(-2px);
+}
+
+.node-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--color-text-2);
+  transition: all 0.3s;
+}
+
+.timeline-node.active .node-circle {
+  background-color: var(--purple);
+  border-color: var(--purple);
+  color: white;
+  box-shadow: 0 4px 12px rgba(var(--purple-rgb), 0.3);
+}
+
+.node-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s;
+}
+
+.timeline-node.active .node-label {
+  color: var(--purple);
+}
+
+/* Detail Container */
+.semester-detail-container {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-sm);
+}
+
+.semester-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.header-left {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  max-width: 500px;
+}
+
+.header-icon {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(var(--purple-rgb), 0.1);
+  color: var(--purple);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.header-title-wrap h2 {
+  margin: 0 0 8px 0;
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--color-text);
+}
+
+.header-title-wrap p {
+  margin: 0;
+  color: var(--color-text-2);
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.header-right {
+  display: flex;
+  gap: 12px;
+}
+
+.sks-badge {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  padding: 12px 16px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px;
+}
+
+.sks-badge.blue {
+  background-color: rgba(var(--purple-rgb), 0.05);
+  border-color: rgba(var(--purple-rgb), 0.2);
+}
+
+.sks-badge span {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-text-3);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  letter-spacing: 0.05em;
+}
+
+.sks-badge.blue span {
+  color: var(--purple);
+}
+
+.sks-badge strong {
+  font-size: 24px;
+  color: var(--color-text);
+  font-weight: 800;
+}
+
+.sks-badge.blue strong {
+  color: var(--purple);
+}
+
+/* Grid Matkul */
+.matkul-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 16px;
+}
+
+.matkul-card {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.matkul-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  border-color: rgba(var(--purple-rgb), 0.3);
+}
+
+.matkul-card-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.matkul-icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-text-3);
+}
+
+.matkul-info h3 {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.sks-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-2);
+}
+
+@media (max-width: 768px) {
+  .roadmap-timeline {
+    overflow-x: auto;
+    padding-bottom: 20px;
+    justify-content: flex-start;
+    gap: 32px;
+  }
+  .timeline-line {
+    width: 600px;
+  }
+  .semester-detail-container {
+    padding: 24px;
+  }
+  .header-left {
+    max-width: 100%;
+  }
+  .header-right {
+    width: 100%;
+  }
+  .sks-badge {
+    flex: 1;
+  }
+}
+
+/* ============================================
+   Alur Kelulusan Timeline
+   ============================================ */
+.alur-timeline-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 160px 20px; /* Ditambahkan padding vertikal besar agar kartu absolute tidak menabrak elemen atas/bawah */
+}
+
+.alur-timeline-line {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  right: 40px;
+  height: 2px;
+  background-color: var(--color-border);
+  z-index: 1;
+}
+
+.alur-node {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 0;
+}
+
+.alur-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #06b6d4; /* Cyan */
+  box-shadow: 0 0 12px 4px rgba(6, 182, 212, 0.4);
+  z-index: 3;
+}
+
+.alur-card {
+  position: absolute;
+  width: 200px; /* Diperlebar agar teks tidak terpotong */
+  background: var(--color-bg);
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(234,179,8,0.5), rgba(6,182,212,0.5), rgba(59,130,246,0.5));
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  /* Centering card horizontally relative to the dot */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.alur-card:hover {
+  transform: translate(-50%, -4px);
+}
+
+.alur-card-inner {
+  background: var(--color-surface);
+  border-radius: 10px;
+  padding: 20px 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.alur-node.node-top .alur-card {
+  bottom: 32px;
+}
+
+.alur-node.node-bottom .alur-card {
+  top: 32px;
+}
+
+.alur-card-inner h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.alur-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.alur-card-inner p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-text-2);
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .alur-timeline-container {
+    overflow-x: auto;
+    padding: 160px 20px;
+    justify-content: flex-start;
+    gap: 220px; /* Space between nodes */
+  }
+  .alur-timeline-line {
+    width: 1600px;
+  }
+}
+

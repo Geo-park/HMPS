@@ -1,18 +1,56 @@
 import { Link } from 'react-router-dom'
+import { useState, useEffect, useRef } from 'react'
 
 export default function Hero() {
+  const [bgMode, setBgMode] = useState('video')
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    let timer;
+    if (bgMode === 'image') {
+      // Tunggu 5 detik di gambar, lalu kembali ke video
+      timer = setTimeout(() => {
+        setBgMode('video')
+      }, 5000)
+    } else if (bgMode === 'video' && videoRef.current) {
+      // Mainkan video dari awal
+      videoRef.current.currentTime = 0
+      videoRef.current.play().catch(e => console.log('Autoplay prevented', e))
+    }
+    return () => clearTimeout(timer)
+  }, [bgMode])
+
   return (
     <section className="hero">
+      <div
+        className={`hero-image-bg ${bgMode === 'image' ? 'active' : ''}`}
+        style={{ backgroundImage: `url('/assets/umum/background.webp')` }}
+      ></div>
+
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        playsInline
+        className={`hero-video-bg ${bgMode === 'video' ? 'active' : ''}`}
+        onEnded={() => setBgMode('image')}
+      >
+        <source src="/assets/umum/hero.mp4" type="video/mp4" />
+      </video>
+
+      <div className="hero-overlay"></div>
       <div className="hero-shape hero-shape-1"></div>
       <div className="hero-shape hero-shape-2"></div>
       <div className="hero-glow"></div>
 
       <div className="container hero-inner">
         <h1 className="hero-title reveal" style={{ transitionDelay: '100ms' }}>
-          Himpunan Mahasiswa Program Studi Informatika<br/>
+          Himpunan Mahasiswa Program Studi Informatika<br />
           <span className="grad">UIN SMH Banten</span>
         </h1>
-        <p className="hero-sub reveal" style={{ transitionDelay: '200ms' }}>Kita Satu, Kita Informatika.</p>
+        <p className="hero-sub reveal" style={{ transitionDelay: '200ms' }}>
+          <span className="shiny-text">Kita Satu, Kita Informatika.</span>
+        </p>
         <div className="hero-cta reveal" style={{ transitionDelay: '300ms' }}>
           <Link to="/tentang" className="btn btn-primary">
             Kenali Kami
@@ -25,7 +63,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <button className="scroll-ind" onClick={() => window.scrollTo({top: window.innerHeight * 0.82, behavior: 'smooth'})}>
+      <button className="scroll-ind" onClick={() => window.scrollTo({ top: window.innerHeight * 0.82, behavior: 'smooth' })}>
         <span>Scroll</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <line x1="12" y1="5" x2="12" y2="19" />

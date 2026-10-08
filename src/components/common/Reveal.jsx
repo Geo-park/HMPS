@@ -11,6 +11,8 @@ export default function Reveal({ children, className = '', delay = 0, style = {}
       ([entry]) => {
         if (entry.isIntersecting) {
           el.classList.add('in')
+        } else {
+          el.classList.remove('in')
         }
       },
       { threshold: 0.1 }
@@ -21,9 +23,9 @@ export default function Reveal({ children, className = '', delay = 0, style = {}
   }, [])
 
   return (
-    <Component 
-      ref={ref} 
-      className={`reveal ${className}`} 
+    <Component
+      ref={ref}
+      className={`reveal ${className}`}
       style={{ ...style, transitionDelay: delay ? `${delay}ms` : undefined }}
     >
       {children}

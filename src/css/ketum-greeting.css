@@ -1,7 +1,6 @@
 .ketum-widget {
   position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 32px;
   right: 24px;
   z-index: 9999;
   display: flex;

@@ -32,6 +32,7 @@ export const NAV_STRUCTURE = [
         title: 'Layanan',
         links: [
           { label: 'Servis Elektronik', href: '/servis', icon: 'smartphone' },
+          { label: 'Marketplace', href: '/marketplace', icon: 'shopping' },
           { label: 'Ruang Aspirasi Perempuan', href: 'https://ruangaspirasiperempuaninformatika.netlify.app/', icon: 'heart' },
         ]
       }
@@ -49,10 +50,16 @@ export const NAV_STRUCTURE = [
           { label: 'Event', href: '/event', icon: 'clock' },
           { label: 'Galeri', href: '/galeri', icon: 'image' },
           { label: 'Arsip', href: '/arsip', icon: 'archive' },
-          { label: 'SIAKAD', href: 'https://neosiakad.uinbanten.ac.id/', icon: 'external' },
+          { label: 'Kontak Dosen', href: '/kontak-dosen', icon: 'phone' },
+          { label: 'Roadmap Matkul', href: '/roadmap', icon: 'map' },
         ]
       }
     ]
+  },
+  {
+    label: 'SIAKAD',
+    href: 'https://neosiakad.uinbanten.ac.id/',
+    accent: 'purple'
   }
 ]
 
@@ -69,4 +76,7 @@ export const LINK_ICON_PATHS = {
   archive: `<polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/>`,
   laptop: `<rect x="3" y="4" width="18" height="12" rx="2"/><line x1="2" y1="20" x2="22" y2="20"/>`,
   smartphone: `<rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>`,
+  phone: `<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>`,
+  map: `<polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/>`,
+  shopping: `<path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>`,
 }

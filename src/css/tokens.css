@@ -37,11 +37,11 @@
   --color-pp: #D4537E;
   --color-ekraf: #5865F2;
 
-  /* Light theme */
-  --color-bg:       #F3F2EE;
-  --color-bg-2:     #ECEAE5;
-  --color-surface:  #FAFAF7;
-  --color-surface-2:#F3F2EE;
+  /* Light theme (Fresh White) */
+  --color-bg:       #FFFFFF;
+  --color-bg-2:     #F8F8F8;
+  --color-surface:  #FFFFFF;
+  --color-surface-2:#FAFAFA;
   --color-text:     #1A1410;
   --color-text-2:   #3D3830;
   --color-text-3:   #6B645A;
@@ -49,7 +49,7 @@
   --color-border-2: rgba(60, 48, 36, 0.16);
 
   /* Navbar glass */
-  --nav-bg: rgba(243, 242, 238, 0.88);
+  --nav-bg: rgba(255, 255, 255, 0.88);
   --nav-border: rgba(60, 48, 36, 0.10);
 
   /* Hero */
@@ -65,7 +65,7 @@
   --shadow-lg:   0 8px 32px rgba(26, 20, 16, 0.12);
 
   /* Glass (navbar + modal) */
-  --glass-bg-light:     rgba(243, 242, 238, 0.76);
+  --glass-bg-light:     rgba(255, 255, 255, 0.76);
   --glass-border-light: rgba(60, 48, 36, 0.08);
   --glass-blur: 16px;
 
@@ -126,22 +126,22 @@
    Dark Theme Overrides
    ============================================ */
 [data-theme='dark'] {
-  --color-bg:       #121212;
-  --color-bg-2:     #1E1E1E;
-  --color-surface:  #242424;
-  --color-surface-2:#2C2C2C;
-  --color-text:     #EDEDED;
-  --color-text-2:   #A0A0A0;
-  --color-text-3:   #737373;
+  --color-bg:       #0B1121;
+  --color-bg-2:     #0F172A;
+  --color-surface:  #1E293B;
+  --color-surface-2:#334155;
+  --color-text:     #F8FAFC;
+  --color-text-2:   #CBD5E1;
+  --color-text-3:   #94A3B8;
   --color-border:   rgba(255, 255, 255, 0.10);
   --color-border-2: rgba(255, 255, 255, 0.16);
 
   /* Navbar glass */
-  --nav-bg: rgba(18, 18, 18, 0.88);
+  --nav-bg: rgba(11, 17, 33, 0.88);
   --nav-border: rgba(255, 255, 255, 0.10);
 
   /* Glass (navbar + modal) */
-  --glass-bg-light:     rgba(18, 18, 18, 0.76);
+  --glass-bg-light:     rgba(11, 17, 33, 0.76);
   --glass-border-light: rgba(255, 255, 255, 0.08);
 
   /* Shadows for dark mode (reduced) */
@@ -153,6 +153,6 @@
   --hero-shape: rgba(133, 45, 201, 0.20);
   
   /* Placeholder */
-  --placeholder-bg:     #2A2A2A;
-  --placeholder-stripe: #333333;
+  --placeholder-bg:     #1E293B;
+  --placeholder-stripe: #334155;
 }

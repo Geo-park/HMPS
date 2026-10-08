@@ -10,10 +10,11 @@
   max-width: 1100px;
   margin: 0 auto;
   position: relative;
-  background-color: #d4a373; /* Light wood color */
+  background-color: #d4a373;
+  /* Light wood color */
   border-radius: 20px;
   padding: 60px 40px;
-  box-shadow: 4px 8px 24px rgba(0,0,0,0.15), inset 0 0 40px rgba(139, 69, 19, 0.1);
+  box-shadow: 4px 8px 24px rgba(0, 0, 0, 0.15), inset 0 0 40px rgba(139, 69, 19, 0.1);
   border: 1px solid #bc8a5f;
 }
 
@@ -28,10 +29,11 @@
   height: 40px;
   background: linear-gradient(to bottom, #cfd8dc, #90a4ae);
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   z-index: 20;
   border: 2px solid #78909c;
 }
+
 .mading-board::after {
   content: '';
   position: absolute;
@@ -74,12 +76,36 @@
 }
 
 /* Accent Colors from Palette */
-.mading-title .letter-1 { background: var(--purple);      --rot: -2; }
-.mading-title .letter-2 { background: var(--accent-red);  --rot: 2; }
-.mading-title .letter-3 { background: var(--accent-teal); --rot: -1; }
-.mading-title .letter-4 { background: var(--accent-amber); color: #1A1410; --rot: 3; }
-.mading-title .letter-5 { background: var(--purple);      --rot: -3; }
-.mading-title .letter-6 { background: var(--accent-red);  --rot: 2; }
+.mading-title .letter-1 {
+  background: var(--purple);
+  --rot: -2;
+}
+
+.mading-title .letter-2 {
+  background: var(--accent-red);
+  --rot: 2;
+}
+
+.mading-title .letter-3 {
+  background: var(--accent-teal);
+  --rot: -1;
+}
+
+.mading-title .letter-4 {
+  background: var(--accent-amber);
+  color: #1A1410;
+  --rot: 3;
+}
+
+.mading-title .letter-5 {
+  background: var(--purple);
+  --rot: -3;
+}
+
+.mading-title .letter-6 {
+  background: var(--accent-red);
+  --rot: 2;
+}
 
 .mading-subtitle-container {
   margin-top: 20px;
@@ -114,7 +140,7 @@
   padding: 40px 24px 24px;
   background-color: var(--color-surface);
   background-image: linear-gradient(to bottom, var(--color-surface-2) 0%, var(--color-surface) 40px);
-  box-shadow: 2px 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
   transform: rotate(var(--rotate));
   transition: transform 0.3s ease, z-index 0.3s ease, box-shadow 0.3s ease;
   z-index: 1;
@@ -124,7 +150,7 @@
 .mading-paper:hover {
   transform: rotate(0deg) scale(1.02);
   z-index: 10;
-  box-shadow: 4px 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Tape instead of pin */
@@ -136,11 +162,12 @@
   width: 80px;
   height: 24px;
   background-color: var(--color-border);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  border-left: 2px dashed rgba(0,0,0,0.2);
-  border-right: 2px dashed rgba(0,0,0,0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-left: 2px dashed rgba(0, 0, 0, 0.2);
+  border-right: 2px dashed rgba(0, 0, 0, 0.2);
   z-index: 5;
 }
+
 /* Tape accent color (red/blue like in image) */
 .paper-pin::after {
   content: '';
@@ -151,6 +178,7 @@
   height: 4px;
   background-color: #d32f2f;
 }
+
 .paper-pin::before {
   content: '';
   position: absolute;
@@ -175,6 +203,7 @@
   letter-spacing: 1px;
   margin-bottom: 8px;
 }
+
 .paper-category::before {
   content: '— ';
   color: var(--accent-amber);
@@ -191,7 +220,7 @@
   margin: 16px 0;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .paper-image {
@@ -236,14 +265,17 @@
   .mading-page {
     padding-top: 100px;
   }
+
   .mading-board {
     padding: 40px 20px;
     border-radius: 12px;
   }
+
   .mading-title .letter {
     font-size: 28px;
     padding: 6px 10px;
   }
+
   .mading-masonry {
     grid-template-columns: 1fr;
     gap: 30px;

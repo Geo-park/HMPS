@@ -28,9 +28,10 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   transition: background var(--transition-base), color var(--transition-base);
-  /* subtle paper noise feel */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23F3F2EE'/%3E%3Ccircle cx='1' cy='1' r='0.4' fill='%23E8E6E1' opacity='.5'/%3E%3Ccircle cx='3' cy='3' r='0.4' fill='%23E8E6E1' opacity='.5'/%3E%3C/svg%3E");
+  /* No background image for a clean look */
 }
+
+
 
 /* ── Typography ── */
 h1,
@@ -94,12 +95,18 @@ select {
   padding: 96px 0;
 }
 
-main > .section:nth-of-type(odd) {
+main>.section:nth-of-type(odd) {
   background-color: var(--color-bg);
   background-image:
-    linear-gradient(rgba(25, 171, 160, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(25, 171, 160, 0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
+    linear-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+[data-theme='dark'] main>.section:nth-of-type(odd) {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
 }
 
 .section-tight {
@@ -181,7 +188,7 @@ main > .section:nth-of-type(odd) {
 .btn-outline {
   border-color: var(--color-border-2);
   color: var(--color-text);
-  background: #FFFFFF;
+  background: var(--color-surface);
 }
 
 .btn-outline:hover {
@@ -213,7 +220,8 @@ main > .section:nth-of-type(odd) {
 
 /* ── Card ── */
 .card {
-  background: var(--color-surface); /* white over cream bg = poster paper feel */
+  background: var(--color-surface);
+  /* white over cream bg = poster paper feel */
   border: 1px solid var(--color-border-2);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
@@ -351,7 +359,7 @@ main > .section:nth-of-type(odd) {
 }
 
 .page-head {
-  padding: 72px 0 8px;
+  padding: 128px 0 8px;
 }
 
 .page-title {
@@ -378,13 +386,19 @@ main > .section:nth-of-type(odd) {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border-2);
+  background: gray;
+  /* Hitam / Navy pekat */
   border-radius: 8px;
   border: 3px solid var(--color-bg);
 }
 
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: gray;
+  /* Lebih gelap di dark mode */
+}
+
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: black;
 }
 
 /* ── Focus visible ── */
@@ -430,7 +444,7 @@ main > .section:nth-of-type(odd) {
 
 /* ── Body offset for fixed navbar ── */
 body {
-  padding-top: 68px;
+  padding-top: 0;
 }
 
 /* ═══════════════════════════════════════
@@ -438,33 +452,49 @@ body {
 ═══════════════════════════════════════ */
 .hero {
   position: relative;
-  min-height: 92vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding: 90px 0;
-  background-image: url('/assets/umum/background.webp');
+  padding: 140px 0 90px;
+  background-color: var(--color-bg);
+  /* fallback */
+}
+
+/* Video Background */
+.hero-video-bg, .hero-image-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.hero-video-bg.active, .hero-image-bg.active {
+  opacity: 1;
 }
 
 /* Overlay gelap supaya teks terbaca */
-.hero::after {
-  content: '';
+.hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top,
       rgba(13, 12, 20, 0.95) 0%,
       rgba(13, 12, 20, 0.60) 40%,
-      rgba(13, 12, 20, 0.10) 100%);
+      rgba(13, 12, 20, 0.20) 100%);
   z-index: 1;
 }
 
-/* Pastikan konten di atas overlay */
+/* Pastikan konten di atas overlay & grid */
 .hero-inner {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .hero-shape,
@@ -564,11 +594,11 @@ body {
   font-size: clamp(40px, 7vw, 86px);
   font-weight: 700;
   letter-spacing: -0.03em;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--purple);
+  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.9)) drop-shadow(3px 5px 6px rgba(0, 0, 0, 0.8));
 }
 
-.hero-title .grad {
-  color: var(--purple);
-}
 
 .hero-sub {
   font-size: clamp(18px, 2.4vw, 24px);
@@ -576,6 +606,7 @@ body {
   margin-top: 22px;
   font-weight: 500;
   font-family: var(--font-display);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-cta {
@@ -1456,11 +1487,9 @@ body {
   text-transform: uppercase;
   text-align: center;
   line-height: 1.2;
-  clip-path: polygon(
-    50% 0%, 61% 35%, 98% 35%, 68% 57%,
-    79% 91%, 50% 70%, 21% 91%, 32% 57%,
-    2% 35%, 39% 35%
-  );
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%,
+      79% 91%, 50% 70%, 21% 91%, 32% 57%,
+      2% 35%, 39% 35%);
 }
 
 .badge-burst-amber {
@@ -1555,10 +1584,21 @@ body {
   flex-shrink: 0;
 }
 
-.ornament-dot-amber { background: var(--accent-amber); }
-.ornament-dot-teal  { background: var(--accent-teal);  }
-.ornament-dot-red   { background: var(--accent-red);   }
-.ornament-dot-purple{ background: var(--purple);       }
+.ornament-dot-amber {
+  background: var(--accent-amber);
+}
+
+.ornament-dot-teal {
+  background: var(--accent-teal);
+}
+
+.ornament-dot-red {
+  background: var(--accent-red);
+}
+
+.ornament-dot-purple {
+  background: var(--purple);
+}
 
 /* Info row — seperti baris info di poster (icon + text) */
 .info-row {
@@ -1611,4 +1651,135 @@ body {
   font-weight: 600;
   color: var(--color-text);
   line-height: 1.3;
+}
+
+/* ============================================
+   Shiny Text Effect
+   ============================================ */
+.shiny-text {
+  color: transparent;
+  background: linear-gradient(120deg,
+      rgba(255, 255, 255, 0.3) 40%,
+      rgba(255, 255, 255, 0.95) 50%,
+      rgba(255, 255, 255, 0.3) 60%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-block;
+  animation: shine 3s linear infinite;
+}
+
+[data-theme='dark'] .shiny-text {
+  background: linear-gradient(120deg,
+      rgba(255, 255, 255, 0.3) 40%,
+      rgba(255, 255, 255, 0.95) 50%,
+      rgba(255, 255, 255, 0.3) 60%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 100%;
+  }
+
+  100% {
+    background-position: -100%;
+  }
+}
+
+/* ============================================
+   3D Coverflow Carousel (Departemen)
+   ============================================ */
+.dept-coverflow-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+  margin-top: 20px;
+  pointer-events: none;
+}
+
+.dept-coverflow {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+.dept-card-3d {
+  position: absolute;
+  width: 260px;
+  height: 360px;
+  background: var(--color-surface);
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s, filter 0.6s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  user-select: none;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.dept-card-3d-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.03) 100%);
+  border-top: 4px solid var(--card-color, var(--purple));
+}
+
+[data-theme='dark'] .dept-card-3d-inner {
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.03) 100%);
+}
+
+.dept-card-3d-icon {
+  color: var(--card-color, var(--purple));
+  margin-bottom: 24px;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+}
+
+.dept-card-3d h3 {
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
+  color: var(--color-text);
+  margin: 0 0 8px 0;
+  font-family: var(--font-display);
+}
+
+.dept-card-3d p {
+  font-size: 14px;
+  text-align: center;
+  color: var(--color-text-2);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.dept-card-3d:not(.active) {
+  opacity: 0.5;
+  filter: blur(3px) grayscale(50%);
+}
+
+.dept-card-3d.active {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  border-color: var(--card-color, var(--purple));
+}
+
+[data-theme='dark'] .dept-card-3d.active {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }

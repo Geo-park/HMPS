@@ -59,9 +59,9 @@ export const departemenList = [
     ketua: { nama: "Muhammad Rifki Hidayatulloh", nim: "241730008", foto: "/assets/pengurus/Rifky.png" },
     sekretaris: { nama: "Athalla Rizqy Erlangga", nim: "241730077", foto: "/assets/pengurus/Carlos.png" },
     anggota: [
+      { nama: "Anjani Meysun Nine Dzalail", nim: "251603027", foto: "/assets/pengurus/Anjani.png" },
       { nama: "Adila Muqtashida", nim: "241730001", foto: "/assets/pengurus/Adila.png" },
       { nama: "Rizky Dani Wibowo", nim: "251603007", foto: "/assets/pengurus/Dani.png" },
-      { nama: "Anjani Meysun Nine Dzalail", nim: "251603027", foto: "/assets/pengurus/Anjani.png" },
       { nama: "Alfiana", nim: "251603004", foto: "/assets/pengurus/Alfiana.png" },
       { nama: "Rosita", nim: "251603075", foto: "/assets/pengurus/Rosita.png" },
     ],

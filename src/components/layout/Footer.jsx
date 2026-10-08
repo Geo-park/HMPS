@@ -43,6 +43,7 @@ export default function Footer() {
             <div className="footer__links">
               <Link to="/" className="footer__link">Beranda</Link>
               <Link to="/tentang#tentang" className="footer__link">Tentang Kami</Link>
+              <Link to="/roadmap" className="footer__link">Roadmap Matkul</Link>
               <Link to="/galeri" className="footer__link">Galeri</Link>
             </div>
           </div>
@@ -59,10 +60,10 @@ export default function Footer() {
           <div>
             <div className="footer__col-title">Layanan</div>
             <div className="footer__links">
+              <Link to="/marketplace" className="footer__link">Marketplace</Link>
               <Link to="/servis" className="footer__link">Servis Elektronik</Link>
               <Link to="/tentang#faq" className="footer__link">Pertanyaan Umum</Link>
               <a href="https://ruangaspirasiperempuaninformatika.netlify.app/" target="_blank" rel="noopener noreferrer" className="footer__link">Ruang Aspirasi Perempuan</a>
-              <a href="https://neosiakad.uinbanten.ac.id/" target="_blank" rel="noopener noreferrer" className="footer__link">SIAKAD</a>
             </div>
           </div>
 

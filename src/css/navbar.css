@@ -6,36 +6,58 @@
 /* ── Navbar Base ── */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 1000px;
   z-index: var(--z-navbar);
-  background: rgba(243, 242, 238, 0.82);
-  -webkit-backdrop-filter: blur(12px) saturate(140%);
-  backdrop-filter: blur(12px) saturate(140%);
-  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
-  border-bottom: 1px solid var(--nav-border);
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  backdrop-filter: blur(24px) saturate(150%);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .navbar {
+  background: rgba(30, 30, 30, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 /* Scrolled state — glass aktif */
 .navbar.scrolled {
-  background: var(--nav-bg);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  backdrop-filter: blur(16px) saturate(180%);
-  border-bottom: 1px solid var(--nav-border);
-  box-shadow: 0 8px 24px rgba(26, 20, 16, 0.07);
+  top: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] .navbar.scrolled {
+  background: rgba(20, 20, 20, 0.7);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+}
+
+/* State saat mobile menu terbuka */
+.navbar.mobile-open {
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme='dark'] .navbar.mobile-open {
+  background: rgba(30, 30, 30, 0.85);
 }
 
 .navbar__inner {
   width: 100%;
-  max-width: var(--maxw);
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
-  gap: 24px;
+  height: 64px;
+  gap: 16px;
 }
 
 /* ── Logo ── */
@@ -162,10 +184,10 @@
 /* ── Mega Menu ── */
 .mega-menu {
   position: absolute;
-  top: calc(100% + 10px);
+  top: calc(100% + 20px);
   left: 50%;
   transform: translateX(-50%) translateY(-6px);
-  background: var(--nav-bg);
+  background: rgba(255, 255, 255, 0.85);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   backdrop-filter: blur(16px) saturate(180%);
   border: 1px solid var(--nav-border);
@@ -179,6 +201,10 @@
     opacity 0.18s ease,
     transform 0.18s ease;
   z-index: var(--z-dropdown);
+}
+
+[data-theme='dark'] .mega-menu {
+  background: rgba(30, 30, 30, 0.85);
 }
 
 .nav-item:hover .mega-menu,
@@ -195,7 +221,7 @@
   top: 100%;
   left: -20px;
   right: -20px;
-  height: 16px;
+  height: 26px;
 }
 
 /* Mega menu grid */
@@ -421,9 +447,7 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s var(--ease), padding 0.4s;
-  background: var(--nav-bg);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
+  background: transparent;
   border-bottom: 1px solid transparent;
 }
 
@@ -538,4 +562,62 @@
   .navbar__mobile.open {
     padding: 12px 16px 18px;
   }
+}
+
+/* ── Dark Mode Toggle Pill ── */
+.theme-toggle-pill {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.theme-toggle-pill__track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 52px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--color-bg-2);
+  border: 1.5px solid var(--color-border-2);
+  transition: background 0.3s, border-color 0.3s;
+  padding: 3px;
+}
+
+.theme-toggle-pill.dark .theme-toggle-pill__track {
+  background: var(--purple);
+  border-color: var(--purple);
+}
+
+.theme-toggle-pill__thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+  display: grid;
+  place-items: center;
+  color: var(--accent-amber);
+  transform: translateX(0);
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), background 0.3s, color 0.3s;
+  flex-shrink: 0;
+}
+
+.theme-toggle-pill.dark .theme-toggle-pill__thumb {
+  transform: translateX(24px);
+  background: #1e1e2e;
+  color: #a78bfa;
+}
+
+.theme-toggle-pill:hover .theme-toggle-pill__track {
+  border-color: var(--purple);
+}
+
+.theme-toggle-pill:focus-visible .theme-toggle-pill__track {
+  outline: 2px solid var(--purple);
+  outline-offset: 2px;
 }

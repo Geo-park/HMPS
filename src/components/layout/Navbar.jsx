@@ -47,7 +47,7 @@ export default function Navbar() {
   }
 
   return (
-    <header id="navbar" className={`navbar ${scrolled ? 'scrolled' : ''}`} role="banner">
+    <header id="navbar" className={`navbar ${scrolled ? 'scrolled' : ''} ${mobileOpen ? 'mobile-open' : ''}`} role="banner">
       <div className="navbar__inner">
         <Link to="/" className="navbar__logo">
           <img src="/assets/umum/logo_hmps.svg" alt="Logo HMPS" loading="eager" className="navbar__logo-mark" />
@@ -131,42 +131,28 @@ export default function Navbar() {
         </nav>
 
         <div className="navbar__actions">
-          <button 
-            className="theme-toggle" 
+          <button
+            className={`theme-toggle-pill ${theme === 'dark' ? 'dark' : ''}`}
             onClick={toggleTheme}
-            aria-label="Toggle Dark Mode"
-            style={{
-              background: 'transparent',
-              border: 'none',
-              cursor: 'pointer',
-              display: 'none', // Disabled for now (was flex)
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '40px',
-              height: '40px',
-              borderRadius: '50%',
-              color: 'var(--color-text)'
-            }}
+            aria-label={theme === 'light' ? 'Aktifkan Dark Mode' : 'Aktifkan Light Mode'}
+            title={theme === 'light' ? 'Dark Mode' : 'Light Mode'}
           >
-            {theme === 'light' ? (
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-              </svg>
-            ) : (
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-              </svg>
-            )}
+            <span className="theme-toggle-pill__track">
+              <span className="theme-toggle-pill__thumb">
+                {theme === 'dark' ? (
+                  <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                  </svg>
+                ) : (
+                  <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <circle cx="12" cy="12" r="4"/>
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+                  </svg>
+                )}
+              </span>
+            </span>
           </button>
-          
+
           <button
             className={`navbar__hamburger ${mobileOpen ? 'open' : ''}`}
             aria-label="Buka menu"

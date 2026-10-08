@@ -9,6 +9,7 @@ import Stats from '../components/home/Stats'
 import KalenderKegiatan from '../components/home/KalenderKegiatan'
 import Reveal from '../components/common/Reveal'
 import KetumGreeting from '../components/home/KetumGreeting'
+import Contact from '../components/home/Contact'
 import EventCard from '../components/events/EventCard'
 import { PENGUMUMAN_DATA } from '../data/pengumuman'
 import { EVENT_PAGE_DATA } from '../data/eventPages'
@@ -35,13 +36,13 @@ export default function Home() {
             <span className="eyebrow">Info Terkini</span>
             <h2 className="section-title">Pengumuman & Event Terbaru</h2>
           </Reveal>
-          
+
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '48px', marginTop: '40px' }}>
-            
+
             {/* Pengumuman Terbaru */}
-            <div className="home-latest-col">
+            <Reveal delay={100} className="home-latest-col">
               <h3 style={{ fontSize: '20px', marginBottom: '24px', borderBottom: '2px solid var(--color-border)', paddingBottom: '12px', fontWeight: '700' }}>
-                📢 Pengumuman Terbaru
+                Pengumuman Terbaru
               </h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {PENGUMUMAN_DATA.slice(0, 3).map(p => (
@@ -52,12 +53,12 @@ export default function Home() {
                   </a>
                 ))}
               </div>
-            </div>
+            </Reveal>
 
             {/* Event Terbaru */}
-            <div className="home-latest-col">
+            <Reveal delay={200} className="home-latest-col">
               <h3 style={{ fontSize: '20px', marginBottom: '24px', borderBottom: '2px solid var(--color-border)', paddingBottom: '12px', fontWeight: '700' }}>
-                🗓️ Event Terdekat
+                Event Terdekat
               </h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '360px' }}>
                 {EVENT_PAGE_DATA.slice(0, 1).map(e => (
@@ -66,7 +67,7 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-            </div>
+            </Reveal>
 
           </div>
         </div>
@@ -85,7 +86,9 @@ export default function Home() {
       </section>
 
       {/* ═══ KETUM WIDGET ═══ */}
-      <KetumGreeting />
+
+      {/* ═══ CONTACT / TERHUBUNG ═══ */}
+      <Contact />
     </main>
   )
 }

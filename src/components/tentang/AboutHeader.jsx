@@ -38,7 +38,7 @@ export default function AboutHeader() {
           key={idx}
           className={`tentang-hero__bg ${idx === currentSlide ? 'active' : ''}`}
         >
-          <img src={src} alt={`Tentang HMPS ${idx + 1}`} />
+          <img src={src} alt={`Tentang HMPS ${idx + 1}`} style={{ transform: 'scale(1.15)', transformOrigin: 'center center' }} />
           <div className="tentang-hero__overlay"></div>
         </div>
       ))}

@@ -1,5 +1,6 @@
 // Data folder galeri
-// Field "dept" menghubungkan ke id departemen di departemen.js untuk ambil ikon & warna
+// Field "dept" menghubungkan ke id departemen di departemen.js untuk ambil ikon & warna.
+// Catatan: Ganti value "dept" dengan id departemen yang sesuai agar warna/ikon pada card ikut berubah.
 export const GALERI_FOLDERS = [
   {
     id: 'meet-greet-2026',

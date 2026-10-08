@@ -24,18 +24,40 @@ export default function Departemen() {
           <p className="section-sub">Pilih departemen untuk melihat visi, struktur pengurus, dan program kerjanya.</p>
         </Reveal>
 
-        <Reveal className="dep-tabs" id="depTabs">
-          {DEPTS.map(d => (
-            <button
-              key={d.id}
-              className={`dep-tab ${activeDept === d.id ? 'active' : ''}`}
-              style={{ '--accent': d.color }}
-              onClick={() => setActiveDept(d.id)}
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16" dangerouslySetInnerHTML={{ __html: d.icon }} />
-              {d.name}
-            </button>
-          ))}
+        <Reveal className="dept-coverflow-container" id="depTabs">
+          <div className="dept-coverflow">
+            {DEPTS.map((d, index) => {
+              const currentIndex = DEPTS.findIndex(dept => dept.id === activeDept)
+              const offset = index - currentIndex
+
+              // Calculate 3D transforms based on offset
+              const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+              const xShift = isMobile ? 80 : 120
+              const translateX = offset * xShift
+              const translateZ = Math.abs(offset) * -180
+              const rotateY = offset * -35
+              const zIndex = 100 - Math.abs(offset)
+
+              return (
+                <div
+                  key={d.id}
+                  className={`dept-card-3d ${offset === 0 ? 'active' : ''}`}
+                  style={{
+                    transform: `translateX(${translateX}%) translateZ(${translateZ}px) rotateY(${rotateY}deg)`,
+                    zIndex: zIndex,
+                    '--card-color': d.color
+                  }}
+                  onClick={() => setActiveDept(d.id)}
+                >
+                  <div className="dept-card-3d-inner">
+                    <div className="dept-card-3d-icon" dangerouslySetInnerHTML={{ __html: `<svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${d.icon}</svg>` }} />
+                    <h3>{d.name}</h3>
+                    <p>{d.fullName}</p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
         </Reveal>
 
         <div

@@ -23,17 +23,17 @@ export default function Galeri() {
       <section className="section-tight">
         <div className="container">
           <Reveal style={{ textAlign: 'left', marginBottom: '32px' }}>
-            <span 
-              className="eyebrow" 
-              style={{ 
-                display: 'inline-flex', 
-                alignItems: 'center', 
-                gap: '6px', 
-                background: 'var(--purple-soft, #EEF2FF)', 
-                color: 'var(--purple)', 
-                padding: '4px 12px', 
-                borderRadius: '99px', 
-                fontSize: '11px', 
+            <span
+              className="eyebrow"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                background: 'var(--purple-soft, #EEF2FF)',
+                color: 'var(--purple)',
+                padding: '4px 12px',
+                borderRadius: '99px',
+                fontSize: '11px',
                 fontWeight: '700',
                 letterSpacing: '0.05em'
               }}

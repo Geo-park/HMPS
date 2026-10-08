@@ -1,14 +1,12 @@
 import { useState, useEffect } from 'react'
 import '../../css/ketum-greeting.css'
 
-export default function KetumGreeting() {
+export default function KetumGreeting({ message = "Halo! Welcome di Website HMPS Informatika!" }) {
   const [isVisible, setIsVisible] = useState(true)
   const [showPhoto, setShowPhoto] = useState(false)
   const [showBubble, setShowBubble] = useState(false)
   const [typewriterText, setTypewriterText] = useState('')
   const [isHovered, setIsHovered] = useState(false)
-
-  const fullTypewriter = "Halo! Welcome di Website HMPS Informatika!"
 
   useEffect(() => {
     // 0.5 detik -> Foto ketum slide-up
@@ -21,8 +19,8 @@ export default function KetumGreeting() {
     const typeTimer = setTimeout(() => {
       let i = 0
       const typeInterval = setInterval(() => {
-        if (i < fullTypewriter.length) {
-          setTypewriterText(fullTypewriter.slice(0, i + 1))
+        if (i < message.length) {
+          setTypewriterText(message.slice(0, i + 1))
           i++
         } else {
           clearInterval(typeInterval)
@@ -35,7 +33,7 @@ export default function KetumGreeting() {
       clearTimeout(bubbleTimer)
       clearTimeout(typeTimer)
     }
-  }, [])
+  }, [message])
 
   if (!isVisible) return null
 
@@ -43,13 +41,13 @@ export default function KetumGreeting() {
     <div className={`ketum-widget ${showPhoto ? 'show-photo' : ''} ${showBubble ? 'show-bubble' : ''} ${isHovered ? 'show-full-text' : ''}`}>
 
       {/* Bubble Chat */}
-      <div 
+      <div
         className="ketum-bubble"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={() => setIsHovered(!isHovered)}
       >
-        <button className="ketum-close" onClick={() => setIsVisible(false)} aria-label="Tutup">
+        <button className="ketum-close" onClick={(e) => { e.stopPropagation(); setIsVisible(false); }} aria-label="Tutup">
           ✕
         </button>
         <div className="ketum-bubble-title">
